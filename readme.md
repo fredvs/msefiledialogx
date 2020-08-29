@@ -11,12 +11,18 @@ Copy in the directory of your project:
 Then add at end of uses section:
 
 uses
+
 ...
+
  , msefiledialogx;
+
 
 This will load the MSEFileDialogX each time a tfiledialog is called.
 
 Included a demo how to use it.
+
+![alt text](https://user-images.githubusercontent.com/3421249/91644981-7aaaa900-ea41-11ea-9cc3-9b07a52684e1.png)
+
 
 ![alt text](https://user-images.githubusercontent.com/3421249/91644861-60240000-ea40-11ea-99ea-f4eb723279aa.png)
 

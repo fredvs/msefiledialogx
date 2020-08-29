@@ -1006,7 +1006,7 @@ windowlayout=574
  x=0
  y=0
  cx=205
- cy=524
+ cy=525
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1267,7 +1267,7 @@ windowlayout=574
  [componentpalettefo]
  splitdir=0
  useroptions=268460139
- stackedunder=_mse_mainfo_mse_
+ stackedunder=
  parent=
  mdistate=3
  nx=0
@@ -1298,7 +1298,7 @@ windowlayout=574
  x=0
  y=0
  cx=1348
- cy=50
+ cy=49
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -1309,12 +1309,12 @@ windowlayout=574
  mdistate=0
  nx=0
  ny=0
- ncx=1348
- ncy=56
+ ncx=1333
+ ncy=55
  x=0
  y=0
- cx=1348
- cy=55
+ cx=1333
+ cy=53
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -1363,7 +1363,7 @@ windowlayout=574
  x=208
  y=0
  cx=1140
- cy=524
+ cy=525
  rcx=0
  rcy=0
  [sourcefo.files_tab]
@@ -1404,9 +1404,9 @@ windowlayout=574
  ncx=0
  ncy=0
  x=0
- y=53
+ y=52
  cx=1348
- cy=524
+ cy=525
  rcx=0
  rcy=0
  [_mse_mainfo_mse_]
