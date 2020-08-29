@@ -1,14 +1,14 @@
 object filedialogfo: Tfiledialogfo
   optionswidget = [ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets, ow_hinton]
-  face.localprops = []
   visible = False
-  bounds_x = 365
-  bounds_y = 169
+  bounds_x = 280
+  bounds_y = 266
   bounds_cx = 496
   bounds_cy = 327
   bounds_cxmin = 496
   bounds_cymin = 50
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
+  container.color = 13224393
   container.frame.localprops = []
   container.frame.localprops1 = []
   container.onlayout = layoutev
@@ -58,7 +58,7 @@ object filedialogfo: Tfiledialogfo
     frame.localprops = [frl_levelo]
     frame.localprops1 = []
     face.localprops = [fal_fadirection]
-    taborder = 13
+    taborder = 9
     bounds_x = 28
     bounds_y = 101
     bounds_cx = 100
@@ -102,18 +102,21 @@ object filedialogfo: Tfiledialogfo
   end
   object dir: tdirdropdownedit
     optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
+    frame.levelo = 0
     frame.caption = '&Directory'
     frame.captiontextflags = [tf_xcentered, tf_bottom]
-    frame.localprops = []
+    frame.localprops = [frl_levelo]
     frame.localprops1 = []
     frame.button.face.localprops = []
-    frame.button.frame.localprops = []
+    frame.button.frame.optionsskin = [fso_flat]
+    frame.button.frame.localprops = [frl_optionsskin]
     frame.button.frame.localprops1 = []
     frame.buttons.count = 1
     frame.buttons.items = <    
       item
         face.localprops = []
-        frame.localprops = []
+        frame.optionsskin = [fso_flat]
+        frame.localprops = [frl_optionsskin]
         frame.localprops1 = []
       end>
     frame.outerframe = (
@@ -138,14 +141,28 @@ object filedialogfo: Tfiledialogfo
   object up: tstockglyphbutton
     optionswidget1 = []
     optionswidget = [ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
-    frame.localprops = [frl_optionsskin]
+    frame.optionsskin = [fso_flat]
+    frame.colorclient = 14737632
+    frame.localprops = [frl_optionsskin, frl_colorclient]
     frame.localprops1 = []
+    face.fade_pos.count = 2
+    face.fade_pos.items = (
+      0
+      1
+    )
+    face.fade_color.count = 2
+    face.fade_color.items = (
+      16777215
+      14408667
+    )
+    face.fade_direction = gd_down
+    face.localprops = [fal_fadirection]
     taborder = 2
     hint = 'Parent directory'
     onshowhint = buttonshowhint
-    bounds_x = 88
-    bounds_y = 0
-    bounds_cx = 36
+    bounds_x = 86
+    bounds_y = 1
+    bounds_cx = 40
     bounds_cy = 30
     options = [bo_executeonclick, bo_executeonkey, bo_executeonshortcut, bo_executedefaultonenterkey, bo_candefocuswindow]
     state = [as_localcaption, as_localimagelist, as_localimagenr, as_localcolor, as_localhint, as_localshortcut, as_localonexecute]
@@ -159,13 +176,27 @@ object filedialogfo: Tfiledialogfo
   object back: tstockglyphbutton
     optionswidget1 = []
     optionswidget = [ow_tabfocus, ow_arrowfocus, ow_destroywidgets, ow_disabledhint]
-    frame.localprops = [frl_optionsskin]
+    frame.optionsskin = [fso_flat]
+    frame.colorclient = 14737632
+    frame.localprops = [frl_optionsskin, frl_colorclient]
     frame.localprops1 = []
+    face.fade_pos.count = 2
+    face.fade_pos.items = (
+      0
+      1
+    )
+    face.fade_color.count = 2
+    face.fade_color.items = (
+      16777215
+      14408667
+    )
+    face.fade_direction = gd_down
+    face.localprops = [fal_fadirection]
     taborder = 3
     onshowhint = buttonshowhint
-    bounds_x = 4
-    bounds_y = 0
-    bounds_cx = 36
+    bounds_x = 2
+    bounds_y = 1
+    bounds_cx = 40
     bounds_cy = 30
     state = [as_disabled, as_localdisabled, as_localimagelist, as_localimagenr, as_localcolor, as_localshortcut, as_localonexecute]
     glyph = stg_arrowleft
@@ -179,13 +210,27 @@ object filedialogfo: Tfiledialogfo
   object forward: tstockglyphbutton
     optionswidget1 = []
     optionswidget = [ow_tabfocus, ow_arrowfocus, ow_destroywidgets, ow_disabledhint]
-    frame.localprops = [frl_optionsskin]
+    frame.optionsskin = [fso_flat]
+    frame.colorclient = 14737632
+    frame.localprops = [frl_optionsskin, frl_colorclient]
     frame.localprops1 = []
+    face.fade_pos.count = 2
+    face.fade_pos.items = (
+      0
+      1
+    )
+    face.fade_color.count = 2
+    face.fade_color.items = (
+      16777215
+      14408667
+    )
+    face.fade_direction = gd_down
+    face.localprops = [fal_fadirection]
     taborder = 4
     onshowhint = buttonshowhint
-    bounds_x = 46
-    bounds_y = 0
-    bounds_cx = 36
+    bounds_x = 44
+    bounds_y = 1
+    bounds_cx = 40
     bounds_cy = 30
     state = [as_disabled, as_localdisabled, as_localimagelist, as_localimagenr, as_localcolor, as_localshortcut, as_localonexecute]
     glyph = stg_arrowright
@@ -196,63 +241,22 @@ object filedialogfo: Tfiledialogfo
       24666
     )
   end
-  object home: tbutton
-    face.localprops = []
-    taborder = 5
-    bounds_x = 130
-    bounds_y = 0
-    bounds_cx = 98
-    bounds_cy = 30
-    state = [as_default, as_localdefault, as_localcaption, as_localonexecute]
-    caption = '&Home'
-    onexecute = homeaction
-  end
-  object createdir: tbutton
-    face.localprops = []
-    taborder = 6
-    bounds_x = 230
-    bounds_y = 0
-    bounds_cx = 98
-    bounds_cy = 30
-    state = [as_default, as_localdefault, as_localcaption, as_localonexecute]
-    caption = '&New dir'
-    onexecute = createdironexecute
-  end
-  object cancel: tbutton
-    face.localprops = []
-    taborder = 7
-    bounds_x = 330
-    bounds_y = 0
-    bounds_cx = 98
-    bounds_cy = 30
-    state = [as_default, as_localdefault, as_localcaption, as_localonexecute]
-    caption = '&Cancel'
-    modalresult = mr_cancel
-  end
-  object ok: tbutton
-    face.localprops = []
-    taborder = 8
-    bounds_x = 430
-    bounds_y = 0
-    bounds_cx = 64
-    bounds_cy = 30
-    state = [as_default, as_localdefault, as_localcaption, as_localonexecute]
-    caption = '&OK'
-    onexecute = okonexecute
-  end
   object filename: thistoryedit
+    frame.levelo = 0
     frame.caption = '&Name (history of files in drop list)'
     frame.captiontextflags = [tf_xcentered, tf_bottom]
-    frame.localprops = []
+    frame.localprops = [frl_levelo]
     frame.localprops1 = []
     frame.button.face.localprops = []
-    frame.button.frame.localprops = []
+    frame.button.frame.optionsskin = [fso_flat]
+    frame.button.frame.localprops = [frl_optionsskin]
     frame.button.frame.localprops1 = []
     frame.buttons.count = 1
     frame.buttons.items = <    
       item
         face.localprops = []
-        frame.localprops = []
+        frame.optionsskin = [fso_flat]
+        frame.localprops = [frl_optionsskin]
         frame.localprops1 = []
       end>
     frame.outerframe = (
@@ -262,7 +266,7 @@ object filedialogfo: Tfiledialogfo
       0
     )
     face.localprops = []
-    taborder = 9
+    taborder = 5
     hint = 'Click button on right corner to show the history of files.'
     bounds_x = 159
     bounds_y = 280
@@ -284,18 +288,21 @@ object filedialogfo: Tfiledialogfo
     reffontheight = 15
   end
   object filter: tdropdownlistedit
+    frame.levelo = 0
     frame.caption = '&Filter'
     frame.captiontextflags = [tf_xcentered, tf_bottom]
-    frame.localprops = []
+    frame.localprops = [frl_levelo]
     frame.localprops1 = []
     frame.button.face.localprops = []
-    frame.button.frame.localprops = []
+    frame.button.frame.optionsskin = [fso_flat]
+    frame.button.frame.localprops = [frl_optionsskin]
     frame.button.frame.localprops1 = []
     frame.buttons.count = 1
     frame.buttons.items = <    
       item
         face.localprops = []
-        frame.localprops = []
+        frame.optionsskin = [fso_flat]
+        frame.localprops = [frl_optionsskin]
         frame.localprops1 = []
       end>
     frame.outerframe = (
@@ -305,7 +312,7 @@ object filedialogfo: Tfiledialogfo
       0
     )
     face.localprops = []
-    taborder = 10
+    taborder = 6
     bounds_x = 8
     bounds_y = 280
     bounds_cx = 147
@@ -326,8 +333,9 @@ object filedialogfo: Tfiledialogfo
     reffontheight = 15
   end
   object showhidden: tbooleanedit
+    frame.levelo = 0
     frame.caption = '&Show hidden'
-    frame.localprops = []
+    frame.localprops = [frl_levelo]
     frame.localprops1 = []
     frame.outerframe = (
       0
@@ -335,7 +343,7 @@ object filedialogfo: Tfiledialogfo
       82
       2
     )
-    taborder = 11
+    taborder = 7
     hint = 'Show hidden files'
     bounds_x = 296
     bounds_y = 40
@@ -357,7 +365,7 @@ object filedialogfo: Tfiledialogfo
     frame.localprops = [frl_levelo, frl_fileft, frl_fitop, frl_firight, frl_fibottom]
     frame.localprops1 = []
     face.localprops = []
-    taborder = 12
+    taborder = 8
     bounds_x = 0
     bounds_y = 93
     bounds_cx = 496
@@ -426,9 +434,14 @@ object filedialogfo: Tfiledialogfo
         valuetrue = '1'
       end>
     fixrows.count = 1
+    fixrows.linecolor = 7895160
+    fixrows.linecolorfix = 7895160
     fixrows.items = <    
       item
+        color = 15790320
         face.localprops = []
+        linecolor = 7895160
+        linecolorfix = 7895160
         height = 17
         numstep = 1
         captions.count = 4
@@ -467,13 +480,117 @@ object filedialogfo: Tfiledialogfo
     oncellevent = oncellev
     reffontheight = 15
   end
+  object home: tbutton
+    frame.optionsskin = [fso_flat]
+    frame.colorclient = 14737632
+    frame.localprops = [frl_optionsskin, frl_colorclient]
+    frame.localprops1 = []
+    face.fade_pos.count = 2
+    face.fade_pos.items = (
+      0
+      1
+    )
+    face.fade_color.count = 2
+    face.fade_color.items = (
+      16777215
+      14408667
+    )
+    face.fade_direction = gd_down
+    face.localprops = [fal_fadirection]
+    taborder = 10
+    bounds_x = 128
+    bounds_y = 1
+    bounds_cx = 98
+    bounds_cy = 30
+    state = [as_localcaption, as_localonexecute]
+    caption = '&Home'
+    onexecute = homeaction
+  end
+  object createdir: tbutton
+    frame.optionsskin = [fso_flat]
+    frame.colorclient = 14737632
+    frame.localprops = [frl_optionsskin, frl_colorclient]
+    frame.localprops1 = []
+    face.fade_pos.count = 2
+    face.fade_pos.items = (
+      0
+      1
+    )
+    face.fade_color.count = 2
+    face.fade_color.items = (
+      16777215
+      14408667
+    )
+    face.fade_direction = gd_down
+    face.localprops = [fal_fadirection]
+    taborder = 11
+    bounds_x = 228
+    bounds_y = 1
+    bounds_cx = 98
+    bounds_cy = 30
+    state = [as_localcaption, as_localonexecute]
+    caption = '&New dir'
+    onexecute = createdironexecute
+  end
+  object cancel: tbutton
+    frame.optionsskin = [fso_flat]
+    frame.colorclient = 14737632
+    frame.localprops = [frl_optionsskin, frl_colorclient]
+    frame.localprops1 = []
+    face.fade_pos.count = 2
+    face.fade_pos.items = (
+      0
+      1
+    )
+    face.fade_color.count = 2
+    face.fade_color.items = (
+      16777215
+      14408667
+    )
+    face.fade_direction = gd_down
+    face.localprops = [fal_fadirection]
+    taborder = 12
+    bounds_x = 328
+    bounds_y = 1
+    bounds_cx = 98
+    bounds_cy = 30
+    state = [as_localcaption, as_localonexecute]
+    caption = '&Cancel'
+    modalresult = mr_cancel
+  end
+  object ok: tbutton
+    frame.optionsskin = [fso_flat]
+    frame.colorclient = 14737632
+    frame.localprops = [frl_optionsskin, frl_colorclient]
+    frame.localprops1 = []
+    face.fade_pos.count = 2
+    face.fade_pos.items = (
+      0
+      1
+    )
+    face.fade_color.count = 2
+    face.fade_color.items = (
+      16777215
+      14408667
+    )
+    face.fade_direction = gd_down
+    face.localprops = [fal_fadirection]
+    taborder = 13
+    bounds_x = 428
+    bounds_y = 1
+    bounds_cx = 64
+    bounds_cy = 30
+    state = [as_localcaption, as_localonexecute]
+    caption = '&OK'
+    onexecute = okonexecute
+  end
   object iconslist: timagelist
     width = 18
     height = 18
     options = [bmo_masked, bmo_graymask]
     transparentcolor = -2147483647
     count = 13
-    left = 190
+    left = 398
     top = 33
     image = {
       0000000012000000480000004800000014260000000000000000000000000000

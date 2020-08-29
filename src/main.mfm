@@ -214,12 +214,7 @@ object mainfo: tmainfo
     onexecute = onex
   end
   object tfiledialog1: tfiledialog
-    controller.defaultext = ' '
-    controller.options = [fdo_savelastdir, fdo_checksubdir]
-    controller.captionopen = 'Open File'
-    controller.captionsave = 'Save File'
-    controller.captionnew = 'New File'
     left = 16
-    top = 168
+    top = 184
   end
 end
