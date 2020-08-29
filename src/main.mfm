@@ -1,0 +1,225 @@
+object mainfo: tmainfo
+  bounds_x = 291
+  bounds_y = 247
+  bounds_cx = 403
+  bounds_cy = 280
+  container.frame.localprops = []
+  container.frame.localprops1 = []
+  container.bounds = (
+    0
+    0
+    403
+    280
+  )
+  caption = 'MSEFileDialogX Demo'
+  windowopacity = -Inf
+  moduleclassname = 'tmainform'
+  object tstringdisp1: tstringdisp
+    frame.caption = 'Result'
+    frame.localprops = []
+    frame.localprops1 = []
+    frame.outerframe = (
+      0
+      18
+      0
+      0
+    )
+    taborder = 1
+    bounds_x = 0
+    bounds_y = 222
+    bounds_cx = 403
+    bounds_cy = 45
+    anchors = [an_top]
+    text = 'The File Name'
+    textflags = [tf_xcentered, tf_ycentered]
+    reffontheight = 15
+  end
+  object tgroupbox1: tgroupbox
+    frame.caption = 'Kind'
+    frame.localprops = []
+    frame.localprops1 = []
+    frame.outerframe = (
+      0
+      8
+      0
+      0
+    )
+    taborder = 2
+    bounds_x = 8
+    bounds_y = 8
+    bounds_cx = 386
+    bounds_cy = 50
+    object b_fdk_open: tbooleaneditradio
+      frame.caption = 'fdk_open'
+      frame.localprops = []
+      frame.localprops1 = []
+      frame.outerframe = (
+        0
+        2
+        58
+        2
+      )
+      bounds_x = 8
+      bounds_y = 22
+      bounds_cx = 71
+      bounds_cy = 17
+      options = [bo_executeonclick, bo_executeonkey, bo_executeonshortcut, bo_executedefaultonenterkey, bo_radioitem]
+      value = True
+    end
+    object b_fdk_save: tbooleaneditradio
+      frame.caption = 'fdk_save'
+      frame.localprops = []
+      frame.localprops1 = []
+      frame.outerframe = (
+        0
+        2
+        55
+        2
+      )
+      taborder = 1
+      bounds_x = 88
+      bounds_y = 22
+      bounds_cx = 68
+      bounds_cy = 17
+      options = [bo_executeonclick, bo_executeonkey, bo_executeonshortcut, bo_executedefaultonenterkey, bo_radioitem]
+    end
+    object b_fdk_dir: tbooleaneditradio
+      frame.caption = 'fdk_dir'
+      frame.localprops = []
+      frame.localprops1 = []
+      frame.outerframe = (
+        0
+        2
+        44
+        2
+      )
+      taborder = 2
+      bounds_x = 240
+      bounds_y = 22
+      bounds_cx = 57
+      bounds_cy = 17
+      options = [bo_executeonclick, bo_executeonkey, bo_executeonshortcut, bo_executedefaultonenterkey, bo_radioitem]
+    end
+    object b_fdk_none: tbooleaneditradio
+      frame.caption = 'fdk_none'
+      frame.localprops = []
+      frame.localprops1 = []
+      frame.outerframe = (
+        0
+        2
+        58
+        2
+      )
+      taborder = 3
+      bounds_x = 304
+      bounds_y = 22
+      bounds_cx = 71
+      bounds_cy = 17
+      options = [bo_executeonclick, bo_executeonkey, bo_executeonshortcut, bo_executedefaultonenterkey, bo_radioitem]
+    end
+    object b_fdk_new: tbooleaneditradio
+      frame.caption = 'fdk_new'
+      frame.localprops = []
+      frame.localprops1 = []
+      frame.outerframe = (
+        0
+        2
+        53
+        2
+      )
+      taborder = 4
+      bounds_x = 168
+      bounds_y = 22
+      bounds_cx = 66
+      bounds_cy = 17
+      options = [bo_executeonclick, bo_executeonkey, bo_executeonshortcut, bo_executedefaultonenterkey, bo_radioitem]
+    end
+  end
+  object thefilter: tstringedit
+    frame.caption = 'Filter'
+    frame.localprops = []
+    frame.localprops1 = []
+    frame.outerframe = (
+      0
+      18
+      0
+      0
+    )
+    taborder = 3
+    bounds_x = 32
+    bounds_y = 70
+    bounds_cx = 132
+    bounds_cy = 39
+    value = '"*.pas" "*.mfm"'
+    reffontheight = 15
+  end
+  object thetitle: tstringedit
+    frame.caption = 'Title'
+    frame.localprops = []
+    frame.localprops1 = []
+    frame.outerframe = (
+      0
+      18
+      0
+      0
+    )
+    taborder = 4
+    bounds_x = 192
+    bounds_y = 70
+    bounds_cx = 172
+    bounds_cy = 39
+    value = 'My title'
+    reffontheight = 15
+  end
+  object custtitle: tbooleanedit
+    frame.caption = 'Custom Title'
+    frame.localprops = []
+    frame.localprops1 = []
+    frame.outerframe = (
+      0
+      2
+      78
+      2
+    )
+    taborder = 5
+    bounds_x = 240
+    bounds_y = 68
+    bounds_cx = 91
+    bounds_cy = 17
+  end
+  object thebasedir: tstringedit
+    frame.caption = 'Base Directory (Empty = current)'
+    frame.localprops = []
+    frame.localprops1 = []
+    frame.outerframe = (
+      0
+      18
+      0
+      0
+    )
+    taborder = 6
+    bounds_x = 32
+    bounds_y = 120
+    bounds_cx = 332
+    bounds_cy = 39
+    reffontheight = 15
+  end
+  object tbutton1: tbutton
+    bounds_x = 128
+    bounds_y = 168
+    bounds_cx = 146
+    bounds_cy = 61
+    state = [as_localcaption, as_localonexecute]
+    caption = 'MSEFileDialogX'
+    onexecute = onex
+  end
+  object tfiledialog1: tfiledialog
+    controller.defaultext = ' '
+    controller.options = [fdo_savelastdir, fdo_checksubdir]
+    controller.captionopen = 'Open File'
+    controller.captionsave = 'Save File'
+    controller.captionnew = 'New File'
+    left = 16
+    top = 168
+  end
+end
