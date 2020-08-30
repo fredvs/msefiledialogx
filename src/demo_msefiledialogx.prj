@@ -819,8 +819,9 @@ envvarons=0
 [edit]
 hintwidth=0
 hintheight=0
-finddtext=list_log.Height
+finddtext=listlog.h
 findhistory=20
+ listlog.h
  list_log.Height
  .height
  filedialogr
@@ -840,12 +841,11 @@ findhistory=20
  fonth
  tfiledialogfo
  fontheightdlg
- implementation
 findoptions=1
 editpos=3
  0,-1073741823
  0,-1073741823
- 0,1904
+ 0,1944
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -896,7 +896,7 @@ windowlayout=593
  ncx=0
  ncy=0
  x=3
- y=66
+ y=55
  cx=1354
  cy=710
  rcx=0
@@ -1015,7 +1015,7 @@ windowlayout=593
  x=0
  y=0
  cx=205
- cy=524
+ cy=525
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1307,7 +1307,7 @@ windowlayout=593
  x=0
  y=0
  cx=1342
- cy=51
+ cy=50
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -1319,11 +1319,11 @@ windowlayout=593
  nx=0
  ny=0
  ncx=1327
- ncy=36
+ ncy=33
  x=0
  y=0
  cx=1342
- cy=35
+ cy=31
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -1372,7 +1372,7 @@ windowlayout=593
  x=208
  y=0
  cx=1134
- cy=524
+ cy=525
  rcx=0
  rcy=0
  [sourcefo.files_tab]
@@ -1413,9 +1413,9 @@ windowlayout=593
  ncx=0
  ncy=0
  x=0
- y=54
+ y=53
  cx=1342
- cy=524
+ cy=525
  rcx=0
  rcy=0
  [_mse_mainfo_mse_]

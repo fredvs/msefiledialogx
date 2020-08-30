@@ -1496,15 +1496,11 @@ var
   info: fileinfoty;
   thedir, thestrnum, thestrfract, thestrx, thestrext, tmp, tmp2: string;
 begin
-
-  if bcompact.Value then
-  begin
-    listview.options :=
-      [lvo_readonly, lvo_horz, lvo_drawfocus, lvo_mouseselect, lvo_keyselect,
-      lvo_multiselect, lvo_locate, lvo_hintclippedtext];
-    listview.invalidate;
-  end;
-
+ 
+  listview.anchors := [an_top,an_left,an_bottom]; 
+  listview.width := 40;
+  listview.invalidate;
+ 
   with listview do
   begin
     dir.Value        := directory;
@@ -1602,13 +1598,13 @@ begin
       list_log[3][x] := formatdatetime('YY-MM-DD hh:mm:ss', info.extinfo1.modtime);
 
     end;
-  if bcompact.Value then
-  begin
-    listview.options :=
-      [lvo_readonly, lvo_drawfocus, lvo_mouseselect, lvo_keyselect,
-      lvo_multiselect, lvo_locate, lvo_hintclippedtext];
+    
+    if bcompact.value then
+    begin
+    listview.anchors := [an_top,an_bottom]; 
     listview.invalidate;
-  end;
+    end;
+
 end;
 
 procedure tfiledialogfo.updatefiltertext;
@@ -1944,17 +1940,14 @@ procedure tfiledialogfo.onsetcomp(const Sender: TObject; var avalue: Boolean; va
 begin
   if avalue then
   begin
-    listview.options :=
-      [lvo_readonly, lvo_horz, lvo_drawfocus, lvo_mouseselect, lvo_keyselect,
-      lvo_multiselect, lvo_locate, lvo_hintclippedtext];
+    listview.anchors := [an_top,an_bottom]; 
     listview.invalidate;
     list_log.Visible := False;
   end
   else
   begin
-    listview.options :=
-      [lvo_readonly, lvo_horz, lvo_drawfocus, lvo_mouseselect, lvo_keyselect,
-      lvo_multiselect, lvo_locate, lvo_hintclippedtext];
+    listview.anchors := [an_top,an_left,an_bottom]; 
+    listview.width := 40;
     listview.invalidate;
     list_log.Visible := True;
   end;
