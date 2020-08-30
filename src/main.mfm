@@ -1,6 +1,6 @@
 object mainfo: tmainfo
-  bounds_x = 291
-  bounds_y = 247
+  bounds_x = 367
+  bounds_y = 326
   bounds_cx = 403
   bounds_cy = 322
   container.frame.localprops = []
@@ -19,8 +19,10 @@ object mainfo: tmainfo
   windowopacity = -Inf
   moduleclassname = 'tmainform'
   object tstringdisp1: tstringdisp
+    color = -2147483645
+    frame.colorclient = 15592941
     frame.caption = 'Result'
-    frame.localprops = []
+    frame.localprops = [frl_colorclient]
     frame.localprops1 = []
     frame.outerframe = (
       0
