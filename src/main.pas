@@ -44,8 +44,8 @@ uses
 procedure tmainfo.onex(const Sender: TObject);
 var
   dialogkind: filedialogkindty;
-begin
 
+ begin
   if b_fdk_open.Value then
     dialogkind := fdk_open
   else if b_fdk_save.Value then
@@ -62,6 +62,7 @@ begin
   tfiledialog1.controller.captiondir  := 'Open Directory';
 
   tfiledialog1.controller.filter  := thefilter.Value;
+  
   tfiledialog1.controller.basedir := thebasedir.Value;
   
    tfiledialog1.controller.fontheight := fontheight.value; // font height of dialogfile

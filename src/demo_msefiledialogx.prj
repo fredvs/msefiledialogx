@@ -19,7 +19,7 @@ order16=0
 [projectoptions]
 projectdir=/home/fred/msefiledialogx/src
 projectfilename=/home/fred/msefiledialogx/src/demo_msefiledialogx.prj
-findinfiledialog=55
+findinfiledialog=57
  [findinfileadialogfo.subdirs]
  value=1
  [findinfileadialogfo.incurrentfile]
@@ -57,8 +57,10 @@ findinfiledialog=55
  filefilterindex=0
  filefilter=
  [findinfileadialogfo.findtext]
- value=captionsave
- history=10
+ value=tdoublemsestringdatalist
+ history=12
+  tdoublemsestringdatalist
+  "*.pas"
   captionsave
   filedialog(
   filedialogres
@@ -476,15 +478,18 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=2
+modulenames=3
  MAINFO
  FILEDIALOGFO
-moduletypes=2
+ PROJECTOPTIONSFO
+moduletypes=3
  TMAINFO
  TFILEDIALOGFO
-modulefiles=2
+ TPROJECTOPTIONSFO
+modulefiles=3
  /home/fred/msefiledialogx/src/main.mfm
  /home/fred/msefiledialogx/src/msefiledialogx.mfm
+ /home/fred/mseide-msegui/apps/ide/projectoptionsform.mfm
 befcommandon=0
 makeoptionson=6
  4095
@@ -840,47 +845,86 @@ findhistory=20
  .execute
  projectfile
 findoptions=1
-editpos=4
- 0,0
- 16,56
- 0,2072
+editpos=9
  0,-1073741823
+ 0,4
+ 0,279
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,1885
+ 0,-1073741823
+ 0,5841
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
 bookmarks3=0
-sourcefiles=4
+bookmarks4=0
+bookmarks5=0
+bookmarks6=0
+bookmarks7=0
+bookmarks8=0
+sourcefiles=9
  ${PROJECTDIR}/demo_msefiledialogx.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/msefiledialogx.pas
  /home/fred/ideu/src/msefiledialog.mfm
-relpaths=4
+ /home/fred/mseide-msegui/apps/ide/main.pas
+ /home/fred/mseide-msegui/apps/ide/main.mfm
+ /home/fred/mseide-msegui/apps/ide/projectoptionsform.pas
+ /home/fred/mseide-msegui/lib/common/container/msedatalist.pas
+ /home/fred/mseide-msegui/lib/common/designutils/msepropertyeditors.pas
+relpaths=9
  demo_msefiledialogx.pas
  main.pas
  msefiledialogx.pas
  ideu/src/msefiledialog.mfm
-ismoduletexts=4
+ mseide-msegui/apps/ide/main.pas
+ mseide-msegui/apps/ide/main.mfm
+ ../mseide-msegui/apps/ide/projectoptionsform.pas
+ mseide-msegui/lib/common/container/msedatalist.pas
+ ../mseide-msegui/lib/common/designutils/msepropertyeditors.pas
+ismoduletexts=9
  0
  0
  0
  0
-modules=2
+ 0
+ -1
+ 0
+ 0
+ 0
+modules=3
  /home/fred/msefiledialogx/src/msefiledialogx.mfm
  /home/fred/msefiledialogx/src/main.mfm
-moduleoptions=2
+ /home/fred/mseide-msegui/apps/ide/projectoptionsform.mfm
+moduleoptions=3
  0
  0
-visiblemodules=2
+ 0
+visiblemodules=3
  -1
  -1
-nomenumodules=2
+ -1
+nomenumodules=3
+ 0
  0
  0
 [sourcefo.files_tab]
+order=9
+ 0
+ 1
+ 5
+ 2
+ 8
+ 3
+ 4
+ 7
+ 6
 firsttab=0
 index=1
 [layout]
-windowlayout=574
+windowlayout=603
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -894,13 +938,13 @@ windowlayout=574
  ny=0
  ncx=0
  ncy=0
- x=35
+ x=0
  y=29
- cx=1224
- cy=621
+ cx=1360
+ cy=710
  rcx=0
  rcy=0
- wsize=0
+ wsize=6
  active=1
  visible=1
  [targetconsolefo]
@@ -995,8 +1039,8 @@ windowlayout=574
  ny=0
  ncx=0
  ncy=0
- x=239
- y=115
+ x=46
+ y=63
  cx=1118
  cy=414
  rcx=0
@@ -1014,7 +1058,7 @@ windowlayout=574
  x=0
  y=0
  cx=205
- cy=451
+ cy=519
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1108,10 +1152,10 @@ windowlayout=574
  [breakpointsfo.bkptson]
  value=1
  [objectinspectorfo.grid]
- propcolwidthref=547
- width0=243
+ propcolwidthref=532
+ width0=236
  sortdescend0=0
- width1=298
+ width1=290
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -1204,9 +1248,9 @@ windowlayout=574
  ncx=0
  ncy=0
  x=0
- y=507
- cx=1212
- cy=93
+ y=582
+ cx=1348
+ cy=107
  rcx=0
  rcy=0
  [componentstorefo]
@@ -1305,8 +1349,8 @@ windowlayout=574
  ncy=0
  x=0
  y=0
- cx=1212
- cy=50
+ cx=1348
+ cy=57
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -1318,11 +1362,11 @@ windowlayout=574
  nx=0
  ny=0
  ncx=1197
- ncy=41
+ ncy=37
  x=0
  y=0
- cx=1212
- cy=39
+ cx=1348
+ cy=42
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -1334,6 +1378,7 @@ windowlayout=574
  [debuggerfo.file_history]
  value=/home/fred/msefiledialogx/src/main.pas
  history=20
+  /home/fred/mseide-msegui/lib/common/designutils/msepropertyeditors.pas
   /home/fred/msefiledialogx/src/main.pas
   /home/fred/msefiledialogx/src/msefiledialogx.pas
   /home/fred/msefiledialogx/msefiledialogx.pas
@@ -1353,7 +1398,6 @@ windowlayout=574
   /home/fred/strumpract/src/msefiledialog.pas
   /home/fred/ideu/src/make.pas
   /home/fred/strumpract/src/status.pas
-  /home/fred/ideu/src/breakpointsform.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -1370,11 +1414,21 @@ windowlayout=574
  ncy=0
  x=208
  y=0
- cx=1004
- cy=451
+ cx=1140
+ cy=519
  rcx=0
  rcy=0
  [sourcefo.files_tab]
+ order=9
+  0
+  1
+  5
+  2
+  8
+  3
+  4
+  7
+  6
  firsttab=0
  index=1
  [confideufo.fontname]
@@ -1412,15 +1466,15 @@ windowlayout=574
  ncx=0
  ncy=0
  x=0
- y=53
- cx=1212
- cy=451
+ y=60
+ cx=1348
+ cy=519
  rcx=0
  rcy=0
  [_mse_filedialogfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_mainfo_mse_
+ stackedunder=_mse_projectoptionsfo_mse_
  parent=
  mdistate=3
  nx=0
@@ -1439,17 +1493,36 @@ windowlayout=574
  [_mse_mainfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=objectinspectorfo
+ stackedunder=mainfo
  parent=
  mdistate=3
  nx=0
  ny=0
  ncx=0
  ncy=0
- x=367
- y=326
+ x=466
+ y=208
  cx=413
  cy=322
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_projectoptionsfo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=_mse_mainfo_mse_
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=205
+ y=177
+ cx=842
+ cy=581
  rcx=0
  rcy=0
  wsize=0

@@ -1,6 +1,6 @@
 object mainfo: tmainfo
-  bounds_x = 367
-  bounds_y = 326
+  bounds_x = 466
+  bounds_y = 208
   bounds_cx = 403
   bounds_cy = 322
   container.frame.localprops = []

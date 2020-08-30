@@ -196,6 +196,8 @@ type
   private
     fowner: tmsecomponent;
     fgroup: integer;
+    ffontname: msestring;
+    ffontheight: integer;
     fonchange: proceventty;
     ffilenames: filenamearty;
     ffilterlist: tdoublemsestringdatalist;
@@ -235,9 +237,6 @@ type
     fdefaultext: filenamety;
     foptions: filedialogoptionsty;
   public
-
-    fontheight: integer;
-    fontname: string;
 
     constructor Create(const aowner: tmsecomponent = nil; const onchange: proceventty = nil);
       reintroduce;
@@ -279,6 +278,8 @@ type
     property filename: filenamety read getfilename write setfilename;
     property lastdir: filenamety read flastdir write setlastdir;
     property basedir: filenamety read fbasedir write fbasedir;
+    property fontheight: integer read ffontheight write ffontheight;
+    property fontname: msestring read ffontname write ffontname;
     property filter: filenamety read ffilter write ffilter;
     property filterlist: tdoublemsestringdatalist read ffilterlist write setfilterlist;
     property filterindex: integer read ffilterindex write ffilterindex default 0;
