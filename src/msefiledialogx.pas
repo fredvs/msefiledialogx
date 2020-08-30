@@ -1463,7 +1463,7 @@ procedure tfiledialogfo.listviewonlistread(const Sender: TObject);
 var
   x, y, y2, z: integer;
   info: fileinfoty;
-  thedir, thestrnum, thestrfract, tmp, tmp2: string;
+  thedir, thestrnum, thestrfract, thestrx, thestrext, tmp, tmp2: string;
 begin
   with listview do
   begin
@@ -1511,19 +1511,37 @@ begin
 
       if not listview.filelist.isdir(x) then
       begin
-        y := info.extinfo1.size div 1000;
-
-        if info.extinfo1.size > 0 then
-        begin
-          if info.extinfo1.size div 1000 > 0 then
-            y2 := Trunc(Frac(info.extinfo1.size / 1000) * Power(10, 1))
-          else
+              
+          if info.extinfo1.size div 1000000000 > 0 then
           begin
-            y2 := Trunc(Frac(info.extinfo1.size / 1000) * Power(10, 3));
-          end;
-        end
-        else
-          y2 := Trunc(Frac(info.extinfo1.size / 1000) * Power(10, 1));
+            y2 := Trunc(Frac(info.extinfo1.size / 1000000000) * Power(10, 1));
+            y := info.extinfo1.size div 1000000000;
+            thestrx := '~';
+            thestrext := ' GB';
+          end            
+          else
+          if info.extinfo1.size div 1000000 > 0 then
+          begin
+            y2 := Trunc(Frac(info.extinfo1.size / 1000000) * Power(10, 1));
+            y := info.extinfo1.size div 1000000;
+            thestrx := '_';
+            thestrext := ' MB';
+          end            
+          else
+           if info.extinfo1.size div 1000 > 0 then
+          begin
+            y2 := Trunc(Frac(info.extinfo1.size / 1000) * Power(10, 1));
+            y := info.extinfo1.size div 1000;
+            thestrx := '^';
+            thestrext := ' KB';
+          end            
+          else
+         begin
+            y2 := 0;
+            y := info.extinfo1.size;
+            thestrx := ' ';
+            thestrext := ' B';
+          end;  
 
 
         thestrnum := IntToStr(y);
@@ -1533,11 +1551,13 @@ begin
         if z < 15 then
           for y := 0 to 14 - z do
             thestrnum := ' ' + thestrnum;
+       
+       if y2 > 0 then        
+        thestrfract := '.' + IntToStr(y2)
+        else thestrfract := '';
 
-        thestrfract := '.' + IntToStr(y2);
 
-
-        list_log[2][x] := thestrnum + thestrfract + ' KB';
+        list_log[2][x] := thestrx + thestrnum + thestrfract + thestrext;
       end;
 
       list_log[3][x] := formatdatetime('YY-MM-DD hh:mm:ss', info.extinfo1.modtime);
