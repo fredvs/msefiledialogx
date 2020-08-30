@@ -583,6 +583,7 @@ type
     createdir: TButton;
     cancel: TButton;
     ok: TButton;
+    bcompact: tbooleanedit;
     procedure createdironexecute(const Sender: TObject);
     procedure listviewselectionchanged(const Sender: tcustomlistview);
     procedure listviewitemevent(const Sender: tcustomlistview; const index: integer; var info: celleventinfoty);
@@ -608,6 +609,8 @@ type
 
     procedure oncellev(const Sender: TObject; var info: celleventinfoty);
     procedure ondrawcell(const Sender: tcol; const Canvas: tcanvas; var cellinfo: cellinfoty);
+    procedure onsetcomp(const Sender: TObject; var avalue: Boolean; var accept: Boolean);
+    procedure oncreat(const Sender: TObject);
   private
     fselectednames: filenamearty;
     finit: Boolean;
@@ -647,6 +650,9 @@ function filedialog(var afilename: filenamety; const aoptions: filedialogoptions
 procedure getfileicon(const info: fileinfoty; var imagelist: timagelist; out imagenr: integer);
 procedure updatefileinfo(const item: tlistitem; const info: fileinfoty; const withicon: Boolean);
 
+var
+  theimagelist: timagelist;
+
 implementation
 
 uses
@@ -654,7 +660,6 @@ uses
   msebits,
   mseactions,
   msestringenter,
-  //msefiledialogres,
   msekeyboard,
   msestockobjects,
   msesysintf,
@@ -680,28 +685,17 @@ type
 // not needed anymore
 procedure getfileicon(const info: fileinfoty; var imagelist: timagelist; out imagenr: integer);
 begin
-{
+  imagelist := theimagelist;
   with info do
   begin
-      //  imagelist:= nil;
+    //  imagelist:= nil;
     imagenr := -1;
     if fis_typevalid in state then
       case extinfo1.filetype of
-        ft_dir:
-          if fis_diropen in state then
-            filedialogres.getfileicon(fdi_diropen, imagelist, imagenr)
-          else if fis_hasentry in state then
-            filedialogres.getfileicon(fdi_direntry, imagelist,
-              imagenr)
-          else
-            filedialogres.getfileicon(fdi_dir, imagelist, imagenr);
-        ft_reg, ft_lnk:
-          filedialogres.getfileicon(fdi_file, imagelist, imagenr
-            );
+        ft_dir: imagenr         := 0;
+        ft_reg, ft_lnk: imagenr := 1;
       end;
-  
   end;
-  }
 end;
 
 procedure updatefileinfo(const item: tlistitem; const info: fileinfoty; const withicon: Boolean);
@@ -802,6 +796,7 @@ begin
     begin
       Height          := 308;
       list_log.Height := Height - list_log.top - 10;
+      listview.Height := list_log.Height;
     end;
     showhidden.Value := not (fa_hidden in excludeattrib);
     Show(True);
@@ -1501,6 +1496,15 @@ var
   info: fileinfoty;
   thedir, thestrnum, thestrfract, thestrx, thestrext, tmp, tmp2: string;
 begin
+
+  if bcompact.Value then
+  begin
+    listview.options :=
+      [lvo_readonly, lvo_horz, lvo_drawfocus, lvo_mouseselect, lvo_keyselect,
+      lvo_multiselect, lvo_locate, lvo_hintclippedtext];
+    listview.invalidate;
+  end;
+
   with listview do
   begin
     dir.Value        := directory;
@@ -1598,8 +1602,14 @@ begin
       list_log[3][x] := formatdatetime('YY-MM-DD hh:mm:ss', info.extinfo1.modtime);
 
     end;
+  if bcompact.Value then
+  begin
+    listview.options :=
+      [lvo_readonly, lvo_drawfocus, lvo_mouseselect, lvo_keyselect,
+      lvo_multiselect, lvo_locate, lvo_hintclippedtext];
+    listview.invalidate;
+  end;
 end;
-
 
 procedure tfiledialogfo.updatefiltertext;
 begin
@@ -1682,18 +1692,7 @@ end;
 
 procedure tfiledialogfo.layoutev(const Sender: TObject);
 begin
-  // placeyorder(2,[2],[dir,listview],2);
-  // aligny(wam_center,[dir,back,forward,home,up,createdir]);
-  // aligny(wam_center,[filename,showhidden]);
-  if ok.Height <= filter.Height then
-  //  aligny(wam_center,[filter,ok,cancel]);
-
-  else
-    //  ok.top:= showhidden.bottom + 4;
-    // aligny(wam_center,[ok,cancel]);
-  ;
-    // syncpaintwidth([filename,filter],namecont.bounds_cx);
-  listview.synctofontheight;
+   listview.synctofontheight;
 end;
 
 procedure tfiledialogfo.showhiddenonsetvalue(const Sender: TObject; var avalue: Boolean; var accept: Boolean);
@@ -1867,7 +1866,7 @@ begin
     (lowercase(list_log[1][cellinfo.cell.row]) = '.pdf') or
     (lowercase(list_log[1][cellinfo.cell.row]) = '.ini') or
     (lowercase(list_log[1][cellinfo.cell.row]) = '.md') or
-    (lowercase(list_log[1][cellinfo.cell.row]) = '.htlm') or
+    (lowercase(list_log[1][cellinfo.cell.row]) = '.html') or
     (lowercase(list_log[1][cellinfo.cell.row]) = '.inc') then
     aicon := 2
   else if (lowercase(list_log[1][cellinfo.cell.row]) = '.pas') or
@@ -1913,6 +1912,7 @@ begin
     aicon := 7
   else if (lowercase(list_log[1][cellinfo.cell.row]) = '') or
     (lowercase(list_log[1][cellinfo.cell.row]) = '.exe') or
+    (lowercase(list_log[1][cellinfo.cell.row]) = '.dbg') or
     (lowercase(list_log[1][cellinfo.cell.row]) = '.com') or
     (lowercase(list_log[1][cellinfo.cell.row]) = '.bat') or
     (lowercase(list_log[1][cellinfo.cell.row]) = '.bin') or
@@ -1938,6 +1938,31 @@ begin
   iconslist.paint(Canvas, aicon, nullpoint, cl_default,
     cl_default, cl_default, 0);
 
+end;
+
+procedure tfiledialogfo.onsetcomp(const Sender: TObject; var avalue: Boolean; var accept: Boolean);
+begin
+  if avalue then
+  begin
+    listview.options :=
+      [lvo_readonly, lvo_horz, lvo_drawfocus, lvo_mouseselect, lvo_keyselect,
+      lvo_multiselect, lvo_locate, lvo_hintclippedtext];
+    listview.invalidate;
+    list_log.Visible := False;
+  end
+  else
+  begin
+    listview.options :=
+      [lvo_readonly, lvo_horz, lvo_drawfocus, lvo_mouseselect, lvo_keyselect,
+      lvo_multiselect, lvo_locate, lvo_hintclippedtext];
+    listview.invalidate;
+    list_log.Visible := True;
+  end;
+end;
+
+procedure tfiledialogfo.oncreat(const Sender: TObject);
+begin
+  theimagelist := iconslist;
 end;
 
 

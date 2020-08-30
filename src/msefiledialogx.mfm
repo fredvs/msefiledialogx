@@ -1,8 +1,8 @@
 object filedialogfo: Tfiledialogfo
   optionswidget = [ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets, ow_hinton]
   visible = False
-  bounds_x = 280
-  bounds_y = 266
+  bounds_x = 304
+  bounds_y = 382
   bounds_cx = 496
   bounds_cy = 327
   bounds_cxmin = 496
@@ -45,6 +45,7 @@ object filedialogfo: Tfiledialogfo
     FFFFFF02
   }
   windowopacity = -Inf
+  oncreate = oncreat
   onloaded = formoncreate
   onkeydown = listviewonkeydown
   onlayout = layoutev
@@ -59,30 +60,21 @@ object filedialogfo: Tfiledialogfo
     frame.localprops1 = []
     face.localprops = [fal_fadirection]
     taborder = 9
-    bounds_x = 28
-    bounds_y = 101
-    bounds_cx = 100
-    bounds_cy = 76
+    bounds_x = 0
+    bounds_y = 94
+    bounds_cx = 496
+    bounds_cy = 174
+    anchors = [an_top, an_bottom]
     onkeydown = listviewonkeydown
     datarowlinecolor = -1610612731
     datacollinecolor = -1610612731
     colorselect = 16763002
-    cellwidth = 490
+    cellwidth = 150
     cellheight = 20
-    fixrows.count = 1
-    fixrows.items = <    
-      item
-        height = 18
-        captions.count = 1
-        captions.items = <        
-          item
-            caption = '     Name'
-            textflags = [tf_left, tf_ycentered]
-            face.localprops = []
-          end>
-      end>
     optionsgrid = [og_focuscellonenter, og_autoappend, og_mousescrollcol]
     options = [lvo_readonly, lvo_horz, lvo_drawfocus, lvo_mouseselect, lvo_keyselect, lvo_multiselect, lvo_locate, lvo_hintclippedtext]
+    itemlist.imagewidth = 16
+    itemlist.imageheight = 16
     cellwidthmin = 50
     onselectionchanged = listviewselectionchanged
     onitemevent = listviewitemevent
@@ -411,7 +403,7 @@ object filedialogfo: Tfiledialogfo
     face.localprops = [fal_fadirection]
     taborder = 8
     bounds_x = 0
-    bounds_y = 93
+    bounds_y = 94
     bounds_cx = 496
     bounds_cy = 174
     anchors = [an_top, an_bottom]
@@ -628,13 +620,32 @@ object filedialogfo: Tfiledialogfo
     caption = '&OK'
     onexecute = okonexecute
   end
+  object bcompact: tbooleanedit
+    frame.levelo = 0
+    frame.caption = '&Compact'
+    frame.localprops = [frl_levelo]
+    frame.localprops1 = []
+    frame.outerframe = (
+      0
+      2
+      57
+      2
+    )
+    taborder = 14
+    hint = 'Switch to compact layout'
+    bounds_x = 128
+    bounds_y = 40
+    bounds_cx = 70
+    bounds_cy = 17
+    onsetvalue = onsetcomp
+  end
   object iconslist: timagelist
     width = 18
     height = 18
     options = [bmo_masked, bmo_graymask]
     transparentcolor = -2147483647
     count = 13
-    left = 398
+    left = 206
     top = 33
     image = {
       0000000012000000480000004800000014260000000000000000000000000000

@@ -82,8 +82,8 @@ finddialog=8
  value=0
  [finddialogfo]
  stackedunder=
- x=774
- y=438
+ x=860
+ y=389
  cx=234
  cy=269
 options=114
@@ -478,18 +478,15 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=3
+modulenames=2
  MAINFO
  FILEDIALOGFO
- PROJECTOPTIONSFO
-moduletypes=3
+moduletypes=2
  TMAINFO
  TFILEDIALOGFO
- TPROJECTOPTIONSFO
-modulefiles=3
+modulefiles=2
  /home/fred/msefiledialogx/src/main.mfm
  /home/fred/msefiledialogx/src/msefiledialogx.mfm
- /home/fred/mseide-msegui/apps/ide/projectoptionsform.mfm
 befcommandon=0
 makeoptionson=6
  4095
@@ -822,109 +819,69 @@ envvarons=0
 [edit]
 hintwidth=0
 hintheight=0
-finddtext=fdk_dir
+finddtext=list_log.Height
 findhistory=20
+ list_log.Height
+ .height
+ filedialogr
+ getfileicon(
+ getfileicon
+ iconslist
+ icon
+ implem
+ impl
+ var
+ filelistv
+ images
+ uses
+ htlm
  fdk_dir
  fontheight
  fonth
  tfiledialogfo
  fontheightdlg
  implementation
- Tfiledialogfo
- .font
- ' KB
- msefiledialogres
- fdk_none
- captionsave
- uses
- getfileicon
- captionnew
- acaption2
- choose a 
- fdk_open
- .execute
- projectfile
 findoptions=1
-editpos=9
- 0,-1073741823
- 0,4
- 0,279
+editpos=3
  0,-1073741823
  0,-1073741823
- 0,-1073741823
- 0,1885
- 0,-1073741823
- 0,5841
+ 0,1904
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
-bookmarks3=0
-bookmarks4=0
-bookmarks5=0
-bookmarks6=0
-bookmarks7=0
-bookmarks8=0
-sourcefiles=9
+sourcefiles=3
  ${PROJECTDIR}/demo_msefiledialogx.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/msefiledialogx.pas
- /home/fred/ideu/src/msefiledialog.mfm
- /home/fred/mseide-msegui/apps/ide/main.pas
- /home/fred/mseide-msegui/apps/ide/main.mfm
- /home/fred/mseide-msegui/apps/ide/projectoptionsform.pas
- /home/fred/mseide-msegui/lib/common/container/msedatalist.pas
- /home/fred/mseide-msegui/lib/common/designutils/msepropertyeditors.pas
-relpaths=9
+relpaths=3
  demo_msefiledialogx.pas
  main.pas
  msefiledialogx.pas
- ideu/src/msefiledialog.mfm
- mseide-msegui/apps/ide/main.pas
- mseide-msegui/apps/ide/main.mfm
- ../mseide-msegui/apps/ide/projectoptionsform.pas
- mseide-msegui/lib/common/container/msedatalist.pas
- ../mseide-msegui/lib/common/designutils/msepropertyeditors.pas
-ismoduletexts=9
- 0
- 0
- 0
- 0
- 0
- -1
+ismoduletexts=3
  0
  0
  0
 modules=3
- /home/fred/msefiledialogx/src/msefiledialogx.mfm
  /home/fred/msefiledialogx/src/main.mfm
- /home/fred/mseide-msegui/apps/ide/projectoptionsform.mfm
+ /home/fred/mseide-msegui/lib/common/dialogs/msefiledialogres.mfm
+ /home/fred/msefiledialogx/src/msefiledialogx.mfm
 moduleoptions=3
  0
  0
  0
 visiblemodules=3
  -1
- -1
+ 0
  -1
 nomenumodules=3
  0
- 0
+ -1
  0
 [sourcefo.files_tab]
-order=9
- 0
- 1
- 5
- 2
- 8
- 3
- 4
- 7
- 6
 firsttab=0
-index=1
+index=2
 [layout]
-windowlayout=603
+windowlayout=593
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -938,13 +895,13 @@ windowlayout=603
  ny=0
  ncx=0
  ncy=0
- x=0
- y=29
- cx=1360
+ x=3
+ y=66
+ cx=1354
  cy=710
  rcx=0
  rcy=0
- wsize=6
+ wsize=0
  active=1
  visible=1
  [targetconsolefo]
@@ -1058,17 +1015,17 @@ windowlayout=603
  x=0
  y=0
  cx=205
- cy=519
+ cy=524
  rcx=0
  rcy=0
  [projecttreefo.grid]
- propcolwidthref=88
- width0=117
+ propcolwidthref=34
+ width0=171
  sortdescend0=0
- width1=82
+ width1=28
  sortdescend1=0
  sorted=0
- col=0
+ col=1
  row=3
  rowheight=16
  [stackfo]
@@ -1152,10 +1109,10 @@ windowlayout=603
  [breakpointsfo.bkptson]
  value=1
  [objectinspectorfo.grid]
- propcolwidthref=532
- width0=236
+ propcolwidthref=547
+ width0=243
  sortdescend0=0
- width1=290
+ width1=298
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -1248,9 +1205,9 @@ windowlayout=603
  ncx=0
  ncy=0
  x=0
- y=582
- cx=1348
- cy=107
+ y=581
+ cx=1342
+ cy=108
  rcx=0
  rcy=0
  [componentstorefo]
@@ -1349,8 +1306,8 @@ windowlayout=603
  ncy=0
  x=0
  y=0
- cx=1348
- cy=57
+ cx=1342
+ cy=51
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -1361,12 +1318,12 @@ windowlayout=603
  mdistate=0
  nx=0
  ny=0
- ncx=1197
- ncy=37
+ ncx=1327
+ ncy=36
  x=0
  y=0
- cx=1348
- cy=42
+ cx=1342
+ cy=35
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -1376,11 +1333,10 @@ windowlayout=603
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/msefiledialogx/src/main.pas
+ value=/home/fred/msefiledialogx/src/msefiledialogx.pas
  history=20
-  /home/fred/mseide-msegui/lib/common/designutils/msepropertyeditors.pas
-  /home/fred/msefiledialogx/src/main.pas
   /home/fred/msefiledialogx/src/msefiledialogx.pas
+  /home/fred/msefiledialogx/src/msefiledialogres.pas
   /home/fred/msefiledialogx/msefiledialogx.pas
   /home/fred/msefiledialogx/main.pas
   /home/fred/msefiledialogx/demo_msefiledialogx.pas
@@ -1398,6 +1354,7 @@ windowlayout=603
   /home/fred/strumpract/src/msefiledialog.pas
   /home/fred/ideu/src/make.pas
   /home/fred/strumpract/src/status.pas
+  /home/fred/ideu/src/breakpointsform.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -1414,23 +1371,13 @@ windowlayout=603
  ncy=0
  x=208
  y=0
- cx=1140
- cy=519
+ cx=1134
+ cy=524
  rcx=0
  rcy=0
  [sourcefo.files_tab]
- order=9
-  0
-  1
-  5
-  2
-  8
-  3
-  4
-  7
-  6
  firsttab=0
- index=1
+ index=2
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
@@ -1439,7 +1386,7 @@ windowlayout=603
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=confdebuggerfo
+ stackedunder=_mse_filedialogres_mse_
  parent=
  mdistate=0
  nx=0
@@ -1466,34 +1413,15 @@ windowlayout=603
  ncx=0
  ncy=0
  x=0
- y=60
- cx=1348
- cy=519
+ y=54
+ cx=1342
+ cy=524
  rcx=0
  rcy=0
- [_mse_filedialogfo_mse_]
- splitdir=0
- useroptions=268451963
- stackedunder=_mse_projectoptionsfo_mse_
- parent=
- mdistate=3
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=280
- y=266
- cx=506
- cy=327
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
  [_mse_mainfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=mainfo
+ stackedunder=_mse_filedialogfo_mse_
  parent=
  mdistate=3
  nx=0
@@ -1509,20 +1437,39 @@ windowlayout=603
  wsize=0
  active=0
  visible=1
- [_mse_projectoptionsfo_mse_]
+ [_mse_filedialogres_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_mainfo_mse_
+ stackedunder=confdebuggerfo
  parent=
  mdistate=3
  nx=0
  ny=0
  ncx=0
  ncy=0
- x=205
- y=177
- cx=842
- cy=581
+ x=93
+ y=396
+ cx=245
+ cy=117
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=0
+ [_mse_filedialogfo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=objectinspectorfo
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=304
+ y=382
+ cx=506
+ cy=327
  rcx=0
  rcy=0
  wsize=0
