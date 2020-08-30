@@ -611,6 +611,7 @@ type
     procedure ondrawcell(const Sender: tcol; const Canvas: tcanvas; var cellinfo: cellinfoty);
     procedure onsetcomp(const Sender: TObject; var avalue: Boolean; var accept: Boolean);
     procedure oncreat(const Sender: TObject);
+   procedure onbefdrop(const sender: TObject);
   private
     fselectednames: filenamearty;
     finit: Boolean;
@@ -1487,12 +1488,12 @@ begin
   accept := tryreadlist(avalue, True);
   if accept then
     course(avalue);
-  // listview.directory:= avalue;
+    listview.directory:= avalue;
 end;
 
 procedure tfiledialogfo.listviewonlistread(const Sender: TObject);
 var
-  x, y, y2, z: integer;
+  x, x2, y, y2, z: integer;
   info: fileinfoty;
   thedir, thestrnum, thestrfract, thestrx, thestrext, tmp, tmp2: string;
 begin
@@ -1519,12 +1520,23 @@ begin
     list_log[4][x] := '';
   end;
 
+   y := 0;
+   x2 := 0;
+
+ //  dir.frame.caption := 'Directory with 0 files';
+   
   if listview.rowcount > 0 then
     for x := 0 to listview.rowcount - 1 do
     begin
       list_log[4][x] := IntToStr(x);
 
-      if not listview.filelist.isdir(x) then
+      if listview.filelist.isdir(x) then
+      begin
+         inc(x2);
+        list_log[0][x] := '     ' + utf8decode(listview.itemlist[x].Caption);
+        list_log[1][x] := '';
+        thedir         := dir.Value + trim(list_log[0][x]);
+      end else
       begin
         list_log[0][x] := '     ' + utf8decode(filenamebase(listview.itemlist[x].Caption));
         tmp := fileext(listview.itemlist[x].Caption);
@@ -1534,16 +1546,9 @@ begin
         list_log[1][x] := utf8decode(tmp);
 
         thedir := dir.Value + trim(list_log[0][x] + tmp);
-
-      end
-      else
-      begin
-        list_log[0][x] := '     ' + utf8decode(listview.itemlist[x].Caption);
-        list_log[1][x] := '';
-        thedir         := dir.Value + trim(list_log[0][x]);
       end;
-
-      getfileinfo(utf8decode(trim(thedir)), info);
+      
+       getfileinfo(utf8decode(trim(thedir)), info);
 
       if not listview.filelist.isdir(x) then
       begin
@@ -1591,21 +1596,22 @@ begin
         else
           thestrfract := '';
 
-
         list_log[2][x] := thestrx + thestrnum + thestrfract + thestrext;
       end;
 
       list_log[3][x] := formatdatetime('YY-MM-DD hh:mm:ss', info.extinfo1.modtime);
 
-    end;
+    end; // else dir.frame.caption := 'Directory with 0 files';
     
     if bcompact.value then
     begin
     listview.anchors := [an_top,an_bottom]; 
     listview.invalidate;
     end;
+    
+    dir.frame.caption := 'Directory with ' + inttostr(list_log.rowcount-x2) + ' files';
 
-end;
+ end;
 
 procedure tfiledialogfo.updatefiltertext;
 begin
@@ -1621,6 +1627,7 @@ procedure tfiledialogfo.filteronafterclosedropdown(const Sender: TObject);
 begin
   updatefiltertext;
   filter.initfocus;
+  filter.width := 146;
 end;
 
 procedure tfiledialogfo.filteronsetvalue(const Sender: TObject; var avalue: msestring; var accept: Boolean);
@@ -1958,6 +1965,11 @@ begin
   theimagelist := iconslist;
 end;
 
+procedure tfiledialogfo.onbefdrop(const sender: TObject);
+begin
+filter.width := 300;
+end;
+
 
 { tfiledialogcontroller }
 
@@ -2084,7 +2096,9 @@ begin
     arb := ffilterlist.asarrayb;
 
     if fontheight > 0 then
-      fo.font.Height := fontheight;
+      if fontheight < 21 then
+      fo.font.Height := fontheight
+      else fo.font.Height := 20;
 
     if fontname <> '' then
       fo.font.Name := ansistring(fontname);

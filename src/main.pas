@@ -44,6 +44,7 @@ uses
 procedure tmainfo.onex(const Sender: TObject);
 var
   dialogkind: filedialogkindty;
+   ara, arb: msestringarty;
 
  begin
   if b_fdk_open.Value then
@@ -60,10 +61,28 @@ var
   tfiledialog1.controller.captionopen := 'Open File';
   tfiledialog1.controller.captionsave := 'Save File as';
   tfiledialog1.controller.captiondir  := 'Open Directory';
-
-  tfiledialog1.controller.filter  := thefilter.Value;
   
-  tfiledialog1.controller.basedir := thebasedir.Value;
+    setlength(ara,5);
+    setlength(arb,5);
+    
+    ara[0] := 'Pascal';
+    ara[1] := 'C';
+    ara[2] := 'Java';
+    ara[3] := 'Python';
+    ara[4] := 'All';
+      
+    arb[0] := '"*.pp" "*.pas" "*.inc" "*.dpr" "*.lpr"';
+    arb[1] := '"*.c" "*.cpp" "*.h"';
+    arb[2] := '"*.java"';
+    arb[3] := '"*.py"';
+    arb[4] := '"*.*"';
+          
+   tfiledialog1.controller.filterlist.asarraya := ara;
+   tfiledialog1.controller.filterlist.asarrayb := arb;
+  
+   tfiledialog1.controller.filter  := thefilter.Value;
+  
+   tfiledialog1.controller.basedir := thebasedir.Value;
   
    tfiledialog1.controller.fontheight := fontheight.value; // font height of dialogfile
    tfiledialog1.controller.fontname := fontname.value; // font name of dialogfile

@@ -19,7 +19,7 @@ order16=0
 [projectoptions]
 projectdir=/home/fred/msefiledialogx/src
 projectfilename=/home/fred/msefiledialogx/src/demo_msefiledialogx.prj
-findinfiledialog=57
+findinfiledialog=61
  [findinfileadialogfo.subdirs]
  value=1
  [findinfileadialogfo.incurrentfile]
@@ -49,16 +49,20 @@ findinfiledialog=57
  y=181
  cx=496
  cy=308
- filehistory=4
+ filehistory=5
   /home/fred/mseide-msegui/
+  /home/fred/mseide-msegui/apps/
   /home/fred/ideu/
   /home/fred/mseuniverse/
   /home/fred/strumpract/src/
  filefilterindex=0
  filefilter=
  [findinfileadialogfo.findtext]
- value=tdoublemsestringdatalist
- history=12
+ value=filterlist.asarraya
+ history=15
+  filterlist.asarraya
+  msestringarty
+  "*.mfm
   tdoublemsestringdatalist
   "*.pas"
   captionsave
@@ -478,15 +482,21 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=2
+modulenames=4
+ GUITEMPLATESMO
  MAINFO
  FILEDIALOGFO
-moduletypes=2
+ PROJECTOPTIONSFO
+moduletypes=4
+ TGUITEMPLATESMO
  TMAINFO
  TFILEDIALOGFO
-modulefiles=2
+ TPROJECTOPTIONSFO
+modulefiles=4
+ /home/fred/mseide-msegui/apps/ide/guitemplates.mfm
  /home/fred/msefiledialogx/src/main.mfm
  /home/fred/msefiledialogx/src/msefiledialogx.mfm
+ /home/fred/mseide-msegui/apps/ide/projectoptionsform.mfm
 befcommandon=0
 makeoptionson=6
  4095
@@ -819,8 +829,9 @@ envvarons=0
 [edit]
 hintwidth=0
 hintheight=0
-finddtext=listlog.h
+finddtext=fontheight
 findhistory=20
+ fontheight
  listlog.h
  list_log.Height
  .height
@@ -837,51 +848,86 @@ findhistory=20
  uses
  htlm
  fdk_dir
- fontheight
  fonth
  tfiledialogfo
  fontheightdlg
 findoptions=1
-editpos=3
- 0,-1073741823
- 0,-1073741823
- 0,1944
+editpos=7
+ 0,0
+ 0,81
+ 0,1490
+ 0,80
+ 0,94
+ 0,1971
+ 0,1111
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
-sourcefiles=3
+bookmarks3=0
+bookmarks4=0
+bookmarks5=0
+bookmarks6=0
+sourcefiles=7
  ${PROJECTDIR}/demo_msefiledialogx.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/msefiledialogx.pas
-relpaths=3
+ /home/fred/mseide-msegui/tools/bmp2pas.pas
+ /home/fred/mseide-msegui/apps/ide/guitemplates.pas
+ /home/fred/mseide-msegui/apps/ide/projectoptionsform.pas
+ /home/fred/mseide-msegui/lib/common/designutils/msepropertyeditors.pas
+relpaths=7
  demo_msefiledialogx.pas
  main.pas
  msefiledialogx.pas
-ismoduletexts=3
+ ../mseide-msegui/tools/bmp2pas.pas
+ ../mseide-msegui/apps/ide/guitemplates.pas
+ ../mseide-msegui/apps/ide/projectoptionsform.pas
+ ../mseide-msegui/lib/common/designutils/msepropertyeditors.pas
+ismoduletexts=7
  0
  0
  0
-modules=3
+ 0
+ 0
+ 0
+ 0
+modules=5
  /home/fred/msefiledialogx/src/main.mfm
  /home/fred/mseide-msegui/lib/common/dialogs/msefiledialogres.mfm
  /home/fred/msefiledialogx/src/msefiledialogx.mfm
-moduleoptions=3
+ /home/fred/mseide-msegui/apps/ide/guitemplates.mfm
+ /home/fred/mseide-msegui/apps/ide/projectoptionsform.mfm
+moduleoptions=5
  0
  0
  0
-visiblemodules=3
+ 0
+ 0
+visiblemodules=5
  -1
  0
  -1
-nomenumodules=3
+ -1
+ -1
+nomenumodules=5
  0
  -1
+ 0
+ 0
  0
 [sourcefo.files_tab]
+order=7
+ 0
+ 1
+ 6
+ 4
+ 5
+ 3
+ 2
 firsttab=0
-index=2
+index=1
 [layout]
-windowlayout=593
+windowlayout=639
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -895,8 +941,8 @@ windowlayout=593
  ny=0
  ncx=0
  ncy=0
- x=3
- y=55
+ x=-62
+ y=84
  cx=1354
  cy=710
  rcx=0
@@ -996,8 +1042,8 @@ windowlayout=593
  ny=0
  ncx=0
  ncy=0
- x=46
- y=63
+ x=89
+ y=177
  cx=1118
  cy=414
  rcx=0
@@ -1319,11 +1365,11 @@ windowlayout=593
  nx=0
  ny=0
  ncx=1327
- ncy=33
+ ncy=31
  x=0
  y=0
  cx=1342
- cy=31
+ cy=29
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -1333,7 +1379,7 @@ windowlayout=593
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/msefiledialogx/src/msefiledialogx.pas
+ value=/home/fred/msefiledialogx/src/main.pas
  history=20
   /home/fred/msefiledialogx/src/msefiledialogx.pas
   /home/fred/msefiledialogx/src/msefiledialogres.pas
@@ -1376,8 +1422,16 @@ windowlayout=593
  rcx=0
  rcy=0
  [sourcefo.files_tab]
+ order=7
+  0
+  1
+  6
+  4
+  5
+  3
+  2
  firsttab=0
- index=2
+ index=1
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
@@ -1421,7 +1475,7 @@ windowlayout=593
  [_mse_mainfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_filedialogfo_mse_
+ stackedunder=objectinspectorfo
  parent=
  mdistate=3
  nx=0
@@ -1459,7 +1513,7 @@ windowlayout=593
  [_mse_filedialogfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=objectinspectorfo
+ stackedunder=_mse_mainfo_mse_
  parent=
  mdistate=3
  nx=0
@@ -1470,6 +1524,44 @@ windowlayout=593
  y=382
  cx=506
  cy=327
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_guitemplatesmo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=_mse_projectoptionsfo_mse_
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=99
+ y=135
+ cx=493
+ cy=132
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_projectoptionsfo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=_mse_filedialogfo_mse_
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=205
+ y=177
+ cx=842
+ cy=581
  rcx=0
  rcy=0
  wsize=0
