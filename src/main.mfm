@@ -296,6 +296,6 @@ object mainfo: tmainfo
   end
   object tfiledialog1: tfiledialog
     left = 16
-    top = 152
+    top = 232
   end
 end

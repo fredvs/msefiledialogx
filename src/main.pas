@@ -64,8 +64,8 @@ begin
   tfiledialog1.controller.filter  := thefilter.Value;
   tfiledialog1.controller.basedir := thebasedir.Value;
   
-  fontheightdlg := fontheight.value; // font height of dialogfile
-  fontnamedlg := fontname.value; // font height of dialogfile
+   tfiledialog1.controller.fontheight := fontheight.value; // font height of dialogfile
+   tfiledialog1.controller.fontname := fontname.value; // font name of dialogfile
   
   if custtitle.Value then
   begin

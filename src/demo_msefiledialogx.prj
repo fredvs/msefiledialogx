@@ -80,8 +80,8 @@ finddialog=8
  value=0
  [finddialogfo]
  stackedunder=
- x=776
- y=318
+ x=774
+ y=438
  cx=234
  cy=269
 options=114
@@ -817,13 +817,14 @@ envvarons=0
 [edit]
 hintwidth=0
 hintheight=0
-finddtext=fonth
+finddtext=fdk_dir
 findhistory=20
+ fdk_dir
+ fontheight
  fonth
  tfiledialogfo
  fontheightdlg
  implementation
- fontheight
  Tfiledialogfo
  .font
  ' KB
@@ -838,12 +839,11 @@ findhistory=20
  fdk_open
  .execute
  projectfile
- visible := fal
 findoptions=1
 editpos=4
- 0,-1073741823
- 0,1
- 0,614
+ 0,0
+ 16,56
+ 0,2072
  0,-1073741823
 bookmarks0=0
 bookmarks1=0
@@ -894,8 +894,8 @@ windowlayout=574
  ny=0
  ncx=0
  ncy=0
- x=38
- y=144
+ x=35
+ y=29
  cx=1224
  cy=621
  rcx=0
@@ -1318,11 +1318,11 @@ windowlayout=574
  nx=0
  ny=0
  ncx=1197
- ncy=43
+ ncy=41
  x=0
  y=0
  cx=1212
- cy=41
+ cy=39
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -1334,6 +1334,7 @@ windowlayout=574
  [debuggerfo.file_history]
  value=/home/fred/msefiledialogx/src/main.pas
  history=20
+  /home/fred/msefiledialogx/src/main.pas
   /home/fred/msefiledialogx/src/msefiledialogx.pas
   /home/fred/msefiledialogx/msefiledialogx.pas
   /home/fred/msefiledialogx/main.pas
@@ -1353,7 +1354,6 @@ windowlayout=574
   /home/fred/ideu/src/make.pas
   /home/fred/strumpract/src/status.pas
   /home/fred/ideu/src/breakpointsform.pas
-  /home/fred/ideu/src/mselistbrowser.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -1420,7 +1420,7 @@ windowlayout=574
  [_mse_filedialogfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=objectinspectorfo
+ stackedunder=_mse_mainfo_mse_
  parent=
  mdistate=3
  nx=0
@@ -1439,7 +1439,7 @@ windowlayout=574
  [_mse_mainfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=mainfo
+ stackedunder=objectinspectorfo
  parent=
  mdistate=3
  nx=0

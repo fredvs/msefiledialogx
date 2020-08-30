@@ -31,14 +31,53 @@ interface
 {$endif}
 
 uses
- Math,mseglob,mseguiglob,mseforms,Classes,mclasses,mseclasses,msewidgets,
- msegrids,mselistbrowser,mseedit,msesimplewidgets,msedataedits,msedialog,
- msetypes,msestrings,msesystypes,msesys,msedispwidgets,msedatalist,msestat,
- msestatfile,msebitmap,msedatanodes,msefileutils,msedropdownlist,mseevent,
- msegraphedits,mseeditglob,msesplitter,msemenus,msegridsglob,msegraphics,
- msegraphutils,msedirtree,msewidgetgrid,mseact,mseapplication,msegui,mseificomp,
- mseificompglob,mseifiglob,msestream,SysUtils,msemenuwidgets,msescrollbar,
- msedragglob;
+  Math,
+  mseglob,
+  mseguiglob,
+  mseforms,
+  Classes,
+  mclasses,
+  mseclasses,
+  msewidgets,
+  msegrids,
+  mselistbrowser,
+  mseedit,
+  msesimplewidgets,
+  msedataedits,
+  msedialog,
+  msetypes,
+  msestrings,
+  msesystypes,
+  msesys,
+  msedispwidgets,
+  msedatalist,
+  msestat,
+  msestatfile,
+  msebitmap,
+  msedatanodes,
+  msefileutils,
+  msedropdownlist,
+  mseevent,
+  msegraphedits,
+  mseeditglob,
+  msesplitter,
+  msemenus,
+  msegridsglob,
+  msegraphics,
+  msegraphutils,
+  msedirtree,
+  msewidgetgrid,
+  mseact,
+  mseapplication,
+  msegui,
+  mseificomp,
+  mseificompglob,
+  mseifiglob,
+  msestream,
+  SysUtils,
+  msemenuwidgets,
+  msescrollbar,
+  msedragglob;
 
 const
   defaultlistviewoptionsfile = defaultlistviewoptions + [lvo_readonly, lvo_horz];
@@ -196,7 +235,10 @@ type
     fdefaultext: filenamety;
     foptions: filedialogoptionsty;
   public
-    
+
+    fontheight: integer;
+    fontname: string;
+
     constructor Create(const aowner: tmsecomponent = nil; const onchange: proceventty = nil);
       reintroduce;
 
@@ -311,8 +353,8 @@ type
     property controller: tfiledialogcontroller read fcontroller write setcontroller;
     property dialogkind: filedialogkindty read fdialogkind write fdialogkind default fdk_none;
     property optionsedit1: optionsedit1ty read foptionsedit1 write foptionsedit1 default defaultfiledialogoptionsedit1;
-   
-   end;
+
+  end;
 
   tcustomfilenameedit1 = class;
 
@@ -536,10 +578,10 @@ type
     list_log: tstringgrid;
     iconslist: timagelist;
     listview: tfilelistview;
-   home: tbutton;
-   createdir: tbutton;
-   cancel: tbutton;
-   ok: tbutton;
+    home: TButton;
+    createdir: TButton;
+    cancel: TButton;
+    ok: TButton;
     procedure createdironexecute(const Sender: TObject);
     procedure listviewselectionchanged(const Sender: tcustomlistview);
     procedure listviewitemevent(const Sender: tcustomlistview; const index: integer; var info: celleventinfoty);
@@ -585,33 +627,24 @@ type
   end;
 
 function filedialog(var afilenames: filenamearty; const aoptions: filedialogoptionsty; const acaption: msestring;    //'' -> 'Open' or 'Save'
-  const filterdesc: array of msestring; const filtermask: array of msestring; const adefaultext: filenamety = '';
-  const filterindex: pinteger = nil;     //nil -> 0
+  const filterdesc: array of msestring; const filtermask: array of msestring; const adefaultext: filenamety = ''; const filterindex: pinteger = nil;     //nil -> 0
   const filter: pfilenamety = nil;       //nil -> unused
   const colwidth: pinteger = nil;        //nil -> default
-  const includeattrib: fileattributesty = [fa_all]; const excludeattrib: fileattributesty = [fa_hidden];
-  const history: pmsestringarty = nil; const historymaxcount: integer = defaulthistorymaxcount; const imagelist: timagelist = nil;
-  const ongetfileicon: getfileiconeventty = nil; const oncheckfile: checkfileeventty = nil): modalresultty;
+  const includeattrib: fileattributesty = [fa_all]; const excludeattrib: fileattributesty = [fa_hidden]; const history: pmsestringarty = nil; const historymaxcount: integer = defaulthistorymaxcount;
+  const imagelist: timagelist = nil; const ongetfileicon: getfileiconeventty = nil; const oncheckfile: checkfileeventty = nil): modalresultty;
   overload;
 //threadsafe
-function filedialog(var afilename: filenamety; const aoptions: filedialogoptionsty; const acaption: msestring;
-  const filterdesc: array of msestring; const filtermask: array of msestring; const adefaultext: filenamety = '';
-  const filterindex: pinteger = nil;     //nil -> 0
+function filedialog(var afilename: filenamety; const aoptions: filedialogoptionsty; const acaption: msestring; const filterdesc: array of msestring; const filtermask: array of msestring;
+  const adefaultext: filenamety = ''; const filterindex: pinteger = nil;     //nil -> 0
   const filter: pfilenamety = nil;       //nil -> unused
   const colwidth: pinteger = nil;        //nil -> default
-  const includeattrib: fileattributesty = [fa_all]; const excludeattrib: fileattributesty = [fa_hidden];
-  const history: pmsestringarty = nil; const historymaxcount: integer = defaulthistorymaxcount; const imagelist: timagelist = nil;
-  const ongetfileicon: getfileiconeventty = nil; const oncheckfile: checkfileeventty = nil): modalresultty;
+  const includeattrib: fileattributesty = [fa_all]; const excludeattrib: fileattributesty = [fa_hidden]; const history: pmsestringarty = nil; const historymaxcount: integer = defaulthistorymaxcount;
+  const imagelist: timagelist = nil; const ongetfileicon: getfileiconeventty = nil; const oncheckfile: checkfileeventty = nil): modalresultty;
   overload;
 //threadsafe
 
 procedure getfileicon(const info: fileinfoty; var imagelist: timagelist; out imagenr: integer);
 procedure updatefileinfo(const item: tlistitem; const info: fileinfoty; const withicon: Boolean);
-
-
-var
-  fontheightdlg : integer = 12;
-  fontnamedlg : string = 'stf_default';  
 
 implementation
 
@@ -642,7 +675,7 @@ uses
 type
   tdirtreefo1 = class(tdirtreefo);
   tcomponent1 = class(TComponent);
-  
+
 // not needed anymore
 procedure getfileicon(const info: fileinfoty; var imagelist: timagelist; out imagenr: integer);
 begin
@@ -686,13 +719,10 @@ begin
   end;
 end;
 
-function filedialog1(dialog: tfiledialogfo; var afilenames: filenamearty; const filterdesc: array of msestring;
-  const filtermask: array of msestring; const filterindex: pinteger; const afilter: pfilenamety;      //nil -> unused
+function filedialog1(dialog: tfiledialogfo; var afilenames: filenamearty; const filterdesc: array of msestring; const filtermask: array of msestring; const filterindex: pinteger; const afilter: pfilenamety;      //nil -> unused
   const colwidth: pinteger;        //nil -> default
-  const includeattrib: fileattributesty; const excludeattrib: fileattributesty; const history: pmsestringarty;
-  const historymaxcount: integer; const acaption: msestring; const aoptions: filedialogoptionsty;
-  const adefaultext: filenamety; const imagelist: timagelist; const ongetfileicon: getfileiconeventty;
-  const oncheckfile: checkfileeventty): modalresultty;
+  const includeattrib: fileattributesty; const excludeattrib: fileattributesty; const history: pmsestringarty; const historymaxcount: integer; const acaption: msestring; const aoptions: filedialogoptionsty;
+  const adefaultext: filenamety; const imagelist: timagelist; const ongetfileicon: getfileiconeventty; const oncheckfile: checkfileeventty): modalresultty;
 var
   int1: integer;
 begin
@@ -730,17 +760,21 @@ begin
       filter.dropdown.ItemIndex := filterindex^
     else
       filter.dropdown.ItemIndex := 0;
-   if (afilter = nil) or (afilter^ = '') or
+    if (afilter = nil) or (afilter^ = '') or
       (filter.dropdown.ItemIndex >= 0) and
       (afilter^ = filter.dropdown.cols[1][filter.dropdown.ItemIndex]) then
-      begin
-      if filename.Visible = False then filter.Value  := '' else
-      updatefiltertext;
-      end
+    begin
+      if filename.Visible = False then
+        filter.Value := ''
+      else
+        updatefiltertext;
+    end
     else
     begin
-      if filename.Visible = False then filter.Value  := '' else
-      filter.Value  := afilter^;
+      if filename.Visible = False then
+        filter.Value := ''
+      else
+        filter.Value := afilter^;
       listview.mask := afilter^;
     end;
     if history <> nil then
@@ -756,23 +790,23 @@ begin
       filename.Value     := quotefilename(afilenames);
     if (colwidth <> nil) and (colwidth^ <> 0) then
       listview.cellwidth := colwidth^;
-      
+
     finit := True;
     try
       filename.checkvalue;
     finally
-      finit          := False;
+      finit := False;
     end;
-     if filename.Visible = False then
+    if filename.Visible = False then
     begin
-      Height         := 308;
-      list_log.height :=    height - list_log.top - 10;
-    end;  
+      Height          := 308;
+      list_log.Height := Height - list_log.top - 10;
+    end;
     showhidden.Value := not (fa_hidden in excludeattrib);
     Show(True);
-    Result           := window.modalresult;
+    Result      := window.modalresult;
     if Result <> mr_ok then
-      Result := mr_cancel;
+      Result    := mr_cancel;
     if (colwidth <> nil) then
       colwidth^ := listview.cellwidth;
     if Result = mr_ok then
@@ -792,14 +826,11 @@ begin
   end;
 end;
 
-function filedialog(var afilenames: filenamearty; const aoptions: filedialogoptionsty; const acaption: msestring;
-  const filterdesc: array of msestring; const filtermask: array of msestring; const adefaultext: filenamety = '';
-  const filterindex: pinteger = nil; const filter: pfilenamety = nil;       //nil -> unused
+function filedialog(var afilenames: filenamearty; const aoptions: filedialogoptionsty; const acaption: msestring; const filterdesc: array of msestring; const filtermask: array of msestring;
+  const adefaultext: filenamety = ''; const filterindex: pinteger = nil; const filter: pfilenamety = nil;       //nil -> unused
   const colwidth: pinteger = nil;        //nil -> default
-  const includeattrib: fileattributesty = [fa_all]; const excludeattrib: fileattributesty = [fa_hidden];
-  const history: pmsestringarty = nil; const historymaxcount: integer = defaulthistorymaxcount;
-  const imagelist: timagelist = nil; const ongetfileicon: getfileiconeventty = nil;
-  const oncheckfile: checkfileeventty = nil): modalresultty;
+  const includeattrib: fileattributesty = [fa_all]; const excludeattrib: fileattributesty = [fa_hidden]; const history: pmsestringarty = nil; const historymaxcount: integer = defaulthistorymaxcount;
+  const imagelist: timagelist = nil; const ongetfileicon: getfileiconeventty = nil; const oncheckfile: checkfileeventty = nil): modalresultty;
 var
   dialog: tfiledialogfo;
   str1: msestring;
@@ -834,13 +865,11 @@ begin
   end;
 end;
 
-function filedialog(var afilename: filenamety; const aoptions: filedialogoptionsty; const acaption: msestring;
-  const filterdesc: array of msestring; const filtermask: array of msestring; const adefaultext: filenamety = '';
-  const filterindex: pinteger = nil; const filter: pfilenamety = nil;       //nil -> unused
+function filedialog(var afilename: filenamety; const aoptions: filedialogoptionsty; const acaption: msestring; const filterdesc: array of msestring; const filtermask: array of msestring;
+  const adefaultext: filenamety = ''; const filterindex: pinteger = nil; const filter: pfilenamety = nil;       //nil -> unused
   const colwidth: pinteger = nil;        //nil -> default
-  const includeattrib: fileattributesty = [fa_all]; const excludeattrib: fileattributesty = [fa_hidden]; const history: pmsestringarty = nil;
-  const historymaxcount: integer = defaulthistorymaxcount; const imagelist: timagelist = nil; const ongetfileicon: getfileiconeventty = nil;
-  const oncheckfile: checkfileeventty = nil): modalresultty;
+  const includeattrib: fileattributesty = [fa_all]; const excludeattrib: fileattributesty = [fa_hidden]; const history: pmsestringarty = nil; const historymaxcount: integer = defaulthistorymaxcount;
+  const imagelist: timagelist = nil; const ongetfileicon: getfileiconeventty = nil; const oncheckfile: checkfileeventty = nil): modalresultty;
 var
   ar1: filenamearty;
 begin
@@ -1517,37 +1546,35 @@ begin
 
       if not listview.filelist.isdir(x) then
       begin
-              
-          if info.extinfo1.size div 1000000000 > 0 then
-          begin
-            y2 := Trunc(Frac(info.extinfo1.size / 1000000000) * Power(10, 1));
-            y := info.extinfo1.size div 1000000000;
-            thestrx := '~';
-            thestrext := ' GB';
-          end            
-          else
-          if info.extinfo1.size div 1000000 > 0 then
-          begin
-            y2 := Trunc(Frac(info.extinfo1.size / 1000000) * Power(10, 1));
-            y := info.extinfo1.size div 1000000;
-            thestrx := '_';
-            thestrext := ' MB';
-          end            
-          else
-           if info.extinfo1.size div 1000 > 0 then
-          begin
-            y2 := Trunc(Frac(info.extinfo1.size / 1000) * Power(10, 1));
-            y := info.extinfo1.size div 1000;
-            thestrx := '^';
-            thestrext := ' KB';
-          end            
-          else
-         begin
-            y2 := 0;
-            y := info.extinfo1.size;
-            thestrx := ' ';
-            thestrext := ' B';
-          end;  
+
+        if info.extinfo1.size div 1000000000 > 0 then
+        begin
+          y2        := Trunc(Frac(info.extinfo1.size / 1000000000) * Power(10, 1));
+          y         := info.extinfo1.size div 1000000000;
+          thestrx   := '~';
+          thestrext := ' GB';
+        end
+        else if info.extinfo1.size div 1000000 > 0 then
+        begin
+          y2        := Trunc(Frac(info.extinfo1.size / 1000000) * Power(10, 1));
+          y         := info.extinfo1.size div 1000000;
+          thestrx   := '_';
+          thestrext := ' MB';
+        end
+        else if info.extinfo1.size div 1000 > 0 then
+        begin
+          y2        := Trunc(Frac(info.extinfo1.size / 1000) * Power(10, 1));
+          y         := info.extinfo1.size div 1000;
+          thestrx   := '^';
+          thestrext := ' KB';
+        end
+        else
+        begin
+          y2        := 0;
+          y         := info.extinfo1.size;
+          thestrx   := ' ';
+          thestrext := ' B';
+        end;
 
 
         thestrnum := IntToStr(y);
@@ -1557,10 +1584,11 @@ begin
         if z < 15 then
           for y := 0 to 14 - z do
             thestrnum := ' ' + thestrnum;
-       
-       if y2 > 0 then        
-        thestrfract := '.' + IntToStr(y2)
-        else thestrfract := '';
+
+        if y2 > 0 then
+          thestrfract := '.' + IntToStr(y2)
+        else
+          thestrfract := '';
 
 
         list_log[2][x] := thestrx + thestrnum + thestrfract + thestrext;
@@ -1657,13 +1685,13 @@ begin
   // aligny(wam_center,[dir,back,forward,home,up,createdir]);
   // aligny(wam_center,[filename,showhidden]);
   if ok.Height <= filter.Height then
-    //  aligny(wam_center,[filter,ok,cancel]);
+  //  aligny(wam_center,[filter,ok,cancel]);
 
   else
     //  ok.top:= showhidden.bottom + 4;
     // aligny(wam_center,[ok,cancel]);
   ;
-  // syncpaintwidth([filename,filter],namecont.bounds_cx);
+    // syncpaintwidth([filename,filter],namecont.bounds_cx);
   listview.synctofontheight;
 end;
 
@@ -1680,9 +1708,6 @@ end;
 procedure tfiledialogfo.formoncreate(const Sender: TObject);
 begin
   fcourseid := -1;
-  
-   font.Height := fontheightdlg;
-   font.Name   := ansistring(fontnamedlg);
 
   with stockobjects do
   begin
@@ -1796,7 +1821,7 @@ begin
 
       y := StrToInt(list_log[4][cellpos.row]);
       cellpos2.row := y;
-    
+
       if listview.filelist.isdir(y) then
       begin
         listview.defocuscell;
@@ -1804,13 +1829,12 @@ begin
         list_log.datacols.clearselection;
         list_log.defocuscell;
         str1 := filepath(dir.Value + listview.filelist[y].Name);
-       
-          if  (ss_double in info
+
+        if (ss_double in info
           .mouseeventinfopo^.shiftstate) then
-          begin
-         // listview.selectcell(cellpos2, csm_select, False);  
-           okonexecute(Sender);
-          end else changedir(str1);
+          okonexecute(Sender)// listview.selectcell(cellpos2, csm_select, False);  
+        else
+          changedir(str1);
 
       end
       else
@@ -1822,12 +1846,10 @@ begin
         listview.selectcell(cellpos2, csm_select, False);
         list_log.datacols.clearselection;
         list_log.selectcell(cellpos, csm_select, False);
-      
+
         if (listview.rowcount > 0) and (list_log.rowcount > 0) and (not listview.filelist.isdir(y)) and (ss_double in info
           .mouseeventinfopo^.shiftstate) then
-          begin
           okonexecute(Sender);
-          end;
       end;
     end;
 end;
@@ -1957,8 +1979,8 @@ begin
   fcolwidth      := reader.readinteger('filecolwidth', fcolwidth);
   if fdo_chdir in foptions then
     trysetcurrentdirmse(flastdir)//  try
-    //  except
-    //  end;
+  //  except
+  //  end;
   ;
 end;
 
@@ -2020,11 +2042,11 @@ var
   rectbefore: rectty;
 begin
   //acaption2 := acaption;
-  ara       := nil;
+  ara    := nil;
   //compiler warning
-  arb       := nil;
+  arb    := nil;
   //compiler warning
-  Result    := mr_ok;
+  Result := mr_ok;
   if Assigned(fonbeforeexecute) then
   begin
     fonbeforeexecute(self, dialogkind, Result);
@@ -2041,6 +2063,12 @@ begin
     //todo!!!!! bug 3348
     ara := ffilterlist.asarraya;
     arb := ffilterlist.asarrayb;
+
+    if fontheight > 0 then
+      fo.font.Height := fontheight;
+
+    if fontname <> '' then
+      fo.font.Name := ansistring(fontname);
 
     if (dialogkind in [fdk_dir]) or (fdo_directory in aoptions) then
     begin
@@ -2094,11 +2122,11 @@ begin
     fdk_new:
       Result := fcaptionnew;
     fdk_open:
-      Result := fcaptionopen; 
+      Result := fcaptionopen;
     fdk_dir:
-      Result := fcaptiondir;  
+      Result := fcaptiondir;
     fdk_none:
-      Result := '';     
+      Result := '';
     else
       Result := fcaptionopen;
   end;
@@ -2129,8 +2157,7 @@ begin
   Result := Execute(avalue, dialogkind, actcaption(dialogkind));
 end;
 
-function tfiledialogcontroller.Execute(var avalue: filenamety; const dialogkind: filedialogkindty; const acaption: msestring;
-  aoptions: filedialogoptionsty): Boolean;
+function tfiledialogcontroller.Execute(var avalue: filenamety; const dialogkind: filedialogkindty; const acaption: msestring; aoptions: filedialogoptionsty): Boolean;
 var
   wstr1: filenamety;
 begin
