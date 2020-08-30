@@ -28,6 +28,8 @@ type
     custtitle: tbooleanedit;
     thebasedir: tstringedit;
    tfiledialog1: tfiledialog;
+   fontname: tdropdownlistedit;
+   fontheight: tintegeredit;
     procedure onex(const Sender: TObject);
   end;
 
@@ -61,6 +63,9 @@ begin
 
   tfiledialog1.controller.filter  := thefilter.Value;
   tfiledialog1.controller.basedir := thebasedir.Value;
+  
+  fontheightdlg := fontheight.value; // font height of dialogfile
+  fontnamedlg := fontname.value; // font height of dialogfile
   
   if custtitle.Value then
   begin

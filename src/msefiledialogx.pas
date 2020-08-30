@@ -196,7 +196,7 @@ type
     fdefaultext: filenamety;
     foptions: filedialogoptionsty;
   public
-
+    
     constructor Create(const aowner: tmsecomponent = nil; const onchange: proceventty = nil);
       reintroduce;
 
@@ -311,7 +311,8 @@ type
     property controller: tfiledialogcontroller read fcontroller write setcontroller;
     property dialogkind: filedialogkindty read fdialogkind write fdialogkind default fdk_none;
     property optionsedit1: optionsedit1ty read foptionsedit1 write foptionsedit1 default defaultfiledialogoptionsedit1;
-  end;
+   
+   end;
 
   tcustomfilenameedit1 = class;
 
@@ -607,6 +608,11 @@ function filedialog(var afilename: filenamety; const aoptions: filedialogoptions
 procedure getfileicon(const info: fileinfoty; var imagelist: timagelist; out imagenr: integer);
 procedure updatefileinfo(const item: tlistitem; const info: fileinfoty; const withicon: Boolean);
 
+
+var
+  fontheightdlg : integer = 12;
+  fontnamedlg : string = 'stf_default';  
+
 implementation
 
 uses
@@ -636,7 +642,7 @@ uses
 type
   tdirtreefo1 = class(tdirtreefo);
   tcomponent1 = class(TComponent);
-
+  
 // not needed anymore
 procedure getfileicon(const info: fileinfoty; var imagelist: timagelist; out imagenr: integer);
 begin
@@ -1674,6 +1680,9 @@ end;
 procedure tfiledialogfo.formoncreate(const Sender: TObject);
 begin
   fcourseid := -1;
+  
+   font.Height := fontheightdlg;
+   font.Name   := ansistring(fontnamedlg);
 
   with stockobjects do
   begin

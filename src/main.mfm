@@ -2,15 +2,19 @@ object mainfo: tmainfo
   bounds_x = 291
   bounds_y = 247
   bounds_cx = 403
-  bounds_cy = 280
+  bounds_cy = 322
   container.frame.localprops = []
   container.frame.localprops1 = []
   container.bounds = (
     0
     0
     403
-    280
+    322
   )
+  font.name = 'stf_default'
+  font.localprops = []
+  fontempty.name = 'stf_empty'
+  fontempty.localprops = []
   caption = 'MSEFileDialogX Demo'
   windowopacity = -Inf
   moduleclassname = 'tmainform'
@@ -26,7 +30,7 @@ object mainfo: tmainfo
     )
     taborder = 1
     bounds_x = 0
-    bounds_y = 222
+    bounds_y = 270
     bounds_cx = 403
     bounds_cy = 45
     anchors = [an_top]
@@ -136,8 +140,9 @@ object mainfo: tmainfo
     end
   end
   object thefilter: tstringedit
+    frame.levelo = 0
     frame.caption = 'Filter'
-    frame.localprops = []
+    frame.localprops = [frl_levelo]
     frame.localprops1 = []
     frame.outerframe = (
       0
@@ -154,8 +159,9 @@ object mainfo: tmainfo
     reffontheight = 15
   end
   object thetitle: tstringedit
+    frame.levelo = 0
     frame.caption = 'Title'
-    frame.localprops = []
+    frame.localprops = [frl_levelo]
     frame.localprops1 = []
     frame.outerframe = (
       0
@@ -188,8 +194,9 @@ object mainfo: tmainfo
     bounds_cy = 17
   end
   object thebasedir: tstringedit
+    frame.levelo = 0
     frame.caption = 'Base Directory (Empty = current)'
-    frame.localprops = []
+    frame.localprops = [frl_levelo]
     frame.localprops1 = []
     frame.outerframe = (
       0
@@ -206,15 +213,87 @@ object mainfo: tmainfo
   end
   object tbutton1: tbutton
     bounds_x = 128
-    bounds_y = 168
+    bounds_y = 232
     bounds_cx = 146
-    bounds_cy = 61
+    bounds_cy = 45
     state = [as_localcaption, as_localonexecute]
     caption = 'MSEFileDialogX'
     onexecute = onex
   end
+  object fontname: tdropdownlistedit
+    frame.levelo = 0
+    frame.hiddenedges = [edg_right, edg_top, edg_left, edg_bottom]
+    frame.caption = 'Font name '
+    frame.localprops = [frl_levelo, frl_hiddenedges, frl_frameimagelist, frl_colorclient]
+    frame.localprops1 = [frl1_captiondist]
+    frame.button.width = 16
+    frame.button.face.fade_direction = gd_down
+    frame.button.face.localprops = [fal_fadirection]
+    frame.button.frame.localprops = []
+    frame.button.frame.localprops1 = []
+    frame.buttons.count = 1
+    frame.buttons.items = <    
+      item
+        width = 16
+        face.fade_direction = gd_down
+        face.localprops = [fal_fadirection]
+        frame.localprops = []
+        frame.localprops1 = []
+      end>
+    frame.outerframe = (
+      0
+      18
+      0
+      0
+    )
+    taborder = 7
+    bounds_x = 64
+    bounds_y = 176
+    bounds_cx = 135
+    bounds_cy = 39
+    optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_readonlydialog, oe1_savevalue, oe1_savestate, oe1_checkvalueafterstatread]
+    value = 'stf_default'
+    dropdown.dropdownrowcount = 5
+    dropdown.cols.count = 1
+    dropdown.cols.items = <    
+      item
+        data = (
+          'stf_default'
+          'stf_courier'
+          'stf_helvetica'
+          'stf_roman'
+          'stf_proportional'
+        )
+      end>
+    reffontheight = 15
+  end
+  object fontheight: tintegeredit
+    frame.levelo = 0
+    frame.caption = 'Font height '
+    frame.captiontextflags = [tf_bottom]
+    frame.localprops = [frl_levelo, frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
+    frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+    frame.outerframe = (
+      0
+      18
+      24
+      0
+    )
+    taborder = 8
+    hint = 'Font height for all ideU text'
+    bounds_x = 245
+    bounds_y = 176
+    bounds_cx = 76
+    bounds_cy = 39
+    optionsedit1 = [oe1_autopopupmenu, oe1_savevalue, oe1_savestate]
+    optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
+    value = 12
+    valuemin = 1
+    valuemax = 100
+    reffontheight = 15
+  end
   object tfiledialog1: tfiledialog
     left = 16
-    top = 184
+    top = 152
   end
 end
