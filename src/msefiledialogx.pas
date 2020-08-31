@@ -38,7 +38,7 @@ uses
  msegraphedits,mseeditglob,msesplitter,msemenus,msegridsglob,msegraphics,
  msegraphutils,msedirtree,msewidgetgrid,mseact,mseapplication,msegui,mseificomp,
  mseificompglob,mseifiglob,msestream,SysUtils,msemenuwidgets,msescrollbar,
- msedragglob;
+ msedragglob, msefiledialog;
 
 const
   defaultlistviewoptionsfile = defaultlistviewoptions + [lvo_readonly, lvo_horz];
@@ -539,7 +539,6 @@ type
     showhidden: tbooleanedit;
     list_log: tstringgrid;
     iconslist: timagelist;
-    listview: tfilelistview;
     home: TButton;
     createdir: TButton;
     cancel: TButton;
@@ -547,6 +546,7 @@ type
     bcompact: tbooleanedit;
     places: tstringgrid;
    tsplitter1: tsplitter;
+   listview: tfilelistview;
     procedure createdironexecute(const Sender: TObject);
     procedure listviewselectionchanged(const Sender: tcustomlistview);
     procedure listviewitemevent(const Sender: tcustomlistview; const index: integer; var info: celleventinfoty);
@@ -1470,7 +1470,6 @@ var
   thedir, thestrnum, thestrfract, thestrx, thestrext, tmp, tmp2: string;
 begin
 
-  //  listview.anchors := [an_top,an_left,an_right,an_bottom]; 
   listview.Width := 40;
   listview.invalidate;
 
@@ -1616,7 +1615,7 @@ procedure tfiledialogfo.filteronafterclosedropdown(const Sender: TObject);
 begin
   updatefiltertext;
   filter.initfocus;
-  filter.Width := 146;
+  filter.Width := 174;
 end;
 
 procedure tfiledialogfo.filteronsetvalue(const Sender: TObject; var avalue: msestring; var accept: Boolean);
@@ -1966,7 +1965,7 @@ end;
 
 procedure tfiledialogfo.onbefdrop(const Sender: TObject);
 begin
-  filter.Width := 300;
+  filter.Width := 400;
 end;
 
 procedure tfiledialogfo.oncellevplaces(const Sender: TObject; var info: celleventinfoty);

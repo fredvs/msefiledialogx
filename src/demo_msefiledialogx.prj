@@ -829,8 +829,9 @@ envvarons=0
 [edit]
 hintwidth=0
 hintheight=0
-finddtext=anchor
+finddtext=filter.width
 findhistory=20
+ filter.width
  anchor
  listview.hei
  fontheight
@@ -850,12 +851,11 @@ findhistory=20
  uses
  htlm
  fdk_dir
- fonth
 findoptions=1
 editpos=4
- 0,-1073741823
  0,0
- 0,2022
+ 0,8
+ 0,541
  0,-1073741823
 bookmarks0=0
 bookmarks1=0
@@ -894,7 +894,7 @@ nomenumodules=3
  0
 [sourcefo.files_tab]
 firsttab=0
-index=1
+index=2
 [layout]
 windowlayout=593
  [mainfo.basedock]
@@ -1124,10 +1124,10 @@ windowlayout=593
  [breakpointsfo.bkptson]
  value=1
  [objectinspectorfo.grid]
- propcolwidthref=531
- width0=236
+ propcolwidthref=546
+ width0=243
  sortdescend0=0
- width1=289
+ width1=297
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -1348,11 +1348,11 @@ windowlayout=593
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/msefiledialogx/src/main.pas
+ value=/home/fred/msefiledialogx/src/msefiledialogx.pas
  history=20
+  /home/fred/msefiledialogx/src/main.pas
   /home/fred/msefiledialogx/src/msefiledialogx.pas
   /home/fred/msefiledialogx/src/demo_msefiledialogx.pas
-  /home/fred/msefiledialogx/src/main.pas
   /home/fred/msefiledialogx/src/msefiledialogres.pas
   /home/fred/msefiledialogx/msefiledialogx.pas
   /home/fred/msefiledialogx/main.pas
@@ -1392,7 +1392,7 @@ windowlayout=593
  rcy=0
  [sourcefo.files_tab]
  firsttab=0
- index=1
+ index=2
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
@@ -1436,7 +1436,7 @@ windowlayout=593
  [_mse_mainfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=mainfo
+ stackedunder=objectinspectorfo
  parent=
  mdistate=3
  nx=0
@@ -1474,7 +1474,7 @@ windowlayout=593
  [_mse_filedialogfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_mainfo_mse_
+ stackedunder=mainfo
  parent=
  mdistate=3
  nx=0
