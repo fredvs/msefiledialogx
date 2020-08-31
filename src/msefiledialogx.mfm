@@ -686,7 +686,7 @@ object filedialogfo: Tfiledialogfo
         linecolor = -1610612731
         linecolorfix = -1610612733
         colorselect = 16763002
-        width = 107
+        width = 99
         options = [co_readonly, co_nofocus, co_rowselect, co_savevalue, co_savestate, co_mousescrollrow]
         datalist.options = [sdo_naturalsort]
         datalist.data = (
