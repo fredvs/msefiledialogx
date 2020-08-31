@@ -488,15 +488,12 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=2
+modulenames=1
  MAINFO
- FILEDIALOGFO
-moduletypes=2
+moduletypes=1
  TMAINFO
- TFILEDIALOGFO
-modulefiles=2
+modulefiles=1
  /home/fred/msefiledialogx/src/main.mfm
- /home/fred/msefiledialogx/src/msefiledialogx.mfm
 befcommandon=0
 makeoptionson=6
  4095
@@ -829,8 +826,10 @@ envvarons=0
 [edit]
 hintwidth=0
 hintheight=0
-finddtext=listview.h
+finddtext=filedial
 findhistory=20
+ filedial
+ filed
  listview.h
  filter.width
  anchor
@@ -849,71 +848,63 @@ findhistory=20
  var
  filelistv
  images
- uses
- htlm
 findoptions=1
-editpos=6
+editpos=7
  0,-1073741823
- 0,85
  0,-1073741823
- 63,8
  0,-1073741823
+ 0,-1073741823
+ 0,0
  0,757
+ 19,61
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
 bookmarks3=0
 bookmarks4=0
 bookmarks5=0
-sourcefiles=6
+bookmarks6=0
+sourcefiles=7
  ${PROJECTDIR}/demo_msefiledialogx.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/msefiledialogx.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/demo_msefiledialogx.pas
  ${PROJECTDIR}/msefiledialogx.pas
-relpaths=6
+ ${PROJECTDIR}/msefiledialogx.mfm
+relpaths=7
  demo_msefiledialogx.pas
  main.pas
  msefiledialogx.pas
  main.pas
  demo_msefiledialogx.pas
  msefiledialogx.pas
-ismoduletexts=6
+ msefiledialogx.mfm
+ismoduletexts=7
  0
  0
  0
  0
  0
  0
-modules=3
+ -1
+modules=2
  /home/fred/msefiledialogx/src/main.mfm
  /home/fred/mseide-msegui/lib/common/dialogs/msefiledialogres.mfm
- /home/fred/msefiledialogx/src/msefiledialogx.mfm
-moduleoptions=3
+moduleoptions=2
  0
  0
- 0
-visiblemodules=3
+visiblemodules=2
  -1
  0
- -1
-nomenumodules=3
+nomenumodules=2
  0
  -1
- 0
 [sourcefo.files_tab]
-order=6
- 0
- 1
- 2
- 3
- 5
- 4
 firsttab=0
-index=4
+index=6
 [layout]
-windowlayout=600
+windowlayout=574
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1141,10 +1132,10 @@ windowlayout=600
  [breakpointsfo.bkptson]
  value=1
  [objectinspectorfo.grid]
- propcolwidthref=532
- width0=236
+ propcolwidthref=547
+ width0=243
  sortdescend0=0
- width1=290
+ width1=298
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -1365,10 +1356,10 @@ windowlayout=600
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/msefiledialogx/src/msefiledialogx.pas
+ value=/home/fred/msefiledialogx/src/msefiledialogx.mfm
  history=20
-  /home/fred/msefiledialogx/src/main.pas
   /home/fred/msefiledialogx/src/demo_msefiledialogx.pas
+  /home/fred/msefiledialogx/src/main.pas
   /home/fred/mseide-msegui/lib/common/dialogs/msefiledialog.pas
   /home/fred/ideu/src/msefiledialog.pas
   /home/fred/msefiledialogx/src/msefiledialogres.pas
@@ -1408,15 +1399,8 @@ windowlayout=600
  rcx=0
  rcy=0
  [sourcefo.files_tab]
- order=6
-  0
-  1
-  2
-  3
-  5
-  4
  firsttab=0
- index=4
+ index=6
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
@@ -1460,7 +1444,7 @@ windowlayout=600
  [_mse_mainfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_filedialogfo_mse_
+ stackedunder=mainfo
  parent=
  mdistate=3
  nx=0
@@ -1495,25 +1479,6 @@ windowlayout=600
  wsize=0
  active=0
  visible=0
- [_mse_filedialogfo_mse_]
- splitdir=0
- useroptions=268451963
- stackedunder=mainfo
- parent=
- mdistate=3
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=396
- y=278
- cx=618
- cy=335
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
 [targetconsole]
 finddtext=
 findhistory=0
