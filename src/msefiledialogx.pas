@@ -584,6 +584,7 @@ type
     cancel: TButton;
     ok: TButton;
     bcompact: tbooleanedit;
+    places: tstringgrid;
     procedure createdironexecute(const Sender: TObject);
     procedure listviewselectionchanged(const Sender: tcustomlistview);
     procedure listviewitemevent(const Sender: tcustomlistview; const index: integer; var info: celleventinfoty);
@@ -611,7 +612,9 @@ type
     procedure ondrawcell(const Sender: tcol; const Canvas: tcanvas; var cellinfo: cellinfoty);
     procedure onsetcomp(const Sender: TObject; var avalue: Boolean; var accept: Boolean);
     procedure oncreat(const Sender: TObject);
-   procedure onbefdrop(const sender: TObject);
+    procedure onbefdrop(const Sender: TObject);
+    procedure oncellevplaces(const Sender: TObject; var info: celleventinfoty);
+    procedure ondrawcellplace(const Sender: tcol; const Canvas: tcanvas; var cellinfo: cellinfoty);
   private
     fselectednames: filenamearty;
     finit: Boolean;
@@ -1248,6 +1251,8 @@ begin
     if stringenter(mstr1, captions[sc_name],
       captions[sc_create_new_directory]) = mr_ok then
     begin
+      places.defocuscell;
+      places.datacols.clearselection;
       mstr1 := filepath(listview.directory, mstr1, fk_file);
       msefileutils.createdir(mstr1);
       changedir(mstr1);
@@ -1329,6 +1334,8 @@ end;
 
 procedure Tfiledialogfo.upaction(const Sender: TObject);
 begin
+  places.defocuscell;
+  places.datacols.clearselection;
   doup();
 end;
 
@@ -1484,11 +1491,13 @@ end;
 
 procedure tfiledialogfo.dironsetvalue(const Sender: TObject; var avalue: mseString; var accept: Boolean);
 begin
+   places.defocuscell;
+ places.datacols.clearselection;
 
   accept := tryreadlist(avalue, True);
   if accept then
     course(avalue);
-    listview.directory:= avalue;
+  listview.directory := avalue;
 end;
 
 procedure tfiledialogfo.listviewonlistread(const Sender: TObject);
@@ -1497,11 +1506,11 @@ var
   info: fileinfoty;
   thedir, thestrnum, thestrfract, thestrx, thestrext, tmp, tmp2: string;
 begin
- 
-  listview.anchors := [an_top,an_left,an_bottom]; 
-  listview.width := 40;
+
+  //  listview.anchors := [an_top,an_left,an_right,an_bottom]; 
+  listview.Width := 40;
   listview.invalidate;
- 
+
   with listview do
   begin
     dir.Value        := directory;
@@ -1520,11 +1529,27 @@ begin
     list_log[4][x] := '';
   end;
 
-   y := 0;
-   x2 := 0;
+  places[0][0] := '      Home';
+  places[1][0] := sys_getuserhomedir;
+  places[0][1] := '      Desktop';
+  places[1][1] := sys_getuserhomedir + directoryseparator + 'Desktop';
+  places[0][2] := '      Music';
+  places[1][2] := sys_getuserhomedir + directoryseparator + 'Music';
+  places[0][3] := '      Pictures';
+  places[1][3] := sys_getuserhomedir + directoryseparator + 'Pictures';
+  places[0][4] := '      Videos';
+  places[1][4] := sys_getuserhomedir + directoryseparator + 'Videos';
+  places[0][5] := '      Documents';
+  places[1][5] := sys_getuserhomedir + directoryseparator + 'Documents';
+  places[0][6] := '      Downloads';
+  places[1][6] := sys_getuserhomedir + directoryseparator + 'Downloads';
 
- //  dir.frame.caption := 'Directory with 0 files';
-   
+
+  y  := 0;
+  x2 := 0;
+
+  //  dir.frame.caption := 'Directory with 0 files';
+
   if listview.rowcount > 0 then
     for x := 0 to listview.rowcount - 1 do
     begin
@@ -1532,11 +1557,12 @@ begin
 
       if listview.filelist.isdir(x) then
       begin
-         inc(x2);
+        Inc(x2);
         list_log[0][x] := '     ' + utf8decode(listview.itemlist[x].Caption);
         list_log[1][x] := '';
         thedir         := dir.Value + trim(list_log[0][x]);
-      end else
+      end
+      else
       begin
         list_log[0][x] := '     ' + utf8decode(filenamebase(listview.itemlist[x].Caption));
         tmp := fileext(listview.itemlist[x].Caption);
@@ -1547,8 +1573,8 @@ begin
 
         thedir := dir.Value + trim(list_log[0][x] + tmp);
       end;
-      
-       getfileinfo(utf8decode(trim(thedir)), info);
+
+      getfileinfo(utf8decode(trim(thedir)), info);
 
       if not listview.filelist.isdir(x) then
       begin
@@ -1602,16 +1628,16 @@ begin
       list_log[3][x] := formatdatetime('YY-MM-DD hh:mm:ss', info.extinfo1.modtime);
 
     end; // else dir.frame.caption := 'Directory with 0 files';
-    
-    if bcompact.value then
-    begin
-    listview.anchors := [an_top,an_bottom]; 
-    listview.invalidate;
-    end;
-    
-    dir.frame.caption := 'Directory with ' + inttostr(list_log.rowcount-x2) + ' files';
 
- end;
+  if bcompact.Value then
+  begin
+    listview.Width := list_log.Width;
+    listview.invalidate;
+  end;
+
+  dir.frame.Caption := 'Directory with ' + IntToStr(list_log.rowcount - x2) + ' files';
+
+end;
 
 procedure tfiledialogfo.updatefiltertext;
 begin
@@ -1627,7 +1653,7 @@ procedure tfiledialogfo.filteronafterclosedropdown(const Sender: TObject);
 begin
   updatefiltertext;
   filter.initfocus;
-  filter.width := 146;
+  filter.Width := 146;
 end;
 
 procedure tfiledialogfo.filteronsetvalue(const Sender: TObject; var avalue: msestring; var accept: Boolean);
@@ -1695,7 +1721,7 @@ end;
 
 procedure tfiledialogfo.layoutev(const Sender: TObject);
 begin
-   listview.synctofontheight;
+  listview.synctofontheight;
 end;
 
 procedure tfiledialogfo.showhiddenonsetvalue(const Sender: TObject; var avalue: Boolean; var accept: Boolean);
@@ -1749,6 +1775,8 @@ end;
 
 procedure tfiledialogfo.homeaction(const Sender: TObject);
 begin
+  places.defocuscell;
+  places.datacols.clearselection;
   if tryreadlist(sys_getuserhomedir, True) then
   begin
     dir.Value := listview.directory;
@@ -1775,6 +1803,9 @@ end;
 
 procedure tfiledialogfo.backexe(const Sender: TObject);
 begin
+  places.defocuscell;
+  places.datacols.clearselection;
+
   fcourselock := True;
   try
     Dec(fcourseid);
@@ -1789,6 +1820,9 @@ end;
 
 procedure tfiledialogfo.forwardexe(const Sender: TObject);
 begin
+  places.defocuscell;
+  places.datacols.clearselection;
+
   fcourselock := True;
   try
     Inc(fcourseid);
@@ -1814,13 +1848,16 @@ var
   x, y: integer;
   str1: string;
 begin
-  cellpos := info.cell;
 
   if (info.eventkind = cek_buttonrelease) then
     if (cellpos.row > -1) then
     begin
       cellpos.col  := 0;
       cellpos2.col := 0;
+
+      cellpos := info.cell;
+      places.defocuscell;
+      places.datacols.clearselection;
 
       y := StrToInt(list_log[4][cellpos.row]);
       cellpos2.row := y;
@@ -1947,14 +1984,13 @@ procedure tfiledialogfo.onsetcomp(const Sender: TObject; var avalue: Boolean; va
 begin
   if avalue then
   begin
-    listview.anchors := [an_top,an_bottom]; 
+    listview.Width   := list_log.Width;
     listview.invalidate;
     list_log.Visible := False;
   end
   else
   begin
-    listview.anchors := [an_top,an_left,an_bottom]; 
-    listview.width := 40;
+    listview.Width   := 40;
     listview.invalidate;
     list_log.Visible := True;
   end;
@@ -1965,9 +2001,58 @@ begin
   theimagelist := iconslist;
 end;
 
-procedure tfiledialogfo.onbefdrop(const sender: TObject);
+procedure tfiledialogfo.onbefdrop(const Sender: TObject);
 begin
-filter.width := 300;
+  filter.Width := 300;
+end;
+
+procedure tfiledialogfo.oncellevplaces(const Sender: TObject; var info: celleventinfoty);
+var
+  cellpos, cellpos2: gridcoordty;
+  x, y: integer;
+  str1: string;
+begin
+
+  if (info.eventkind = cek_buttonrelease) then
+  begin
+    cellpos   := info.cell;
+    dir.Value := places[1][cellpos.row] + directoryseparator;
+
+    if tryreadlist(dir.Value, True) then
+    begin
+      dir.Value := listview.directory;
+      course(listview.directory);
+    end;
+
+    places.defocuscell;
+    places.datacols.clearselection;
+    places.selectcell(cellpos, csm_select, False);
+  end;
+end;
+
+procedure tfiledialogfo.ondrawcellplace(const Sender: tcol; const Canvas: tcanvas; var cellinfo: cellinfoty);
+var
+  aicon: integer;
+begin
+
+  if cellinfo.cell.row = 0 then
+    aicon := 13
+  else if cellinfo.cell.row = 1 then
+    aicon := 14
+  else if cellinfo.cell.row = 2 then
+    aicon := 3
+  else if cellinfo.cell.row = 3 then
+    aicon := 7
+  else if cellinfo.cell.row = 4 then
+    aicon := 4
+  else if cellinfo.cell.row = 5 then
+    aicon := 2
+  else if cellinfo.cell.row = 6 then
+    aicon := 15;
+
+  iconslist.paint(Canvas, aicon, nullpoint, cl_default,
+    cl_default, cl_default, 0);
+
 end;
 
 
@@ -2097,8 +2182,9 @@ begin
 
     if fontheight > 0 then
       if fontheight < 21 then
-      fo.font.Height := fontheight
-      else fo.font.Height := 20;
+        fo.font.Height := fontheight
+      else
+        fo.font.Height := 20;
 
     if fontname <> '' then
       fo.font.Name := ansistring(fontname);
