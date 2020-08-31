@@ -25,14 +25,14 @@ Included a demo how to use it.
 ![alt text](https://user-images.githubusercontent.com/3421249/91650054-f70dae00-ea7a-11ea-80f1-f54e31361080.png)
 
 
-Detailled layout:
+Detailled list:
 
-![alt text](https://user-images.githubusercontent.com/3421249/91667598-39300180-eb06-11ea-9791-67b4d0dc7e06.png)
+![alt text](https://user-images.githubusercontent.com/3421249/91686891-c010c880-eb5e-11ea-882b-000af31a3be4.png)
 
 
-Compact layout:
+Compact list:
 
-![alt text](https://user-images.githubusercontent.com/3421249/91667621-51078580-eb06-11ea-9e82-4338395eca40.png)
+![alt text](https://user-images.githubusercontent.com/3421249/91686957-e9c9ef80-eb5e-11ea-8570-21cb2401c978.png)
 
 
 

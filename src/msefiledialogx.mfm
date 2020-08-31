@@ -593,6 +593,7 @@ object filedialogfo: Tfiledialogfo
     bounds_y = 1
     bounds_cx = 98
     bounds_cy = 30
+    anchors = [an_top, an_right]
     state = [as_localcaption, as_localonexecute]
     caption = '&Cancel'
     modalresult = mr_cancel
@@ -619,6 +620,7 @@ object filedialogfo: Tfiledialogfo
     bounds_y = 1
     bounds_cx = 64
     bounds_cy = 30
+    anchors = [an_top, an_right]
     state = [as_localcaption, as_localonexecute]
     caption = '&OK'
     onexecute = okonexecute
