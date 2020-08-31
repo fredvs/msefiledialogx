@@ -2020,8 +2020,8 @@ end;
 procedure tfiledialogfo.onlayout(const sender: tcustomgrid);
 begin
 listview.left := list_log.left;
+tsplitter1.height := list_log.height;
 end;
-
 
 { tfiledialogcontroller }
 

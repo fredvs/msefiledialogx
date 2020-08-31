@@ -735,7 +735,7 @@ object filedialogfo: Tfiledialogfo
   object tsplitter1: tsplitter
     taborder = 15
     bounds_x = 104
-    bounds_y = 96
+    bounds_y = 94
     bounds_cx = 2
     bounds_cy = 186
     options = [spo_hmove, spo_hprop, spo_dockleft, spo_docktop, spo_dockright, spo_dockbottom]
