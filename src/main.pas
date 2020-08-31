@@ -9,7 +9,7 @@ uses
  msebitmap,msedataedits,msedatanodes,msedragglob,msedropdownlist,mseedit,
  msegrids,msegridsglob,mseificomp,mseificompglob,mseifiglob,mselistbrowser,
  msestatfile,msestream,msesys,SysUtils,msesimplewidgets,msedispwidgets,
- mserichstring,msegraphedits,msescrollbar,msefiledialogx;
+ mserichstring,msegraphedits,msescrollbar,msefiledialogx, msesplitter;
 
 {msefiledialogx in last position (or after msefiledialog) will override it}
 
