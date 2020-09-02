@@ -1863,11 +1863,18 @@ begin
             .mouseeventinfopo^.shiftstate) then
             okonexecute(Sender)
           else
+          begin
             changedir(str1);
+            filename.value := '';
+          end;
+            
         end
         else if info.keyeventinfopo^.key = key_return then
+        begin
           changedir(str1);
-
+          filename.value := '';
+        end;  
+ 
       end
       else
       begin
@@ -2022,6 +2029,8 @@ begin
       dir.Value := listview.directory;
       course(listview.directory);
     end;
+    
+    filename.value := '';
 
     //  places.defocuscell;
     //  places.datacols.clearselection;

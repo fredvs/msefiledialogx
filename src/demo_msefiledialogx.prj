@@ -855,7 +855,7 @@ findhistory=20
  var
 findoptions=1
 editpos=5
- 0,1885
+ 77,2014
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1131,10 +1131,10 @@ windowlayout=593
  [breakpointsfo.bkptson]
  value=1
  [objectinspectorfo.grid]
- propcolwidthref=532
- width0=236
+ propcolwidthref=547
+ width0=243
  sortdescend0=0
- width1=290
+ width1=298
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -1341,11 +1341,11 @@ windowlayout=593
  nx=0
  ny=0
  ncx=1327
- ncy=1
+ ncy=0
  x=0
  y=0
  cx=1342
- cy=-1
+ cy=0
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -1443,7 +1443,7 @@ windowlayout=593
  [_mse_filedialogres_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_mainfo_mse_
+ stackedunder=_mse_filedialogfo_mse_
  parent=
  mdistate=3
  nx=0
@@ -1462,7 +1462,7 @@ windowlayout=593
  [_mse_filedialogfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=objectinspectorfo
+ stackedunder=_mse_mainfo_mse_
  parent=
  mdistate=3
  nx=0
@@ -1481,7 +1481,7 @@ windowlayout=593
  [_mse_mainfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_filedialogfo_mse_
+ stackedunder=targetconsolefo
  parent=
  mdistate=3
  nx=0
