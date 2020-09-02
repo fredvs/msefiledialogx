@@ -31,54 +31,14 @@ interface
 {$endif}
 
 uses
-  Math,
-  mseglob,
-  mseguiglob,
-  mseforms,
-  Classes,
-  mclasses,
-  mseclasses,
-  msewidgets,
-  msegrids,
-  mselistbrowser,
-  mseedit,
-  msesimplewidgets,
-  msedataedits,
-  msedialog,
-  msetypes,
-  msestrings,
-  msesystypes,
-  msesys,
-  msedispwidgets,
-  msedatalist,
-  msestat,
-  msestatfile,
-  msebitmap,
-  msedatanodes,
-  msefileutils,
-  msedropdownlist,
-  mseevent,
-  msegraphedits,
-  mseeditglob,
-  msesplitter,
-  msemenus,
-  msegridsglob,
-  msegraphics,
-  msegraphutils,
-  msedirtree,
-  msewidgetgrid,
-  mseact,
-  mseapplication,
-  msegui,
-  mseificomp,
-  mseificompglob,
-  mseifiglob,
-  msestream,
-  SysUtils,
-  msemenuwidgets,
-  msescrollbar,
-  msedragglob,
-  msefiledialog;
+ Math,mseglob,mseguiglob,mseforms,Classes,mclasses,mseclasses,msewidgets,
+ msegrids,mselistbrowser,mseedit,msesimplewidgets,msedataedits,msedialog,
+ msetypes,msestrings,msesystypes,msesys,msedispwidgets,msedatalist,msestat,
+ msestatfile,msebitmap,msedatanodes,msefileutils,msedropdownlist,mseevent,
+ msegraphedits,mseeditglob,msesplitter,msemenus,msegridsglob,msegraphics,
+ msegraphutils,msedirtree,msewidgetgrid,mseact,mseapplication,msegui,mseificomp,
+ mseificompglob,mseifiglob,msestream,SysUtils,msemenuwidgets,msescrollbar,
+ msedragglob,msefiledialog;
 
 const
   defaultlistviewoptionsfile = defaultlistviewoptions + [lvo_readonly, lvo_horz];
@@ -587,6 +547,7 @@ type
     places: tstringgrid;
     tsplitter1: tsplitter;
     listview: tfilelistview;
+   blateral: tbooleanedit;
     procedure createdironexecute(const Sender: TObject);
     procedure listviewselectionchanged(const Sender: tcustomlistview);
     procedure listviewitemevent(const Sender: tcustomlistview; const index: integer; var info: celleventinfoty);
@@ -619,6 +580,8 @@ type
     procedure ondrawcellplace(const Sender: tcol; const Canvas: tcanvas; var cellinfo: cellinfoty);
     procedure onlayout(const Sender: tcustomgrid);
     procedure onformcreated(const Sender: TObject);
+   procedure onlateral(const sender: TObject; var avalue: Boolean;
+                   var accept: Boolean);
   private
     fselectednames: filenamearty;
     finit: Boolean;
@@ -1544,21 +1507,20 @@ begin
       if listview.filelist.isdir(x) then
       begin
         Inc(x2);
-        list_log[0][x] := '     ' + utf8decode(listview.itemlist[x].Caption);
+        list_log[0][x] := '       ' + utf8decode(listview.itemlist[x].Caption);
         list_log[1][x] := '';
-        thedir         := dir.Value + trim(list_log[0][x]);
       end
       else
       begin
-        list_log[0][x] := '     ' + utf8decode(filenamebase(listview.itemlist[x].Caption));
+        list_log[0][x] := '       ' + utf8decode(filenamebase(listview.itemlist[x].Caption));
         tmp := fileext(listview.itemlist[x].Caption);
         if tmp <> '' then
           tmp := '.' + tmp;
-
         list_log[1][x] := utf8decode(tmp);
-
-        thedir := dir.Value + trim(list_log[0][x] + tmp);
-      end;
+        list_log[0][x] := list_log[0][x] + list_log[1][x];
+     end;
+      
+      thedir := dir.Value + trim(list_log[0][x]);
 
       getfileinfo(utf8decode(trim(thedir)), info);
 
@@ -2022,6 +1984,11 @@ begin
   if (info.eventkind = cek_buttonrelease) or (info.eventkind = cek_keyup) then
   begin
     cellpos   := info.cell;
+    
+    if directoryexists(places[1][cellpos.row] + directoryseparator) then
+    
+    begin
+    
     dir.Value := places[1][cellpos.row] + directoryseparator;
 
     if tryreadlist(dir.Value, True) then
@@ -2031,10 +1998,12 @@ begin
     end;
     
     filename.value := '';
-
-    //  places.defocuscell;
-    //  places.datacols.clearselection;
-    //  places.selectcell(cellpos, csm_select, False);
+    end else
+    begin
+    places.defocuscell;
+    places.datacols.clearselection;
+    end;
+    
   end;
 end;
 
@@ -2085,6 +2054,47 @@ begin
   places[1][5] := sys_getuserhomedir + directoryseparator + 'Documents';
   places[0][6] := '      Downloads';
   places[1][6] := sys_getuserhomedir + directoryseparator + 'Downloads';
+end;
+
+procedure tfiledialogfo.onlateral(const sender: TObject; var avalue: Boolean;
+               var accept: Boolean);
+begin
+
+ if avalue then
+  begin
+    places.Visible := true;
+    list_log.invalidate;
+    tsplitter1.left := 110;
+    tsplitter1.visible := true;
+    
+    list_log.left := tsplitter1.left+tsplitter1.width;
+     
+    listview.left   := list_log.left;
+    listview.invalidate;
+  
+    
+  end
+  else
+  begin
+  
+    places.Visible := false;
+    
+    tsplitter1.left := 0;
+    list_log.invalidate;
+    
+    list_log.Width := width;
+    
+    
+    tsplitter1.visible := false;
+   
+    list_log.left := 0;
+    
+    listview.Width   := list_log.Width;
+    listview.left   := list_log.left;
+    listview.invalidate;
+  
+  end;
+
 end;
 
 { tfiledialogcontroller }
