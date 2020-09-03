@@ -538,7 +538,6 @@ type
     filter: tdropdownlistedit;
     showhidden: tbooleanedit;
     list_log: tstringgrid;
-    iconslist: timagelist;
     home: TButton;
     createdir: TButton;
     cancel: TButton;
@@ -548,6 +547,7 @@ type
     tsplitter1: tsplitter;
     listview: tfilelistview;
    blateral: tbooleanedit;
+   iconslist: timagelist;
     procedure createdironexecute(const Sender: TObject);
     procedure listviewselectionchanged(const Sender: tcustomlistview);
     procedure listviewitemevent(const Sender: tcustomlistview; const index: integer; var info: celleventinfoty);
@@ -1512,7 +1512,7 @@ begin
       end
       else
       begin
-        list_log[0][x] := '~     ' + utf8decode(filenamebase(listview.itemlist[x].Caption));
+        list_log[0][x] := '  .    ' + utf8decode(filenamebase(listview.itemlist[x].Caption));
         tmp := fileext(listview.itemlist[x].Caption);
         if tmp <> '' then
           tmp := '.' + tmp;
@@ -1871,8 +1871,7 @@ var
 begin
 
   if (list_log[1][cellinfo.cell.row] = '') and (list_log[2][cellinfo.cell.row] = '') then
-    aicon :=
-      0
+    aicon := 0
   else if (lowercase(list_log[1][cellinfo.cell.row]) = '.txt') or
     (lowercase(list_log[1][cellinfo.cell.row]) = '.pdf') or
     (lowercase(list_log[1][cellinfo.cell.row]) = '.ini') or
@@ -2050,19 +2049,19 @@ end;
 
 procedure tfiledialogfo.onformcreated(const Sender: TObject);
 begin
-  places[0][0] := '      Home';
+  places[0][0] := '       Home';
   places[1][0] := sys_getuserhomedir;
-  places[0][1] := '      Desktop';
+  places[0][1] := '       Desktop';
   places[1][1] := sys_getuserhomedir + directoryseparator + 'Desktop';
-  places[0][2] := '      Music';
+  places[0][2] := '       Music';
   places[1][2] := sys_getuserhomedir + directoryseparator + 'Music';
-  places[0][3] := '      Pictures';
+  places[0][3] := '       Pictures';
   places[1][3] := sys_getuserhomedir + directoryseparator + 'Pictures';
-  places[0][4] := '      Videos';
+  places[0][4] := '       Videos';
   places[1][4] := sys_getuserhomedir + directoryseparator + 'Videos';
-  places[0][5] := '      Documents';
+  places[0][5] := '       Documents';
   places[1][5] := sys_getuserhomedir + directoryseparator + 'Documents';
-  places[0][6] := '      Downloads';
+  places[0][6] := '       Downloads';
   places[1][6] := sys_getuserhomedir + directoryseparator + 'Downloads';
 end;
 

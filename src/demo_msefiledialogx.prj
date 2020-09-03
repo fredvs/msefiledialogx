@@ -209,19 +209,22 @@ options=114
  y=68
  cx=874
  cy=572
-imagelisteditor=29
+imagelisteditor=32
  [imagelisteditorfo.statfile1]
  currentversion=0
  [imagelisteditorfo.filedialog]
  filenames=1
-  /home/fred/Pictures/download.png
+  /home/fred/strumpract/src/images/audiob.png
  filecolwidth=150
  x=659
  y=227
  cx=496
  cy=308
- lastdir=/home/fred/Pictures/
- filehistory=3
+ lastdir=/home/fred/strumpract/src/images/
+ filehistory=6
+  /home/fred/strumpract/src/images/audiob.png
+  /home/fred/strumpract/src/images/textb.png
+  /home/fred/strumpract/src/images/fileb.png
   /home/fred/Pictures/download.png
   /home/fred/Pictures/desktop.png
   /home/fred/Pictures/home.png
@@ -854,34 +857,39 @@ findhistory=20
  filedialogr
  getfileicon(
 findoptions=1
-editpos=6
- 0,1505
- 0,103
- 0,0
- 0,0
+editpos=7
+ 0,2063
  0,-1073741823
- 0,515
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
 bookmarks3=0
 bookmarks4=0
 bookmarks5=0
-sourcefiles=6
+bookmarks6=0
+sourcefiles=7
  ${PROJECTDIR}/msefiledialogx.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/demo_msefiledialogx.pas
  /home/fred/mseide-msegui/lib/common/widgets/msegrids.pas
  /home/fred/mseuniverse/testcase/graphics/radeonline/msegrids_test.pas
  /home/fred/mseide-msegui/lib/common/graphics/msebitmap.pas
-relpaths=6
+ ${PROJECTDIR}/main.pas
+relpaths=7
  msefiledialogx.pas
  main.pas
  demo_msefiledialogx.pas
- ../mseide-msegui/lib/common/widgets/msegrids.pas
+ mseide-msegui/lib/common/widgets/msegrids.pas
  mseuniverse/testcase/graphics/radeonline/msegrids_test.pas
- ../mseide-msegui/lib/common/graphics/msebitmap.pas
-ismoduletexts=6
+ mseide-msegui/lib/common/graphics/msebitmap.pas
+ main.pas
+ismoduletexts=7
+ 0
  0
  0
  0
@@ -905,17 +913,18 @@ nomenumodules=3
  0
  0
 [sourcefo.files_tab]
-order=6
+order=7
  0
- 5
- 1
  2
  3
+ 1
+ 5
+ 6
  4
 firsttab=0
 index=0
 [layout]
-windowlayout=600
+windowlayout=601
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -955,7 +964,7 @@ windowlayout=600
  rcy=0
  wsize=0
  active=0
- visible=0
+ visible=1
  [threadsfo]
  splitdir=0
  useroptions=268451945
@@ -1357,7 +1366,7 @@ windowlayout=600
  x=0
  y=0
  cx=1342
- cy=0
+ cy=-2
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -1410,12 +1419,13 @@ windowlayout=600
  rcx=0
  rcy=0
  [sourcefo.files_tab]
- order=6
+ order=7
   0
-  5
-  1
   2
   3
+  1
+  5
+  6
   4
  firsttab=0
  index=0
