@@ -88,6 +88,8 @@ var
   
    tfiledialog1.controller.fontheight := fontheight.value; // font height of dialogfile
    tfiledialog1.controller.fontname := fontname.value; // font name of dialogfile
+   tfiledialog1.controller.fontcolor := cl_black; // font color of dialogfile
+   tfiledialog1.controller.backcolor := cl_gray; // background color of dialogfile
   
   if custtitle.Value then
   begin
