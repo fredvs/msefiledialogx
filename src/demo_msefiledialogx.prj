@@ -864,9 +864,9 @@ findhistory=20
  list_log.Height
 findoptions=1
 editpos=3
- 0,2273
- 0,4
- 54,84
+ 0,-1073741823
+ 0,-1073741823
+ 2,86
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -942,7 +942,7 @@ windowlayout=593
  rcy=0
  wsize=0
  active=0
- visible=1
+ visible=0
  [threadsfo]
  splitdir=0
  useroptions=268451945
@@ -1297,7 +1297,7 @@ windowlayout=593
  [componentpalettefo]
  splitdir=0
  useroptions=268460139
- stackedunder=objectinspectorfo
+ stackedunder=
  parent=
  mdistate=3
  nx=0
@@ -1312,7 +1312,7 @@ windowlayout=593
  rcy=0
  wsize=0
  active=0
- visible=1
+ visible=0
  [componentpalettefo.componentpages]
  activetab=2
  [debuggerfo]
@@ -1356,8 +1356,8 @@ windowlayout=593
  [debuggerfo.file_history]
  value=/home/fred/msefiledialogx/src/main.pas
  history=20
-  /home/fred/msefiledialogx/src/demo_msefiledialogx.pas
   /home/fred/msefiledialogx/src/main.pas
+  /home/fred/msefiledialogx/src/demo_msefiledialogx.pas
   /home/fred/mseuniverse/testcase/graphics/radeonline/msegrids_test.pas
   /home/fred/strumpract/src/aboutform.pas
   /home/fred/ideu/src/msefiledialog.pas
@@ -1461,7 +1461,7 @@ windowlayout=593
  [_mse_filedialogfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=componentpalettefo
+ stackedunder=objectinspectorfo
  parent=
  mdistate=3
  nx=0
@@ -1480,7 +1480,7 @@ windowlayout=593
  [_mse_mainfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=targetconsolefo
+ stackedunder=mainfo
  parent=
  mdistate=3
  nx=0
@@ -1490,7 +1490,7 @@ windowlayout=593
  x=466
  y=208
  cx=413
- cy=322
+ cy=374
  rcx=0
  rcy=0
  wsize=0

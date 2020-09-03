@@ -10,7 +10,7 @@ uses
  msegrids,msegridsglob,mseificomp,mseificompglob,mseifiglob,mselistbrowser,
  msestatfile,msestream,msesys,SysUtils,msesimplewidgets,msedispwidgets,
  mserichstring,msegraphedits,msescrollbar,msefiledialogx, msesplitter,
-  msecolordialog;
+ msecolordialog;
 
 {msefiledialogx in last position (or after msefiledialog) will override it}
 
@@ -32,7 +32,8 @@ type
    fontname: tdropdownlistedit;
    fontheight: tintegeredit;
    tbutton2: tbutton;
-   tcoloredit1: tcoloredit;
+   tbackcolor: tcoloredit;
+   tfontcolor: tcoloredit;
     procedure onex(const Sender: TObject);
    procedure onclose(const sender: TObject);
   end;
@@ -90,9 +91,11 @@ var
   
    tfiledialog1.controller.fontheight := fontheight.value; // font height of dialogfile
    tfiledialog1.controller.fontname := fontname.value; // font name of dialogfile
-   tfiledialog1.controller.fontcolor := cl_black; // font color of dialogfile
-   if tcoloredit1.value <> cl_none then
-   tfiledialog1.controller.backcolor := tcoloredit1.value; // background color of dialogfile
+   if tfontcolor.value <> cl_none then
+   tfiledialog1.controller.fontcolor := tfontcolor.value; // font color of dialogfile
+   if tbackcolor.value <> cl_none then
+   tfiledialog1.controller.backcolor := tbackcolor.value; // background color of dialogfile
+    
   
   if custtitle.Value then
   begin

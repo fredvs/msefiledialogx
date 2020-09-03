@@ -2,14 +2,14 @@ object mainfo: tmainfo
   bounds_x = 466
   bounds_y = 208
   bounds_cx = 403
-  bounds_cy = 322
+  bounds_cy = 374
   container.frame.localprops = []
   container.frame.localprops1 = []
   container.bounds = (
     0
     0
     403
-    322
+    374
   )
   font.name = 'stf_default'
   font.localprops = []
@@ -32,7 +32,7 @@ object mainfo: tmainfo
     )
     taborder = 1
     bounds_x = 0
-    bounds_y = 270
+    bounds_y = 318
     bounds_cx = 403
     bounds_cy = 45
     anchors = [an_top]
@@ -215,8 +215,8 @@ object mainfo: tmainfo
   end
   object tbutton1: tbutton
     bounds_x = 64
-    bounds_y = 232
-    bounds_cx = 178
+    bounds_y = 272
+    bounds_cx = 186
     bounds_cy = 45
     state = [as_localcaption, as_localonexecute]
     caption = 'MSEFileDialogX'
@@ -249,8 +249,8 @@ object mainfo: tmainfo
       0
     )
     taborder = 7
-    bounds_x = 16
-    bounds_y = 176
+    bounds_x = 24
+    bounds_y = 168
     bounds_cx = 103
     bounds_cy = 39
     optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_readonlydialog, oe1_savevalue, oe1_savestate, oe1_checkvalueafterstatread]
@@ -283,8 +283,8 @@ object mainfo: tmainfo
     )
     taborder = 8
     hint = 'Font height for all ideU text'
-    bounds_x = 141
-    bounds_y = 176
+    bounds_x = 133
+    bounds_y = 168
     bounds_cx = 76
     bounds_cy = 39
     optionsedit1 = [oe1_autopopupmenu, oe1_savevalue, oe1_savestate]
@@ -296,15 +296,15 @@ object mainfo: tmainfo
   end
   object tbutton2: tbutton
     taborder = 9
-    bounds_x = 280
-    bounds_y = 232
+    bounds_x = 264
+    bounds_y = 272
     bounds_cx = 82
     bounds_cy = 45
     state = [as_localcaption, as_localonexecute]
     caption = 'Close'
     onexecute = onclose
   end
-  object tcoloredit1: tcoloredit
+  object tbackcolor: tcoloredit
     frame.caption = 'Background color'
     frame.localprops = []
     frame.localprops1 = []
@@ -323,14 +323,39 @@ object mainfo: tmainfo
       0
     )
     taborder = 10
-    bounds_x = 240
-    bounds_y = 174
-    bounds_cx = 148
+    bounds_x = 56
+    bounds_y = 222
+    bounds_cx = 292
+    bounds_cy = 39
+    reffontheight = 15
+  end
+  object tfontcolor: tcoloredit
+    frame.caption = 'Font color'
+    frame.localprops = []
+    frame.localprops1 = []
+    frame.buttons.count = 2
+    frame.buttons.items = <    
+      item
+      end    
+      item
+        imagenr = 17
+      end>
+    frame.buttonellipse.imagenr = 17
+    frame.outerframe = (
+      0
+      18
+      0
+      0
+    )
+    taborder = 11
+    bounds_x = 216
+    bounds_y = 168
+    bounds_cx = 172
     bounds_cy = 39
     reffontheight = 15
   end
   object tfiledialog1: tfiledialog
-    left = 16
-    top = 232
+    left = 283
+    top = 48
   end
 end
