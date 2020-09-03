@@ -214,9 +214,9 @@ object mainfo: tmainfo
     reffontheight = 15
   end
   object tbutton1: tbutton
-    bounds_x = 128
+    bounds_x = 64
     bounds_y = 232
-    bounds_cx = 146
+    bounds_cx = 178
     bounds_cy = 45
     state = [as_localcaption, as_localonexecute]
     caption = 'MSEFileDialogX'
@@ -293,6 +293,16 @@ object mainfo: tmainfo
     valuemin = 1
     valuemax = 100
     reffontheight = 15
+  end
+  object tbutton2: tbutton
+    taborder = 9
+    bounds_x = 280
+    bounds_y = 232
+    bounds_cx = 82
+    bounds_cy = 45
+    state = [as_localcaption, as_localonexecute]
+    caption = 'Close'
+    onexecute = onclose
   end
   object tfiledialog1: tfiledialog
     left = 16

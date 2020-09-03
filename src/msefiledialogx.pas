@@ -1512,7 +1512,7 @@ begin
       end
       else
       begin
-        list_log[0][x] := '       ' + utf8decode(filenamebase(listview.itemlist[x].Caption));
+        list_log[0][x] := '~     ' + utf8decode(filenamebase(listview.itemlist[x].Caption));
         tmp := fileext(listview.itemlist[x].Caption);
         if tmp <> '' then
           tmp := '.' + tmp;
@@ -1520,7 +1520,9 @@ begin
         list_log[0][x] := list_log[0][x] + list_log[1][x];
      end;
       
-      thedir := dir.Value + trim(list_log[0][x]);
+    //  thedir := dir.Value + trim(list_log[0][x]);
+      
+      thedir := dir.Value + (listview.itemlist[x].Caption);
 
       getfileinfo(utf8decode(trim(thedir)), info);
 
@@ -1532,28 +1534,28 @@ begin
           y2        := Trunc(Frac(info.extinfo1.size / 1000000000) * Power(10, 1));
           y         := info.extinfo1.size div 1000000000;
           thestrx   := '~';
-          thestrext := ' GB';
+          thestrext := ' GB ';
         end
         else if info.extinfo1.size div 1000000 > 0 then
         begin
           y2        := Trunc(Frac(info.extinfo1.size / 1000000) * Power(10, 1));
           y         := info.extinfo1.size div 1000000;
           thestrx   := '_';
-          thestrext := ' MB';
+          thestrext := ' MB ';
         end
         else if info.extinfo1.size div 1000 > 0 then
         begin
           y2        := Trunc(Frac(info.extinfo1.size / 1000) * Power(10, 1));
           y         := info.extinfo1.size div 1000;
           thestrx   := '^';
-          thestrext := ' KB';
+          thestrext := ' KB ';
         end
         else
         begin
           y2        := 0;
           y         := info.extinfo1.size;
           thestrx   := ' ';
-          thestrext := ' B';
+          thestrext := ' B ';
         end;
 
 
@@ -1795,7 +1797,7 @@ var
   cellpos, cellpos2: gridcoordty;
   x, y: integer;
   str1: string;
-begin
+ begin
 
   if (list_log.rowcount > 0) and ((info.eventkind = cek_buttonrelease) or (info.eventkind = cek_keyup)) then
     if (info.cell.row > -1) then
@@ -1865,6 +1867,7 @@ end;
 procedure tfiledialogfo.ondrawcell(const Sender: tcol; const Canvas: tcanvas; var cellinfo: cellinfoty);
 var
   aicon: integer;
+  apoint : pointty;
 begin
 
   if (list_log[1][cellinfo.cell.row] = '') and (list_log[2][cellinfo.cell.row] = '') then
@@ -1942,8 +1945,11 @@ begin
     aicon := 6
   else
     aicon := 1;
+    
+    apoint.x := 2;
+    apoint.y := 1;
 
-  iconslist.paint(Canvas, aicon, nullpoint, cl_default,
+  iconslist.paint(Canvas, aicon, apoint, cl_default,
     cl_default, cl_default, 0);
 
 end;
@@ -2010,6 +2016,7 @@ end;
 procedure tfiledialogfo.ondrawcellplace(const Sender: tcol; const Canvas: tcanvas; var cellinfo: cellinfoty);
 var
   aicon: integer;
+  apoint : pointty;
 begin
 
   if cellinfo.cell.row = 0 then
@@ -2026,8 +2033,11 @@ begin
     aicon := 2
   else if cellinfo.cell.row = 6 then
     aicon := 15;
+    
+    apoint.x := 2;
+    apoint.y := 3;
 
-  iconslist.paint(Canvas, aicon, nullpoint, cl_default,
+  iconslist.paint(Canvas, aicon, apoint, cl_default,
     cl_default, cl_default, 0);
 
 end;

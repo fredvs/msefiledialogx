@@ -30,7 +30,9 @@ type
    tfiledialog1: tfiledialog;
    fontname: tdropdownlistedit;
    fontheight: tintegeredit;
+   tbutton2: tbutton;
     procedure onex(const Sender: TObject);
+   procedure onclose(const sender: TObject);
   end;
 
 var
@@ -95,6 +97,11 @@ var
   else if tfiledialog1.controller.Execute(dialogkind) = mr_ok then
     tstringdisp1.Text := tfiledialog1.controller.filename;
 
+end;
+
+procedure tmainfo.onclose(const sender: TObject);
+begin
+close;
 end;
 
 end.
