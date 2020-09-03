@@ -857,14 +857,15 @@ findhistory=20
  filedialogr
  getfileicon(
 findoptions=1
-editpos=7
- 0,2063
+editpos=8
+ 5,2069
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
+ 0,0
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -872,7 +873,8 @@ bookmarks3=0
 bookmarks4=0
 bookmarks5=0
 bookmarks6=0
-sourcefiles=7
+bookmarks7=0
+sourcefiles=8
  ${PROJECTDIR}/msefiledialogx.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/demo_msefiledialogx.pas
@@ -880,7 +882,8 @@ sourcefiles=7
  /home/fred/mseuniverse/testcase/graphics/radeonline/msegrids_test.pas
  /home/fred/mseide-msegui/lib/common/graphics/msebitmap.pas
  ${PROJECTDIR}/main.pas
-relpaths=7
+ ${PROJECTDIR}/main.pas
+relpaths=8
  msefiledialogx.pas
  main.pas
  demo_msefiledialogx.pas
@@ -888,7 +891,9 @@ relpaths=7
  mseuniverse/testcase/graphics/radeonline/msegrids_test.pas
  mseide-msegui/lib/common/graphics/msebitmap.pas
  main.pas
-ismoduletexts=7
+ main.pas
+ismoduletexts=8
+ 0
  0
  0
  0
@@ -913,8 +918,9 @@ nomenumodules=3
  0
  0
 [sourcefo.files_tab]
-order=7
+order=8
  0
+ 7
  2
  3
  1
@@ -924,7 +930,7 @@ order=7
 firsttab=0
 index=0
 [layout]
-windowlayout=601
+windowlayout=602
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1366,7 +1372,7 @@ windowlayout=601
  x=0
  y=0
  cx=1342
- cy=-2
+ cy=0
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -1419,8 +1425,9 @@ windowlayout=601
  rcx=0
  rcy=0
  [sourcefo.files_tab]
- order=7
+ order=8
   0
+  7
   2
   3
   1
