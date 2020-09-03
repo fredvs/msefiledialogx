@@ -289,9 +289,7 @@ object mainfo: tmainfo
     bounds_cy = 39
     optionsedit1 = [oe1_autopopupmenu, oe1_savevalue, oe1_savestate]
     optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
-    value = 12
-    valuemin = 1
-    valuemax = 100
+    valuemax = 20
     reffontheight = 15
   end
   object tbutton2: tbutton

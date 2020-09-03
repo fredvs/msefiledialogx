@@ -840,8 +840,10 @@ envvarons=0
 [edit]
 hintwidth=0
 hintheight=0
-finddtext=fontname
+finddtext=tsplitter2
 findhistory=20
+ tsplitter2
+ tspliter2
  fontname
  color
  filter.vis
@@ -860,13 +862,11 @@ findhistory=20
  anchor
  listview.hei
  fontheight
- listlog.h
- list_log.Height
 findoptions=1
 editpos=3
+ 0,1986
  0,-1073741823
- 0,-1073741823
- 2,86
+ 0,139
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -900,7 +900,7 @@ nomenumodules=3
  0
 [sourcefo.files_tab]
 firsttab=0
-index=2
+index=0
 [layout]
 windowlayout=593
  [mainfo.basedock]
@@ -942,7 +942,7 @@ windowlayout=593
  rcy=0
  wsize=0
  active=0
- visible=0
+ visible=1
  [threadsfo]
  splitdir=0
  useroptions=268451945
@@ -1354,7 +1354,7 @@ windowlayout=593
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/msefiledialogx/src/main.pas
+ value=/home/fred/msefiledialogx/src/msefiledialogx.pas
  history=20
   /home/fred/msefiledialogx/src/main.pas
   /home/fred/msefiledialogx/src/demo_msefiledialogx.pas
@@ -1398,7 +1398,7 @@ windowlayout=593
  rcy=0
  [sourcefo.files_tab]
  firsttab=0
- index=2
+ index=0
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
@@ -1442,7 +1442,7 @@ windowlayout=593
  [_mse_filedialogres_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_filedialogfo_mse_
+ stackedunder=_mse_mainfo_mse_
  parent=
  mdistate=3
  nx=0
@@ -1480,7 +1480,7 @@ windowlayout=593
  [_mse_mainfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=mainfo
+ stackedunder=targetconsolefo
  parent=
  mdistate=3
  nx=0
