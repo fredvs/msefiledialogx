@@ -249,9 +249,9 @@ object mainfo: tmainfo
       0
     )
     taborder = 7
-    bounds_x = 64
+    bounds_x = 16
     bounds_y = 176
-    bounds_cx = 135
+    bounds_cx = 103
     bounds_cy = 39
     optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_readonlydialog, oe1_savevalue, oe1_savestate, oe1_checkvalueafterstatread]
     value = 'stf_default'
@@ -283,7 +283,7 @@ object mainfo: tmainfo
     )
     taborder = 8
     hint = 'Font height for all ideU text'
-    bounds_x = 245
+    bounds_x = 141
     bounds_y = 176
     bounds_cx = 76
     bounds_cy = 39
@@ -303,6 +303,31 @@ object mainfo: tmainfo
     state = [as_localcaption, as_localonexecute]
     caption = 'Close'
     onexecute = onclose
+  end
+  object tcoloredit1: tcoloredit
+    frame.caption = 'Background color'
+    frame.localprops = []
+    frame.localprops1 = []
+    frame.buttons.count = 2
+    frame.buttons.items = <    
+      item
+      end    
+      item
+        imagenr = 17
+      end>
+    frame.buttonellipse.imagenr = 17
+    frame.outerframe = (
+      0
+      18
+      0
+      0
+    )
+    taborder = 10
+    bounds_x = 240
+    bounds_y = 174
+    bounds_cx = 148
+    bounds_cy = 39
+    reffontheight = 15
   end
   object tfiledialog1: tfiledialog
     left = 16

@@ -863,57 +863,22 @@ findhistory=20
  listlog.h
  list_log.Height
 findoptions=1
-editpos=10
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,9
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
+editpos=3
+ 0,2273
+ 0,4
+ 54,84
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
-bookmarks3=0
-bookmarks4=0
-bookmarks5=0
-bookmarks6=0
-bookmarks7=0
-bookmarks8=0
-bookmarks9=0
-sourcefiles=10
+sourcefiles=3
  ${PROJECTDIR}/msefiledialogx.pas
- ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/demo_msefiledialogx.pas
- /home/fred/mseide-msegui/lib/common/widgets/msegrids.pas
- /home/fred/mseuniverse/testcase/graphics/radeonline/msegrids_test.pas
- /home/fred/mseide-msegui/lib/common/graphics/msebitmap.pas
  ${PROJECTDIR}/main.pas
- ${PROJECTDIR}/main.pas
- ${PROJECTDIR}/main.pas
- ${PROJECTDIR}/main.pas
-relpaths=10
+relpaths=3
  msefiledialogx.pas
- main.pas
  demo_msefiledialogx.pas
- mseide-msegui/lib/common/widgets/msegrids.pas
- ../mseuniverse/testcase/graphics/radeonline/msegrids_test.pas
- mseide-msegui/lib/common/graphics/msebitmap.pas
  main.pas
- main.pas
- main.pas
- main.pas
-ismoduletexts=10
- 0
- 0
- 0
- 0
- 0
- 0
- 0
+ismoduletexts=3
  0
  0
  0
@@ -934,21 +899,10 @@ nomenumodules=3
  0
  0
 [sourcefo.files_tab]
-order=10
- 0
- 5
- 2
- 4
- 1
- 9
- 7
- 3
- 8
- 6
 firsttab=0
-index=3
+index=2
 [layout]
-windowlayout=604
+windowlayout=593
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -980,7 +934,7 @@ windowlayout=604
  ny=0
  ncx=0
  ncy=0
- x=697
+ x=629
  y=451
  cx=497
  cy=314
@@ -1056,7 +1010,7 @@ windowlayout=604
  [findinfilefo]
  splitdir=0
  useroptions=268451947
- stackedunder=mainfo
+ stackedunder=
  parent=
  mdistate=0
  nx=0
@@ -1343,7 +1297,7 @@ windowlayout=604
  [componentpalettefo]
  splitdir=0
  useroptions=268460139
- stackedunder=
+ stackedunder=objectinspectorfo
  parent=
  mdistate=3
  nx=0
@@ -1358,9 +1312,9 @@ windowlayout=604
  rcy=0
  wsize=0
  active=0
- visible=0
+ visible=1
  [componentpalettefo.componentpages]
- activetab=0
+ activetab=2
  [debuggerfo]
  splitdir=0
  useroptions=24683
@@ -1400,10 +1354,11 @@ windowlayout=604
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/mseuniverse/testcase/graphics/radeonline/msegrids_test.pas
+ value=/home/fred/msefiledialogx/src/main.pas
  history=20
-  /home/fred/mseuniverse/testcase/graphics/radeonline/msegrids_test.pas
+  /home/fred/msefiledialogx/src/demo_msefiledialogx.pas
   /home/fred/msefiledialogx/src/main.pas
+  /home/fred/mseuniverse/testcase/graphics/radeonline/msegrids_test.pas
   /home/fred/strumpract/src/aboutform.pas
   /home/fred/ideu/src/msefiledialog.pas
   /home/fred/strumpract/src/imagedancer.pas
@@ -1411,7 +1366,6 @@ windowlayout=604
   /home/fred/strumpract/src/spectrum1.pas
   /home/fred/strumpract/src/config.pas
   /home/fred/strumpract/src/msefiledialogx.pas
-  /home/fred/msefiledialogx/src/demo_msefiledialogx.pas
   /home/fred/mseide-msegui/lib/common/dialogs/msefiledialog.pas
   /home/fred/msefiledialogx/src/msefiledialogres.pas
   /home/fred/msefiledialogx/src/msefiledialogx.pas
@@ -1443,19 +1397,8 @@ windowlayout=604
  rcx=0
  rcy=0
  [sourcefo.files_tab]
- order=10
-  0
-  5
-  2
-  4
-  1
-  9
-  7
-  3
-  8
-  6
  firsttab=0
- index=3
+ index=2
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
@@ -1518,7 +1461,7 @@ windowlayout=604
  [_mse_filedialogfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_mainfo_mse_
+ stackedunder=componentpalettefo
  parent=
  mdistate=3
  nx=0
