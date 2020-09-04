@@ -512,7 +512,7 @@ befcommandon=0
 makeoptionson=6
  4095
  31
- 34
+ 38
  36
  4095
  4095
@@ -864,9 +864,9 @@ findhistory=20
  fontheight
 findoptions=1
 editpos=3
- 0,1986
+ 61,1951
  0,-1073741823
- 0,139
+ 0,-1073741823
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1339,12 +1339,12 @@ windowlayout=593
  mdistate=0
  nx=0
  ny=0
- ncx=1327
+ ncx=1342
  ncy=0
  x=0
  y=0
  cx=1342
- cy=-2
+ cy=0
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -1356,6 +1356,7 @@ windowlayout=593
  [debuggerfo.file_history]
  value=/home/fred/msefiledialogx/src/msefiledialogx.pas
  history=20
+  /home/fred/msefiledialogx/src/msefiledialogx.pas
   /home/fred/msefiledialogx/src/main.pas
   /home/fred/msefiledialogx/src/demo_msefiledialogx.pas
   /home/fred/mseuniverse/testcase/graphics/radeonline/msegrids_test.pas
@@ -1368,7 +1369,6 @@ windowlayout=593
   /home/fred/strumpract/src/msefiledialogx.pas
   /home/fred/mseide-msegui/lib/common/dialogs/msefiledialog.pas
   /home/fred/msefiledialogx/src/msefiledialogres.pas
-  /home/fred/msefiledialogx/src/msefiledialogx.pas
   /home/fred/msefiledialogx/msefiledialogx.pas
   /home/fred/msefiledialogx/main.pas
   /home/fred/msefiledialogx/demo_msefiledialogx.pas
@@ -1442,7 +1442,7 @@ windowlayout=593
  [_mse_filedialogres_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_mainfo_mse_
+ stackedunder=_mse_filedialogfo_mse_
  parent=
  mdistate=3
  nx=0
@@ -1461,7 +1461,7 @@ windowlayout=593
  [_mse_filedialogfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=objectinspectorfo
+ stackedunder=_mse_mainfo_mse_
  parent=
  mdistate=3
  nx=0
