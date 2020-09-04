@@ -205,7 +205,7 @@ options=114
  firsttab=1
  index=2
  [projectoptionsfo]
- stackedunder=finddialogfo
+ stackedunder=
  x=205
  y=68
  cx=874
@@ -513,7 +513,7 @@ befcommandon=0
 makeoptionson=6
  4095
  31
- 34
+ 38
  36
  4095
  4095
@@ -864,40 +864,25 @@ findhistory=20
  ' .
  '.
 findoptions=1
-editpos=6
- 12,2592
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
+editpos=3
+ 0,1251
+ 0,0
+ 0,0
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
-bookmarks3=0
-bookmarks4=0
-bookmarks5=0
-sourcefiles=6
+sourcefiles=3
  ${PROJECTDIR}/msefiledialogx.pas
- ${PROJECTDIR}/demo_msefiledialogx.pas
  ${PROJECTDIR}/main.pas
- /home/fred/mseuniverse/add-on/lib/addon/repaz/repazclasses.pas
- /home/fred/mseuniverse/tools/kicad/bom/mainmodule.pas
- /home/fred/mseuniverse/tools/kicad/bom/mainmodule.mfm
-relpaths=6
+ ${PROJECTDIR}/demo_msefiledialogx.pas
+relpaths=3
  msefiledialogx.pas
- demo_msefiledialogx.pas
  main.pas
- mseuniverse/add-on/lib/addon/repaz/repazclasses.pas
- mseuniverse/tools/kicad/bom/mainmodule.pas
- mseuniverse/tools/kicad/bom/mainmodule.mfm
-ismoduletexts=6
+ demo_msefiledialogx.pas
+ismoduletexts=3
  0
  0
  0
- 0
- 0
- -1
 modules=3
  /home/fred/mseide-msegui/lib/common/dialogs/msefiledialogres.mfm
  /home/fred/msefiledialogx/src/msefiledialogx.mfm
@@ -915,17 +900,10 @@ nomenumodules=3
  0
  0
 [sourcefo.files_tab]
-order=6
- 0
- 2
- 3
- 4
- 5
- 1
 firsttab=0
-index=0
+index=2
 [layout]
-windowlayout=600
+windowlayout=593
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1377,7 +1355,7 @@ windowlayout=600
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/msefiledialogx/src/msefiledialogx.pas
+ value=/home/fred/msefiledialogx/src/demo_msefiledialogx.pas
  history=20
   /home/fred/msefiledialogx/src/msefiledialogx.pas
   /home/fred/msefiledialogx/src/main.pas
@@ -1420,15 +1398,8 @@ windowlayout=600
  rcx=0
  rcy=0
  [sourcefo.files_tab]
- order=6
-  0
-  2
-  3
-  4
-  5
-  1
  firsttab=0
- index=0
+ index=2
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
@@ -1491,7 +1462,7 @@ windowlayout=600
  [_mse_filedialogfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_mainfo_mse_
+ stackedunder=targetconsolefo
  parent=
  mdistate=3
  nx=0
@@ -1510,7 +1481,7 @@ windowlayout=600
  [_mse_mainfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=objectinspectorfo
+ stackedunder=mainfo
  parent=
  mdistate=3
  nx=0
