@@ -91,8 +91,8 @@ finddialog=8
  value=0
  [finddialogfo]
  stackedunder=
- x=969
- y=389
+ x=827
+ y=496
  cx=234
  cy=269
 options=114
@@ -841,8 +841,18 @@ envvarons=0
 [edit]
 hintwidth=0
 hintheight=0
-finddtext=visible
+finddtext=tag :=
 findhistory=20
+ tag :=
+ selected fi
+ 'name of
+ fdk_save
+ save
+ defoc
+ dironsetv
+ dirsetv
+ defocu
+ tag =
  visible
  visible=
  visible =
@@ -853,21 +863,11 @@ findhistory=20
  visible :=
  select
  tsplitter2
- tspliter2
- fontname
- color
- filter.vis
- ~
- MB
- apoint
- strtoint
- ' .
- '.
 findoptions=1
 editpos=3
- 0,1251
- 0,0
- 0,0
+ 0,2272
+ 0,-1073741823
+ 0,-1073741823
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -901,7 +901,7 @@ nomenumodules=3
  0
 [sourcefo.files_tab]
 firsttab=0
-index=2
+index=0
 [layout]
 windowlayout=593
  [mainfo.basedock]
@@ -1047,7 +1047,7 @@ windowlayout=593
  width1=28
  sortdescend1=0
  sorted=0
- col=0
+ col=1
  row=1
  rowheight=16
  [stackfo]
@@ -1355,19 +1355,19 @@ windowlayout=593
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/msefiledialogx/src/demo_msefiledialogx.pas
+ value=/home/fred/msefiledialogx/src/msefiledialogx.pas
  history=20
   /home/fred/msefiledialogx/src/msefiledialogx.pas
+  /home/fred/msefiledialogx/src/main2.pas
   /home/fred/msefiledialogx/src/main.pas
-  /home/fred/msefiledialogx/src/demo_msefiledialogx.pas
-  /home/fred/mseuniverse/testcase/graphics/radeonline/msegrids_test.pas
+  /home/fred/strumpract/src/spectrum1.pas
   /home/fred/strumpract/src/aboutform.pas
   /home/fred/ideu/src/msefiledialog.pas
   /home/fred/strumpract/src/imagedancer.pas
   /home/fred/strumpract/src/dockpanel1.pas
-  /home/fred/strumpract/src/spectrum1.pas
   /home/fred/strumpract/src/config.pas
   /home/fred/strumpract/src/msefiledialogx.pas
+  /home/fred/msefiledialogx/src/demo_msefiledialogx.pas
   /home/fred/mseide-msegui/lib/common/dialogs/msefiledialog.pas
   /home/fred/msefiledialogx/src/msefiledialogres.pas
   /home/fred/msefiledialogx/msefiledialogx.pas
@@ -1399,7 +1399,7 @@ windowlayout=593
  rcy=0
  [sourcefo.files_tab]
  firsttab=0
- index=2
+ index=0
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
@@ -1462,7 +1462,7 @@ windowlayout=593
  [_mse_filedialogfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=targetconsolefo
+ stackedunder=_mse_mainfo_mse_
  parent=
  mdistate=3
  nx=0
@@ -1481,7 +1481,7 @@ windowlayout=593
  [_mse_mainfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=mainfo
+ stackedunder=targetconsolefo
  parent=
  mdistate=3
  nx=0

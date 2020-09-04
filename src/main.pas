@@ -94,6 +94,7 @@ begin
   else if b_fdk_new.Value then
     dialogkind := fdk_new;
 
+  tfiledialog1.controller.captionnew := 'New File'; 
   tfiledialog1.controller.captionopen := 'Open File';
   tfiledialog1.controller.captionsave := 'Save File as';
   tfiledialog1.controller.captiondir  := 'Open Directory';
