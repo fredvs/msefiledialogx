@@ -19,7 +19,7 @@ order16=0
 [projectoptions]
 projectdir=/home/fred/msefiledialogx/src
 projectfilename=/home/fred/msefiledialogx/src/demo_msefiledialogx.prj
-findinfiledialog=65
+findinfiledialog=66
  [findinfileadialogfo.subdirs]
  value=1
  [findinfileadialogfo.incurrentfile]
@@ -29,9 +29,9 @@ findinfiledialog=65
  [findinfileadialogfo.wholeword]
  value=0
  [findinfileadialogfo.indirectories]
- value=0
- [findinfileadialogfo.inprojectdir]
  value=1
+ [findinfileadialogfo.inprojectdir]
+ value=0
  [findinfileadialogfo.casesensitive]
  value=0
  [findinfileadialogfo.mask]
@@ -58,8 +58,9 @@ findinfiledialog=65
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc" "*.mfm"
  [findinfileadialogfo.findtext]
- value=filedialog
- history=19
+ value=filenamebase
+ history=20
+  filenamebase
   filedialog
   keyeventinfopo
   cek_buttonrelease
@@ -90,8 +91,8 @@ finddialog=8
  value=0
  [finddialogfo]
  stackedunder=
- x=844
- y=241
+ x=969
+ y=389
  cx=234
  cy=269
 options=114
@@ -204,7 +205,7 @@ options=114
  firsttab=1
  index=2
  [projectoptionsfo]
- stackedunder=
+ stackedunder=finddialogfo
  x=205
  y=68
  cx=874
@@ -512,7 +513,7 @@ befcommandon=0
 makeoptionson=6
  4095
  31
- 38
+ 34
  36
  4095
  4095
@@ -840,8 +841,17 @@ envvarons=0
 [edit]
 hintwidth=0
 hintheight=0
-finddtext=tsplitter2
+finddtext=visible
 findhistory=20
+ visible
+ visible=
+ visible =
+ .tag
+ if filename.tag = 1
+ Directory name
+ caption :=
+ visible :=
+ select
  tsplitter2
  tspliter2
  fontname
@@ -853,35 +863,41 @@ findhistory=20
  strtoint
  ' .
  '.
- ".
- visible :=
- filedial
- filed
- listview.h
- filter.width
- anchor
- listview.hei
- fontheight
 findoptions=1
-editpos=3
- 61,1951
+editpos=6
+ 12,2592
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
  0,-1073741823
  0,-1073741823
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
-sourcefiles=3
+bookmarks3=0
+bookmarks4=0
+bookmarks5=0
+sourcefiles=6
  ${PROJECTDIR}/msefiledialogx.pas
  ${PROJECTDIR}/demo_msefiledialogx.pas
  ${PROJECTDIR}/main.pas
-relpaths=3
+ /home/fred/mseuniverse/add-on/lib/addon/repaz/repazclasses.pas
+ /home/fred/mseuniverse/tools/kicad/bom/mainmodule.pas
+ /home/fred/mseuniverse/tools/kicad/bom/mainmodule.mfm
+relpaths=6
  msefiledialogx.pas
  demo_msefiledialogx.pas
  main.pas
-ismoduletexts=3
+ mseuniverse/add-on/lib/addon/repaz/repazclasses.pas
+ mseuniverse/tools/kicad/bom/mainmodule.pas
+ mseuniverse/tools/kicad/bom/mainmodule.mfm
+ismoduletexts=6
  0
  0
  0
+ 0
+ 0
+ -1
 modules=3
  /home/fred/mseide-msegui/lib/common/dialogs/msefiledialogres.mfm
  /home/fred/msefiledialogx/src/msefiledialogx.mfm
@@ -899,10 +915,17 @@ nomenumodules=3
  0
  0
 [sourcefo.files_tab]
+order=6
+ 0
+ 2
+ 3
+ 4
+ 5
+ 1
 firsttab=0
 index=0
 [layout]
-windowlayout=593
+windowlayout=600
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -934,8 +957,8 @@ windowlayout=593
  ny=0
  ncx=0
  ncy=0
- x=629
- y=451
+ x=532
+ y=275
  cx=497
  cy=314
  rcx=0
@@ -1339,12 +1362,12 @@ windowlayout=593
  mdistate=0
  nx=0
  ny=0
- ncx=1342
+ ncx=1327
  ncy=0
  x=0
  y=0
  cx=1342
- cy=0
+ cy=-2
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -1397,6 +1420,13 @@ windowlayout=593
  rcx=0
  rcy=0
  [sourcefo.files_tab]
+ order=6
+  0
+  2
+  3
+  4
+  5
+  1
  firsttab=0
  index=0
  [confideufo.fontname]
@@ -1480,7 +1510,7 @@ windowlayout=593
  [_mse_mainfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=targetconsolefo
+ stackedunder=objectinspectorfo
  parent=
  mdistate=3
  nx=0
