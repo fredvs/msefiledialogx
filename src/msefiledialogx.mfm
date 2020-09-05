@@ -19,6 +19,7 @@ object filedialogfo: Tfiledialogfo
     335
   )
   options = [fo_screencentered, fo_closeonesc, fo_localshortcuts, fo_autoreadstat, fo_autowritestat, fo_savepos]
+  statfile = tstatfile1
   caption = 'Select a file'
   icon.origformat = 'bmp'
   icon.image = {
@@ -53,6 +54,27 @@ object filedialogfo: Tfiledialogfo
   left = 239
   top = 138
   moduleclassname = 'tmseform'
+  object showhidden2: tbooleanedit
+    frame.levelo = 0
+    frame.caption = '&Show hidden'
+    frame.localprops = [frl_levelo]
+    frame.localprops1 = []
+    frame.outerframe = (
+      0
+      2
+      82
+      3
+    )
+    taborder = 19
+    hint = 'Show hidden files'
+    bounds_x = 320
+    bounds_y = 152
+    bounds_cx = 95
+    bounds_cy = 17
+    anchors = [an_top, an_right]
+    statfile = tstatfile1
+    visible = False
+  end
   object listview: tfilelistview
     optionswidget = [ow_mousefocus, ow_arrowfocus, ow_focusbackonesc, ow_mousewheel, ow_destroywidgets]
     frame.localprops = []
@@ -651,6 +673,7 @@ object filedialogfo: Tfiledialogfo
     bounds_y = 38
     bounds_cx = 70
     bounds_cy = 17
+    statfile = tstatfile1
     onsetvalue = onsetcomp
   end
   object places: tstringgrid
@@ -775,6 +798,7 @@ object filedialogfo: Tfiledialogfo
     bounds_y = 38
     bounds_cx = 77
     bounds_cy = 17
+    statfile = tstatfile1
     onsetvalue = onlateral
   end
   object tsplitter2: tsplitter
@@ -1300,5 +1324,10 @@ object filedialogfo: Tfiledialogfo
       0000000000000000000000000000000000000044000000000000000000000000
       010919190A01000000000000
     }
+  end
+  object tstatfile1: tstatfile
+    filename = 'status.sta'
+    left = 144
+    top = 128
   end
 end

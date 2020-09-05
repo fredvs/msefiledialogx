@@ -841,8 +841,14 @@ envvarons=0
 [edit]
 hintwidth=0
 hintheight=0
-finddtext=readstat
+finddtext=filedialog1(
 findhistory=20
+ filedialog1(
+ .execu
+ tfiledialog.ex
+ tfiledialog1
+ showhidd
+ hidden
  readstat
  readststat
  writestat
@@ -857,16 +863,10 @@ findhistory=20
  defocu
  tag =
  visible
- visible=
- visible =
- .tag
- if filename.tag = 1
- Directory name
- caption :=
 findoptions=1
 editpos=3
- 0,2106
- 0,8
+ 61,6
+ 0,-1073741823
  0,-1073741823
 bookmarks0=0
 bookmarks1=0
@@ -1131,10 +1131,10 @@ windowlayout=593
  [breakpointsfo.bkptson]
  value=1
  [objectinspectorfo.grid]
- propcolwidthref=532
- width0=236
+ propcolwidthref=547
+ width0=243
  sortdescend0=0
- width1=290
+ width1=298
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -1305,8 +1305,8 @@ windowlayout=593
  ny=0
  ncx=0
  ncy=0
- x=240
- y=139
+ x=200
+ y=50
  cx=956
  cy=77
  rcx=0
@@ -1315,7 +1315,7 @@ windowlayout=593
  active=0
  visible=0
  [componentpalettefo.componentpages]
- activetab=2
+ activetab=4
  [debuggerfo]
  splitdir=0
  useroptions=24683

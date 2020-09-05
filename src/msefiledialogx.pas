@@ -31,54 +31,14 @@ interface
 {$endif}
 
 uses
-  Math,
-  mseglob,
-  mseguiglob,
-  mseforms,
-  Classes,
-  mclasses,
-  mseclasses,
-  msewidgets,
-  msegrids,
-  mselistbrowser,
-  mseedit,
-  msesimplewidgets,
-  msedataedits,
-  msedialog,
-  msetypes,
-  msestrings,
-  msesystypes,
-  msesys,
-  msedispwidgets,
-  msedatalist,
-  msestat,
-  msestatfile,
-  msebitmap,
-  msedatanodes,
-  msefileutils,
-  msedropdownlist,
-  mseevent,
-  msegraphedits,
-  mseeditglob,
-  msesplitter,
-  msemenus,
-  msegridsglob,
-  msegraphics,
-  msegraphutils,
-  msedirtree,
-  msewidgetgrid,
-  mseact,
-  mseapplication,
-  msegui,
-  mseificomp,
-  mseificompglob,
-  mseifiglob,
-  msestream,
-  SysUtils,
-  msemenuwidgets,
-  msescrollbar,
-  msedragglob,
-  msefiledialog;
+ Math,mseglob,mseguiglob,mseforms,Classes,mclasses,mseclasses,msewidgets,
+ msegrids,mselistbrowser,mseedit,msesimplewidgets,msedataedits,msedialog,
+ msetypes,msestrings,msesystypes,msesys,msedispwidgets,msedatalist,msestat,
+ msestatfile,msebitmap,msedatanodes,msefileutils,msedropdownlist,mseevent,
+ msegraphedits,mseeditglob,msesplitter,msemenus,msegridsglob,msegraphics,
+ msegraphutils,msedirtree,msewidgetgrid,mseact,mseapplication,msegui,mseificomp,
+ mseificompglob,mseifiglob,msestream,SysUtils,msemenuwidgets,msescrollbar,
+ msedragglob,msefiledialog;
 
 const
   defaultlistviewoptionsfile = defaultlistviewoptions + [lvo_readonly, lvo_horz];
@@ -593,6 +553,8 @@ type
     blateral: tbooleanedit;
     iconslist: timagelist;
     tsplitter2: tsplitter;
+   tstatfile1: tstatfile;
+   showhidden2: tbooleanedit;
     procedure createdironexecute(const Sender: TObject);
     procedure listviewselectionchanged(const Sender: tcustomlistview);
     procedure listviewitemevent(const Sender: tcustomlistview; const index: integer; var info: celleventinfoty);
@@ -736,6 +698,7 @@ function filedialog1(dialog: tfiledialogfo; var afilenames: filenamearty; const 
   const adefaultext: filenamety; const imagelist: timagelist; const ongetfileicon: getfileiconeventty; const oncheckfile: checkfileeventty): modalresultty;
 var
   int1: integer;
+  abool: boolean;
 begin
   with dialog do
   begin
@@ -804,7 +767,12 @@ begin
     if filename.tag = 1  then
     filename.value := ExtractFilePath(filename.value);
     
-    showhidden.Value := not (fa_hidden in excludeattrib);
+    abool := true;
+   
+   showhidden.value := showhidden2.value;
+  if showhidden.value then showhiddenonsetvalue(nil,abool,abool);
+    
+  //  showhidden.Value := not (fa_hidden in excludeattrib);
     Show(True);
     Result      := window.modalresult;
     if Result <> mr_ok then
@@ -1719,6 +1687,7 @@ end;
 
 procedure tfiledialogfo.showhiddenonsetvalue(const Sender: TObject; var avalue: Boolean; var accept: Boolean);
 begin
+ showhidden2.value := avalue;
   dir.showhiddenfiles      := avalue;
   if avalue then
     listview.excludeattrib := listview.excludeattrib - [fa_hidden]
@@ -2096,6 +2065,7 @@ end;
 procedure tfiledialogfo.onformcreated(const Sender: TObject);
 var
 x : integer = 0;
+abool : boolean;
 begin
   if directoryexists(sys_getuserhomedir) then
   begin
@@ -2140,6 +2110,11 @@ begin
   end;
   
   places.rowcount := x + 1;
+  
+  abool := true;
+  
+  if blateral.value then onlateral(Sender,abool,abool);
+  if bcompact.value then onsetcomp(Sender,abool,abool);
   
 end;
 
