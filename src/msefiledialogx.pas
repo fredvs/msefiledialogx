@@ -773,12 +773,14 @@ begin
     
     if filename.tag = 1  then
     filename.value := ExtractFilePath(filename.value);
-    
+ 
     abool := true;
    
+  if blateral.value then onlateral(nil,abool,abool);
+  if bcompact.value then onsetcomp(nil,abool,abool);
   if showhidden.value then showhiddenonsetvalue(nil,abool,abool);
-    
-  //  showhidden.Value := not (fa_hidden in excludeattrib);
+   //  showhidden.Value := not (fa_hidden in excludeattrib);
+ 
     Show(True);
     Result      := window.modalresult;
     if Result <> mr_ok then
@@ -2070,7 +2072,6 @@ end;
 procedure tfiledialogfo.onformcreated(const Sender: TObject);
 var
 x : integer = 0;
-abool : boolean;
 begin
   if directoryexists(sys_getuserhomedir) then
   begin
@@ -2115,12 +2116,9 @@ begin
   end;
   
   places.rowcount := x + 1;
-  
-  abool := true;
-  
-  if blateral.value then onlateral(Sender,abool,abool);
-  if bcompact.value then onsetcomp(Sender,abool,abool);
-  
+ 
+  application.processmessages;
+ 
 end;
 
 procedure tfiledialogfo.onlateral(const Sender: TObject; var avalue: Boolean; var accept: Boolean);
@@ -2141,17 +2139,23 @@ begin
     tsplitter1.Visible := False;
     list_log.left := 0;
   end;
+  
+    tsplitter1.invalidate;
+    list_log.invalidate;
     
     listview.left := list_log.left;
     
-    if not list_log.visible then listview.Width := list_log.Width;
+    if not list_log.visible then listview.Width := list_log.Width
+    else listview.Width := 40;
   
   list_log.datacols[0].Width := list_log.Width -
     list_log.datacols[1].Width - list_log.datacols[2].Width -
     list_log.datacols[3].Width - 20;
-   
+ 
     listview.invalidate;
     list_log.invalidate;
+       tsplitter1.invalidate;
+ 
 
 end;
 
@@ -2297,6 +2301,7 @@ begin
     arb := ffilterlist.asarrayb;
 
     fo.blateral.value := fpanel;
+     
     fo.bcompact.value := fcompact;
     fo.showhidden.value := fshowhidden;
     
