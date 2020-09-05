@@ -165,6 +165,9 @@ type
     ffilenames: filenamearty;
     ffilterlist: tdoublemsestringdatalist;
     ffilter: filenamety;
+    fpanel: boolean;
+    fcompact: boolean;
+    fshowhidden: boolean;
     ffilterindex: integer;
     fcolwidth: integer;
     fwindowrect: rectty;
@@ -246,6 +249,9 @@ type
     property fontcolor: colorty read ffontcolor write ffontcolor;
     property backcolor: colorty read fbackcolor write fbackcolor;
     property filter: filenamety read ffilter write ffilter;
+    property panel: boolean read fpanel write fpanel;
+    property compact: boolean read fcompact write fcompact;
+    property showhidden: boolean read fshowhidden write fshowhidden;
     property filterlist: tdoublemsestringdatalist read ffilterlist write setfilterlist;
     property filterindex: integer read ffilterindex write ffilterindex default 0;
     property include: fileattributesty read finclude write finclude default [fa_all];
@@ -553,8 +559,6 @@ type
     blateral: tbooleanedit;
     iconslist: timagelist;
     tsplitter2: tsplitter;
-   tstatfile1: tstatfile;
-   showhidden2: tbooleanedit;
     procedure createdironexecute(const Sender: TObject);
     procedure listviewselectionchanged(const Sender: tcustomlistview);
     procedure listviewitemevent(const Sender: tcustomlistview; const index: integer; var info: celleventinfoty);
@@ -769,7 +773,6 @@ begin
     
     abool := true;
    
-   showhidden.value := showhidden2.value;
   if showhidden.value then showhiddenonsetvalue(nil,abool,abool);
     
   //  showhidden.Value := not (fa_hidden in excludeattrib);
@@ -1687,8 +1690,7 @@ end;
 
 procedure tfiledialogfo.showhiddenonsetvalue(const Sender: TObject; var avalue: Boolean; var accept: Boolean);
 begin
- showhidden2.value := avalue;
-  dir.showhiddenfiles      := avalue;
+ dir.showhiddenfiles      := avalue;
   if avalue then
     listview.excludeattrib := listview.excludeattrib - [fa_hidden]
   else
@@ -2192,6 +2194,10 @@ begin
   fwindowrect.cx := reader.readinteger('cx', fwindowrect.cx);
   fwindowrect.cy := reader.readinteger('cy', fwindowrect.cy);
   fcolwidth      := reader.readinteger('filecolwidth', fcolwidth);
+  fshowhidden        := reader.readboolean('showhidden', fshowhidden);
+  fcompact        := reader.readboolean('compact', fcompact);
+  fpanel        := reader.readboolean('panel', fpanel);
+  
   if fdo_chdir in foptions then
     trysetcurrentdirmse(flastdir);
 end;
@@ -2218,6 +2224,9 @@ begin
   writer.writeinteger('y', fwindowrect.y);
   writer.writeinteger('cx', fwindowrect.cx);
   writer.writeinteger('cy', fwindowrect.cy);
+  writer.writeboolean('panel', fpanel);
+  writer.writeboolean('compact', fcompact);
+  writer.writeboolean('showhidden', fshowhidden);
 end;
 
 procedure tfiledialogcontroller.writestatoptions(const writer: tstatwriter);
@@ -2228,6 +2237,9 @@ begin
     writer.writearray('filehistory', fhistory);
   writer.writeinteger('filefilterindex', ffilterindex);
   writer.writemsestring('filefilter', ffilter);
+  writer.writeboolean('panel', fpanel);
+  writer.writeboolean('compact', fcompact);
+  writer.writeboolean('showhidden', fshowhidden);
 end;
 
 procedure tfiledialogcontroller.componentevent(const event: tcomponentevent);
@@ -2270,12 +2282,17 @@ begin
   else
     po1 := nil;
   fo := tfiledialogfo.Create(nil);
+  
   try
  {$ifdef FPC} {$checkpointer off} {$endif}
     //todo!!!!! bug 3348
     ara := ffilterlist.asarraya;
     arb := ffilterlist.asarrayb;
 
+    fo.blateral.value := fpanel;
+    fo.bcompact.value := fcompact;
+    fo.showhidden.value := fshowhidden;
+   
     if fontheight > 0 then
       if fontheight < 21 then
         fo.font.Height := fontheight
@@ -2325,10 +2342,18 @@ begin
       fonafterexecute(self, Result);
  {$ifdef FPC} {$checkpointer default} {$endif}
     if Result = mr_ok then
+    begin
       if fdo_relative in foptions then
         flastdir := getcurrentdirmse
       else
         flastdir := fo.dir.Value;
+      fpanel := fo.blateral.Value;
+      
+      fpanel := fo.blateral.value;
+      fcompact := fo.bcompact.value ;
+      fshowhidden := fo.showhidden.value;
+  
+     end;   
 
   finally
     fo.Free;
