@@ -841,8 +841,9 @@ envvarons=0
 [edit]
 hintwidth=0
 hintheight=0
-finddtext=onlateral
+finddtext=onformcreated
 findhistory=20
+ onformcreated
  onlateral
  fpanel
  colsi
@@ -862,12 +863,11 @@ findhistory=20
  tfiledialog1
  showhidd
  hidden
- readststat
 findoptions=1
 editpos=3
  0,-1073741823
  0,-1073741823
- 5,1993
+ 0,1702
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -903,14 +903,14 @@ nomenumodules=3
 firsttab=0
 index=2
 [layout]
-windowlayout=602
+windowlayout=611
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
  [mainfo]
  splitdir=0
  useroptions=301990011
- stackedunder=
+ stackedunder=finddialogfo
  parent=
  mdistate=0
  nx=0
@@ -1271,6 +1271,9 @@ windowlayout=602
  panel=0
  compact=0
  showhidden=0
+ colsizewidth=0
+ colextwidth=0
+ coldatewidth=0
  lastdir=/home/mse/test/msegui/apps/ide/compstore/
  filehistory=0
  filefilterindex=0
@@ -1286,6 +1289,9 @@ windowlayout=602
  panel=0
  compact=0
  showhidden=0
+ colsizewidth=0
+ colextwidth=0
+ coldatewidth=0
  lastdir=/home/mse/test/msegui/apps/ide/compstore/
  filehistory=0
  filefilterindex=0
@@ -1300,6 +1306,9 @@ windowlayout=602
  panel=0
  compact=0
  showhidden=0
+ colsizewidth=0
+ colextwidth=0
+ coldatewidth=0
  lastdir=
  filehistory=0
  filefilterindex=0
@@ -1471,7 +1480,7 @@ windowlayout=602
  [_mse_filedialogfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=targetconsolefo
+ stackedunder=objectinspectorfo
  parent=
  mdistate=3
  nx=0
@@ -1490,7 +1499,7 @@ windowlayout=602
  [_mse_mainfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=objectinspectorfo
+ stackedunder=_mse_filedialogfo_mse_
  parent=
  mdistate=3
  nx=0
