@@ -4,45 +4,13 @@ unit main;
 interface
 
 uses
-  msetypes,
-  mseglob,
-  mseguiglob,
-  mseguiintf,
-  mseapplication,
-  msestat,
-  msemenus,
-  msegui,
-  msegraphics,
-  msegraphutils,
-  mseevent,
-  mseclasses,
-  msewidgets,
-  mseforms,
-  mseact,
-  msebitmap,
-  msedataedits,
-  msedatanodes,
-  msedragglob,
-  msedropdownlist,
-  mseedit,
-  msegrids,
-  msegridsglob,
-  mseificomp,
-  mseificompglob,
-  mseifiglob,
-  mselistbrowser,
-  msestatfile,
-  msestream,
-  msesys,
-  SysUtils,
-  msesimplewidgets,
-  msedispwidgets,
-  mserichstring,
-  msegraphedits,
-  msescrollbar,
-  msefiledialogx,
-  msesplitter,
-  msecolordialog;
+ msetypes,mseglob,mseguiglob,mseguiintf,mseapplication,msestat,msemenus,msegui,
+ msegraphics,msegraphutils,mseevent,mseclasses,msewidgets,mseforms,mseact,
+ msebitmap,msedataedits,msedatanodes,msedragglob,msedropdownlist,mseedit,
+ msegrids,msegridsglob,mseificomp,mseificompglob,mseifiglob,mselistbrowser,
+ msestatfile,msestream,msesys,SysUtils,msesimplewidgets,msedispwidgets,
+ mserichstring,msegraphedits,msescrollbar,msefiledialogx,msesplitter,
+ msecolordialog;
 
 {msefiledialogx in last position (or after msefiledialog) will override it}
 
@@ -66,6 +34,7 @@ type
     tbutton2: TButton;
     tbackcolor: tcoloredit;
     tfontcolor: tcoloredit;
+   tstatfile1: tstatfile;
     procedure onex(const Sender: TObject);
     procedure onclose(const Sender: TObject);
   end;
@@ -119,7 +88,7 @@ begin
 
   tfiledialog1.controller.filter := thefilter.Value;
 
-  tfiledialog1.controller.lastdir := thebasedir.Value;
+  tfiledialog1.controller.filename := thebasedir.Value;
 
   if fontheight.Value <> 0 then
     tfiledialog1.controller.fontheight := fontheight.Value; // font height of dialogfile

@@ -15,6 +15,7 @@ object mainfo: tmainfo
   font.localprops = []
   fontempty.name = 'stf_empty'
   fontempty.localprops = []
+  statfile = tstatfile1
   caption = 'MSEFileDialogX Demo'
   windowopacity = -Inf
   moduleclassname = 'tmainform'
@@ -69,6 +70,7 @@ object mainfo: tmainfo
       bounds_y = 22
       bounds_cx = 71
       bounds_cy = 17
+      statfile = tstatfile1
       options = [bo_executeonclick, bo_executeonkey, bo_executeonshortcut, bo_executedefaultonenterkey, bo_radioitem]
       value = True
     end
@@ -87,6 +89,7 @@ object mainfo: tmainfo
       bounds_y = 22
       bounds_cx = 68
       bounds_cy = 17
+      statfile = tstatfile1
       options = [bo_executeonclick, bo_executeonkey, bo_executeonshortcut, bo_executedefaultonenterkey, bo_radioitem]
     end
     object b_fdk_dir: tbooleaneditradio
@@ -104,6 +107,7 @@ object mainfo: tmainfo
       bounds_y = 22
       bounds_cx = 57
       bounds_cy = 17
+      statfile = tstatfile1
       options = [bo_executeonclick, bo_executeonkey, bo_executeonshortcut, bo_executedefaultonenterkey, bo_radioitem]
     end
     object b_fdk_none: tbooleaneditradio
@@ -121,6 +125,7 @@ object mainfo: tmainfo
       bounds_y = 22
       bounds_cx = 71
       bounds_cy = 17
+      statfile = tstatfile1
       options = [bo_executeonclick, bo_executeonkey, bo_executeonshortcut, bo_executedefaultonenterkey, bo_radioitem]
     end
     object b_fdk_new: tbooleaneditradio
@@ -138,6 +143,7 @@ object mainfo: tmainfo
       bounds_y = 22
       bounds_cx = 66
       bounds_cy = 17
+      statfile = tstatfile1
       options = [bo_executeonclick, bo_executeonkey, bo_executeonshortcut, bo_executedefaultonenterkey, bo_radioitem]
     end
   end
@@ -157,6 +163,7 @@ object mainfo: tmainfo
     bounds_y = 70
     bounds_cx = 132
     bounds_cy = 39
+    statfile = tstatfile1
     value = '"*.pas" "*.mfm"'
     reffontheight = 15
   end
@@ -176,6 +183,7 @@ object mainfo: tmainfo
     bounds_y = 70
     bounds_cx = 172
     bounds_cy = 39
+    statfile = tstatfile1
     value = 'My title'
     reffontheight = 15
   end
@@ -194,6 +202,7 @@ object mainfo: tmainfo
     bounds_y = 68
     bounds_cx = 91
     bounds_cy = 17
+    statfile = tstatfile1
   end
   object thebasedir: tstringedit
     frame.levelo = 0
@@ -211,6 +220,7 @@ object mainfo: tmainfo
     bounds_y = 120
     bounds_cx = 332
     bounds_cy = 39
+    statfile = tstatfile1
     reffontheight = 15
   end
   object tbutton1: tbutton
@@ -253,6 +263,7 @@ object mainfo: tmainfo
     bounds_y = 168
     bounds_cx = 103
     bounds_cy = 39
+    statfile = tstatfile1
     optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_readonlydialog, oe1_savevalue, oe1_savestate, oe1_checkvalueafterstatread]
     value = 'stf_default'
     dropdown.dropdownrowcount = 5
@@ -287,6 +298,7 @@ object mainfo: tmainfo
     bounds_y = 168
     bounds_cx = 76
     bounds_cy = 39
+    statfile = tstatfile1
     optionsedit1 = [oe1_autopopupmenu, oe1_savevalue, oe1_savestate]
     optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
     valuemax = 20
@@ -325,6 +337,7 @@ object mainfo: tmainfo
     bounds_y = 222
     bounds_cx = 292
     bounds_cy = 39
+    statfile = tstatfile1
     reffontheight = 15
   end
   object tfontcolor: tcoloredit
@@ -350,10 +363,17 @@ object mainfo: tmainfo
     bounds_y = 168
     bounds_cx = 172
     bounds_cy = 39
+    statfile = tstatfile1
     reffontheight = 15
   end
   object tfiledialog1: tfiledialog
+    statfile = tstatfile1
     left = 283
     top = 48
+  end
+  object tstatfile1: tstatfile
+    filename = 'status.sta'
+    left = 16
+    top = 264
   end
 end
