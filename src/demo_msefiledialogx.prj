@@ -865,7 +865,7 @@ findhistory=20
  tsplitter2
 findoptions=1
 editpos=3
- 0,2272
+ 4,2131
  0,-1073741823
  0,-1073741823
 bookmarks0=0
@@ -1358,6 +1358,7 @@ windowlayout=593
  value=/home/fred/msefiledialogx/src/msefiledialogx.pas
  history=20
   /home/fred/msefiledialogx/src/msefiledialogx.pas
+  /home/fred/msefiledialogx/src/demo_msefiledialogx.pas
   /home/fred/msefiledialogx/src/main2.pas
   /home/fred/msefiledialogx/src/main.pas
   /home/fred/strumpract/src/spectrum1.pas
@@ -1367,7 +1368,6 @@ windowlayout=593
   /home/fred/strumpract/src/dockpanel1.pas
   /home/fred/strumpract/src/config.pas
   /home/fred/strumpract/src/msefiledialogx.pas
-  /home/fred/msefiledialogx/src/demo_msefiledialogx.pas
   /home/fred/mseide-msegui/lib/common/dialogs/msefiledialog.pas
   /home/fred/msefiledialogx/src/msefiledialogres.pas
   /home/fred/msefiledialogx/msefiledialogx.pas
@@ -1443,7 +1443,7 @@ windowlayout=593
  [_mse_filedialogres_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_filedialogfo_mse_
+ stackedunder=_mse_mainfo_mse_
  parent=
  mdistate=3
  nx=0
@@ -1462,7 +1462,7 @@ windowlayout=593
  [_mse_filedialogfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_mainfo_mse_
+ stackedunder=objectinspectorfo
  parent=
  mdistate=3
  nx=0
