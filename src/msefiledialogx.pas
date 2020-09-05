@@ -170,6 +170,9 @@ type
     fshowhidden: boolean;
     ffilterindex: integer;
     fcolwidth: integer;
+    fcolsizewidth: integer;
+    fcolextwidth: integer;
+    fcoldatewidth: integer;
     fwindowrect: rectty;
     fhistorymaxcount: integer;
     fhistory: msestringarty;
@@ -2197,6 +2200,10 @@ begin
   fshowhidden        := reader.readboolean('showhidden', fshowhidden);
   fcompact        := reader.readboolean('compact', fcompact);
   fpanel        := reader.readboolean('panel', fpanel);
+  fcolsizewidth := reader.readinteger('colsizewidth', fcolsizewidth);
+  fcolextwidth := reader.readinteger('colextwidth', fcolextwidth);
+  fcoldatewidth := reader.readinteger('coldatewidth', fcoldatewidth);
+
   
   if fdo_chdir in foptions then
     trysetcurrentdirmse(flastdir);
@@ -2227,6 +2234,9 @@ begin
   writer.writeboolean('panel', fpanel);
   writer.writeboolean('compact', fcompact);
   writer.writeboolean('showhidden', fshowhidden);
+  writer.writeinteger('colsizewidth', fcolsizewidth);
+  writer.writeinteger('colextwidth', fcolextwidth);
+  writer.writeinteger('coldatewidth', fcoldatewidth);
 end;
 
 procedure tfiledialogcontroller.writestatoptions(const writer: tstatwriter);
@@ -2237,9 +2247,6 @@ begin
     writer.writearray('filehistory', fhistory);
   writer.writeinteger('filefilterindex', ffilterindex);
   writer.writemsestring('filefilter', ffilter);
-  writer.writeboolean('panel', fpanel);
-  writer.writeboolean('compact', fcompact);
-  writer.writeboolean('showhidden', fshowhidden);
 end;
 
 procedure tfiledialogcontroller.componentevent(const event: tcomponentevent);
@@ -2292,6 +2299,17 @@ begin
     fo.blateral.value := fpanel;
     fo.bcompact.value := fcompact;
     fo.showhidden.value := fshowhidden;
+    
+    if fcolextwidth > 0 then 
+    fo.list_log.datacols[1].width  := fcolextwidth;
+    if fcolsizewidth > 0 then
+    fo.list_log.datacols[2].width  := fcolsizewidth;
+    if fcoldatewidth > 0 then
+    fo.list_log.datacols[3].width  := fcoldatewidth;
+    
+     fo.list_log.datacols[0].Width := fo.list_log.Width -
+    fo.list_log.datacols[1].Width - fo.list_log.datacols[2].Width -
+    fo.list_log.datacols[3].Width - 20;
    
     if fontheight > 0 then
       if fontheight < 21 then
@@ -2347,13 +2365,14 @@ begin
         flastdir := getcurrentdirmse
       else
         flastdir := fo.dir.Value;
-      fpanel := fo.blateral.Value;
-      
+        
       fpanel := fo.blateral.value;
       fcompact := fo.bcompact.value ;
       fshowhidden := fo.showhidden.value;
-  
-     end;   
+      fcolextwidth  := fo.list_log.datacols[1].width ;
+      fcolsizewidth := fo.list_log.datacols[2].width ;
+      fcoldatewidth := fo.list_log.datacols[3].width ;
+      end;   
 
   finally
     fo.Free;

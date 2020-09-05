@@ -91,8 +91,8 @@ finddialog=8
  value=0
  [finddialogfo]
  stackedunder=
- x=805
- y=467
+ x=702
+ y=265
  cx=234
  cy=269
 options=114
@@ -841,8 +841,12 @@ envvarons=0
 [edit]
 hintwidth=0
 hintheight=0
-finddtext=showhidden
+finddtext=fcompact
 findhistory=20
+ fcompact
+ howhidden
+ fshowhidden
+ compact
  showhidden
  fpanel
  fwindowrect
@@ -859,15 +863,11 @@ findhistory=20
  tag :=
  selected fi
  'name of
- fdk_save
- save
- defoc
- dironsetv
 findoptions=1
 editpos=3
- 0,88
- 0,11
- 0,2204
+ 9,3
+ 0,-1073741823
+ 0,2289
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -901,9 +901,9 @@ nomenumodules=3
  0
 [sourcefo.files_tab]
 firsttab=0
-index=2
+index=0
 [layout]
-windowlayout=593
+windowlayout=602
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -917,8 +917,8 @@ windowlayout=593
  ny=0
  ncx=0
  ncy=0
- x=3
- y=55
+ x=-40
+ y=71
  cx=1354
  cy=710
  rcx=0
@@ -1131,10 +1131,10 @@ windowlayout=593
  [breakpointsfo.bkptson]
  value=1
  [objectinspectorfo.grid]
- propcolwidthref=547
- width0=243
+ propcolwidthref=532
+ width0=236
  sortdescend0=0
- width1=298
+ width1=290
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -1268,6 +1268,9 @@ windowlayout=593
  y=0
  cx=0
  cy=0
+ panel=0
+ compact=0
+ showhidden=0
  lastdir=/home/mse/test/msegui/apps/ide/compstore/
  filehistory=0
  filefilterindex=0
@@ -1280,6 +1283,9 @@ windowlayout=593
  y=0
  cx=0
  cy=0
+ panel=0
+ compact=0
+ showhidden=0
  lastdir=/home/mse/test/msegui/apps/ide/compstore/
  filehistory=0
  filefilterindex=0
@@ -1291,6 +1297,9 @@ windowlayout=593
  y=0
  cx=0
  cy=0
+ panel=0
+ compact=0
+ showhidden=0
  lastdir=
  filehistory=0
  filefilterindex=0
@@ -1298,7 +1307,7 @@ windowlayout=593
  [componentpalettefo]
  splitdir=0
  useroptions=268460139
- stackedunder=objectinspectorfo
+ stackedunder=
  parent=
  mdistate=3
  nx=0
@@ -1313,7 +1322,7 @@ windowlayout=593
  rcy=0
  wsize=0
  active=0
- visible=1
+ visible=0
  [componentpalettefo.componentpages]
  activetab=4
  [debuggerfo]
@@ -1340,12 +1349,12 @@ windowlayout=593
  mdistate=0
  nx=0
  ny=0
- ncx=1342
+ ncx=1327
  ncy=0
  x=0
  y=0
  cx=1342
- cy=0
+ cy=-2
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -1355,10 +1364,10 @@ windowlayout=593
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/msefiledialogx/src/msefiledialogx.pas
+ value=/home/fred/msefiledialogx/src/main.pas
  history=20
-  /home/fred/msefiledialogx/src/demo_msefiledialogx.pas
   /home/fred/msefiledialogx/src/msefiledialogx.pas
+  /home/fred/msefiledialogx/src/demo_msefiledialogx.pas
   /home/fred/msefiledialogx/src/main2.pas
   /home/fred/msefiledialogx/src/main.pas
   /home/fred/strumpract/src/spectrum1.pas
@@ -1399,7 +1408,7 @@ windowlayout=593
  rcy=0
  [sourcefo.files_tab]
  firsttab=0
- index=2
+ index=0
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
@@ -1443,7 +1452,7 @@ windowlayout=593
  [_mse_filedialogres_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=componentpalettefo
+ stackedunder=targetconsolefo
  parent=
  mdistate=3
  nx=0
@@ -1462,7 +1471,7 @@ windowlayout=593
  [_mse_filedialogfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=targetconsolefo
+ stackedunder=_mse_mainfo_mse_
  parent=
  mdistate=3
  nx=0
@@ -1481,7 +1490,7 @@ windowlayout=593
  [_mse_mainfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_filedialogfo_mse_
+ stackedunder=objectinspectorfo
  parent=
  mdistate=3
  nx=0
