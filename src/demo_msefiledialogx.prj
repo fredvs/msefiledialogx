@@ -19,7 +19,7 @@ order16=0
 [projectoptions]
 projectdir=/home/fred/msefiledialogx/src
 projectfilename=/home/fred/msefiledialogx/src/demo_msefiledialogx.prj
-findinfiledialog=66
+findinfiledialog=72
  [findinfileadialogfo.subdirs]
  value=1
  [findinfileadialogfo.incurrentfile]
@@ -49,6 +49,12 @@ findinfiledialog=66
  y=181
  cx=496
  cy=308
+ panel=0
+ compact=0
+ showhidden=0
+ colsizewidth=0
+ colextwidth=0
+ coldatewidth=0
  filehistory=5
   /home/fred/mseuniverse/
   /home/fred/mseide-msegui/
@@ -867,7 +873,7 @@ findoptions=1
 editpos=3
  0,-1073741823
  0,-1073741823
- 0,1702
+ 0,2028
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -910,7 +916,7 @@ windowlayout=611
  [mainfo]
  splitdir=0
  useroptions=301990011
- stackedunder=finddialogfo
+ stackedunder=
  parent=
  mdistate=0
  nx=0
@@ -1461,7 +1467,7 @@ windowlayout=611
  [_mse_filedialogres_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_mainfo_mse_
+ stackedunder=_mse_filedialogfo_mse_
  parent=
  mdistate=3
  nx=0
@@ -1480,7 +1486,7 @@ windowlayout=611
  [_mse_filedialogfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=objectinspectorfo
+ stackedunder=_mse_mainfo_mse_
  parent=
  mdistate=3
  nx=0
@@ -1499,7 +1505,7 @@ windowlayout=611
  [_mse_mainfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_filedialogfo_mse_
+ stackedunder=objectinspectorfo
  parent=
  mdistate=3
  nx=0
