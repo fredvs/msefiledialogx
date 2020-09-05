@@ -513,7 +513,7 @@ befcommandon=0
 makeoptionson=6
  4095
  31
- 38
+ 34
  36
  4095
  4095
@@ -841,8 +841,11 @@ envvarons=0
 [edit]
 hintwidth=0
 hintheight=0
-finddtext=tag :=
+finddtext=readstat
 findhistory=20
+ readstat
+ readststat
+ writestat
  tag :=
  selected fi
  'name of
@@ -860,13 +863,10 @@ findhistory=20
  if filename.tag = 1
  Directory name
  caption :=
- visible :=
- select
- tsplitter2
 findoptions=1
 editpos=3
- 4,2131
- 0,-1073741823
+ 0,2106
+ 0,8
  0,-1073741823
 bookmarks0=0
 bookmarks1=0
@@ -943,7 +943,7 @@ windowlayout=593
  rcy=0
  wsize=0
  active=0
- visible=1
+ visible=0
  [threadsfo]
  splitdir=0
  useroptions=268451945
@@ -1131,10 +1131,10 @@ windowlayout=593
  [breakpointsfo.bkptson]
  value=1
  [objectinspectorfo.grid]
- propcolwidthref=547
- width0=243
+ propcolwidthref=532
+ width0=236
  sortdescend0=0
- width1=298
+ width1=290
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -1481,7 +1481,7 @@ windowlayout=593
  [_mse_mainfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=targetconsolefo
+ stackedunder=_mse_filedialogfo_mse_
  parent=
  mdistate=3
  nx=0

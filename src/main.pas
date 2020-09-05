@@ -119,7 +119,7 @@ begin
 
   tfiledialog1.controller.filter := thefilter.Value;
 
-  tfiledialog1.controller.basedir := thebasedir.Value;
+  tfiledialog1.controller.lastdir := thebasedir.Value;
 
   if fontheight.Value <> 0 then
     tfiledialog1.controller.fontheight := fontheight.Value; // font height of dialogfile
