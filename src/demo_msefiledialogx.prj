@@ -879,9 +879,9 @@ findhistory=20
  hidden
 findoptions=1
 editpos=3
- 0,3
- 13,7
- 0,1222
+ 0,-1073741823
+ 0,9
+ 0,2039
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -919,7 +919,7 @@ nomenumodules=4
  0
 [sourcefo.files_tab]
 firsttab=0
-index=1
+index=2
 [layout]
 windowlayout=630
  [mainfo.basedock]
@@ -961,7 +961,7 @@ windowlayout=630
  rcy=0
  wsize=0
  active=0
- visible=1
+ visible=0
  [threadsfo]
  splitdir=0
  useroptions=268451945
@@ -1381,7 +1381,7 @@ windowlayout=630
  x=0
  y=0
  cx=1342
- cy=0
+ cy=-2
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -1391,11 +1391,11 @@ windowlayout=630
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/mseide-msegui/lib/common/kernel/linux/cwstring.pas
+ value=/home/fred/msefiledialogx/src/msefiledialogx.pas
  history=20
+  /home/fred/msefiledialogx/src/demo_msefiledialogx.pas
   /home/fred/msefiledialogx/src/main.pas
   /home/fred/msefiledialogx/src/msefiledialogx.pas
-  /home/fred/msefiledialogx/src/demo_msefiledialogx.pas
   /home/fred/msefiledialogx/src/main2.pas
   /home/fred/strumpract/src/spectrum1.pas
   /home/fred/strumpract/src/aboutform.pas
@@ -1435,7 +1435,7 @@ windowlayout=630
  rcy=0
  [sourcefo.files_tab]
  firsttab=0
- index=1
+ index=2
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
@@ -1444,7 +1444,7 @@ windowlayout=630
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=confdebuggerfo
+ stackedunder=_mse_stringenterfo_mse_
  parent=
  mdistate=0
  nx=0
@@ -1498,15 +1498,15 @@ windowlayout=630
  [_mse_filedialogfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_mainfo_mse_
+ stackedunder=mainfo
  parent=
  mdistate=3
  nx=0
  ny=0
  ncx=0
  ncy=0
- x=383
- y=143
+ x=761
+ y=347
  cx=618
  cy=335
  rcx=0
@@ -1517,7 +1517,7 @@ windowlayout=630
  [_mse_mainfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=targetconsolefo
+ stackedunder=_mse_filedialogres_mse_
  parent=
  mdistate=3
  nx=0
@@ -1536,7 +1536,7 @@ windowlayout=630
  [_mse_stringenterfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=confcompilerfo
+ stackedunder=confdebuggerfo
  parent=
  mdistate=3
  nx=0
