@@ -8,6 +8,8 @@ Copy in the directory of your project:
 - msefiledialogx.mfm
 - msefiledialogx_mfm.pas
 
+With the form designer, add a MSEFileDialog component.
+
 Then add at end of uses section:
 
 uses
@@ -18,6 +20,8 @@ uses
 
 
 This will load the MSEFileDialogX each time a tfiledialog is called.
+
+(But better remove msefiledialog in uses section)
 
 
 Included a demo how to use it.
@@ -43,10 +47,6 @@ Detailled list without lateral panel:
 Compact list without lateral panel:
 
 ![alt text](https://user-images.githubusercontent.com/3421249/92292643-979e1b00-ef1e-11ea-831f-71f3229fb349.png)
-
-
-
-
 
 
 
