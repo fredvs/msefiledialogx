@@ -372,9 +372,6 @@ object mainfo: tmainfo
     top = 264
   end
   object tfiledialog1: tfiledialog
-    controller.panel = False
-    controller.compact = False
-    controller.showhidden = False
     left = 24
     top = 208
   end
