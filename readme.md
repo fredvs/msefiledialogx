@@ -25,9 +25,9 @@ Included a demo how to use it.
 ![alt text](https://user-images.githubusercontent.com/3421249/91650054-f70dae00-ea7a-11ea-80f1-f54e31361080.png)
 
 
-Detailled list with lateral panel:
+Detailled list with lateral panel and custom places:
 
-![alt text](https://user-images.githubusercontent.com/3421249/92292557-1050a780-ef1e-11ea-8adc-9fca84db9ada.png)
+![alt text](https://user-images.githubusercontent.com/3421249/92342079-0797d700-f0c0-11ea-8043-2cd98410854c.png)
 
 
 Compact list with lateral panel:

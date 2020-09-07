@@ -64,8 +64,10 @@ findinfiledialog=72
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc" "*.mfm"
  [findinfileadialogfo.findtext]
- value=filenamebase
+ value=keyeventinfopo^
  history=20
+  keyeventinfopo^
+  key_delete
   filenamebase
   filedialog
   keyeventinfopo
@@ -84,8 +86,6 @@ findinfiledialog=72
   controller.execute(
   fdo_directory
   framecompt3
-  .execute(
-  
  [findinfileadialogfo]
  stackedunder=
  x=707
@@ -97,8 +97,8 @@ finddialog=8
  value=0
  [finddialogfo]
  stackedunder=
- x=1017
- y=303
+ x=992
+ y=213
  cx=234
  cy=269
 options=114
@@ -188,7 +188,7 @@ options=114
  value=
  [projectoptionsfo.makegroupbox]
  firsttab=0
- index=3
+ index=2
  [projectoptionsfo.exceptionsgrid]
  propcolwidthref=814
  width0=47
@@ -216,19 +216,26 @@ options=114
  y=68
  cx=874
  cy=572
-imagelisteditor=32
+imagelisteditor=39
  [imagelisteditorfo.statfile1]
  currentversion=0
  [imagelisteditorfo.filedialog]
  filenames=1
-  /home/fred/strumpract/src/images/audiob.png
+  /home/fred/Pictures/coeur.png
  filecolwidth=150
  x=659
  y=227
  cx=496
  cy=308
- lastdir=/home/fred/strumpract/src/images/
- filehistory=6
+ panel=0
+ compact=0
+ showhidden=0
+ colsizewidth=81
+ colextwidth=45
+ coldatewidth=126
+ lastdir=/home/fred/Pictures/
+ filehistory=7
+  /home/fred/Pictures/coeur.png
   /home/fred/strumpract/src/images/audiob.png
   /home/fred/strumpract/src/images/textb.png
   /home/fred/strumpract/src/images/fileb.png
@@ -509,23 +516,20 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=3
+modulenames=2
  MAINFO
  FILEDIALOGFO
- STRINGENTERFO
-moduletypes=3
+moduletypes=2
  TMAINFO
  TFILEDIALOGFO
- TSTRINGENTERFO
-modulefiles=3
+modulefiles=2
  /home/fred/msefiledialogx/src/main.mfm
  /home/fred/msefiledialogx/src/msefiledialogx.mfm
- /home/fred/strumpract/src/msestringenter.mfm
 befcommandon=0
 makeoptionson=7
  4095
  31
- 226
+ 162
  228
  4095
  4095
@@ -855,11 +859,16 @@ envvarons=0
 [edit]
 hintwidth=0
 hintheight=0
-finddtext=onformcreated
+finddtext=fpanel
 findhistory=20
+ fpanel
+ ffilenames
+ key
+ places.v
+ utf
+ tosys
  onformcreated
  onlateral
- fpanel
  colsi
  fcompact
  bool
@@ -872,56 +881,48 @@ findhistory=20
  filedialog1(
  ffilter
  readstat
- .execu
- tfiledialog.ex
- tfiledialog1
- showhidd
- hidden
 findoptions=1
-editpos=3
+editpos=4
  0,-1073741823
- 0,9
- 0,2039
+ 0,-1073741823
+ 7,2294
+ 0,6
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
-sourcefiles=3
- ${PROJECTDIR}/main.pas
+bookmarks3=0
+sourcefiles=4
  ${PROJECTDIR}/demo_msefiledialogx.pas
+ ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/msefiledialogx.pas
-relpaths=3
- main.pas
+ /home/fred/mseuniverse/samples/widgets/grids/chessboard/main.mfm
+relpaths=4
  demo_msefiledialogx.pas
+ main.pas
  msefiledialogx.pas
-ismoduletexts=3
+ ../mseuniverse/samples/widgets/grids/chessboard/main.mfm
+ismoduletexts=4
  0
  0
  0
-modules=4
- /home/fred/mseide-msegui/lib/common/dialogs/msefiledialogres.mfm
- /home/fred/msefiledialogx/src/msefiledialogx.mfm
+ -1
+modules=2
  /home/fred/msefiledialogx/src/main.mfm
- /home/fred/strumpract/src/msestringenter.mfm
-moduleoptions=4
+ /home/fred/msefiledialogx/src/msefiledialogx.mfm
+moduleoptions=2
  0
  0
- 0
- 0
-visiblemodules=4
+visiblemodules=2
  -1
  -1
- -1
- 0
-nomenumodules=4
- -1
- 0
+nomenumodules=2
  0
  0
 [sourcefo.files_tab]
 firsttab=0
 index=2
 [layout]
-windowlayout=630
+windowlayout=592
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -937,7 +938,7 @@ windowlayout=630
  ncy=0
  x=3
  y=55
- cx=1354
+ cx=1352
  cy=710
  rcx=0
  rcy=0
@@ -1055,7 +1056,7 @@ windowlayout=630
  x=0
  y=0
  cx=205
- cy=525
+ cy=523
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1150,9 +1151,9 @@ windowlayout=630
  value=1
  [objectinspectorfo.grid]
  propcolwidthref=547
- width0=243
+ width0=244
  sortdescend0=0
- width1=298
+ width1=297
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -1245,9 +1246,9 @@ windowlayout=630
  ncx=0
  ncy=0
  x=0
- y=581
- cx=1342
- cy=108
+ y=579
+ cx=1340
+ cy=110
  rcx=0
  rcy=0
  [componentstorefo]
@@ -1351,7 +1352,7 @@ windowlayout=630
  active=0
  visible=0
  [componentpalettefo.componentpages]
- activetab=4
+ activetab=0
  [debuggerfo]
  splitdir=0
  useroptions=24683
@@ -1364,7 +1365,7 @@ windowlayout=630
  ncy=0
  x=0
  y=0
- cx=1342
+ cx=1340
  cy=50
  rcx=0
  rcy=0
@@ -1376,11 +1377,11 @@ windowlayout=630
  mdistate=0
  nx=0
  ny=0
- ncx=1327
+ ncx=1325
  ncy=0
  x=0
  y=0
- cx=1342
+ cx=1340
  cy=-2
  rcx=0
  rcy=0
@@ -1393,9 +1394,11 @@ windowlayout=630
  [debuggerfo.file_history]
  value=/home/fred/msefiledialogx/src/msefiledialogx.pas
  history=20
+  /home/fred/mseuniverse/samples/widgets/grids/chessboard/main.mfm
+  /home/fred/msefiledialogx/src/msefiledialogx.pas
+  Z:\home\fred\msefiledialogx\src\msefiledialogx.pas
   /home/fred/msefiledialogx/src/demo_msefiledialogx.pas
   /home/fred/msefiledialogx/src/main.pas
-  /home/fred/msefiledialogx/src/msefiledialogx.pas
   /home/fred/msefiledialogx/src/main2.pas
   /home/fred/strumpract/src/spectrum1.pas
   /home/fred/strumpract/src/aboutform.pas
@@ -1411,8 +1414,6 @@ windowlayout=630
   /home/fred/msefiledialogx/demo_msefiledialogx.pas
   /home/fred/ideu/src/selectsubmoduledialogform_mfm.pas
   /home/fred/new_msefiledialog2/msefiledialog2_mfm.pas
-  /home/fred/new_msefiledialog2/msefiledialogres.mfm
-  /home/fred/ideu/src/regcomponents.inc
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -1429,8 +1430,8 @@ windowlayout=630
  ncy=0
  x=208
  y=0
- cx=1134
- cy=525
+ cx=1132
+ cy=523
  rcx=0
  rcy=0
  [sourcefo.files_tab]
@@ -1444,7 +1445,7 @@ windowlayout=630
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=_mse_stringenterfo_mse_
+ stackedunder=confdebuggerfo
  parent=
  mdistate=0
  nx=0
@@ -1472,52 +1473,14 @@ windowlayout=630
  ncy=0
  x=0
  y=53
- cx=1342
- cy=525
+ cx=1340
+ cy=523
  rcx=0
  rcy=0
- [_mse_filedialogres_mse_]
- splitdir=0
- useroptions=268451963
- stackedunder=_mse_filedialogfo_mse_
- parent=
- mdistate=3
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=93
- y=396
- cx=245
- cy=117
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
- [_mse_filedialogfo_mse_]
- splitdir=0
- useroptions=268451963
- stackedunder=mainfo
- parent=
- mdistate=3
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=761
- y=347
- cx=618
- cy=335
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
  [_mse_mainfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_filedialogres_mse_
+ stackedunder=_mse_filedialogfo_mse_
  parent=
  mdistate=3
  nx=0
@@ -1533,25 +1496,25 @@ windowlayout=630
  wsize=0
  active=0
  visible=1
- [_mse_stringenterfo_mse_]
+ [_mse_filedialogfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=confdebuggerfo
+ stackedunder=objectinspectorfo
  parent=
  mdistate=3
  nx=0
  ny=0
  ncx=0
  ncy=0
- x=340
- y=323
- cx=408
- cy=70
+ x=326
+ y=209
+ cx=618
+ cy=384
  rcx=0
  rcy=0
  wsize=0
  active=0
- visible=0
+ visible=1
 [targetconsole]
 finddtext=
 findhistory=0

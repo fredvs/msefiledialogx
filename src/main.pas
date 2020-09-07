@@ -105,10 +105,10 @@ begin
   if custtitle.Value then
   begin
     if tfiledialog1.controller.Execute(dialogkind, thetitle.Value) = mr_ok then
-      tstringdisp1.Text := tfiledialog1.controller.filename;
+      tstringdisp1.Text := (tfiledialog1.controller.filename);
   end
   else if tfiledialog1.controller.Execute(dialogkind) = mr_ok then
-    tstringdisp1.Text := tfiledialog1.controller.filename;
+    tstringdisp1.Text := (tfiledialog1.controller.filename);
 
 end;
 
