@@ -2481,7 +2481,7 @@ begin
     ara := ffilterlist.asarraya;
     arb := ffilterlist.asarrayb;
     
-    if length(ffilenamescust) > 1 then
+    if length(ffilenamescust) > 0 then
     begin
     fo.placescust.rowcount := length(ffilenamescust) + 1;
     for x:= 0 to length(ffilenamescust) - 1 do
