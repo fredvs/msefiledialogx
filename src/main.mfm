@@ -366,14 +366,16 @@ object mainfo: tmainfo
     statfile = tstatfile1
     reffontheight = 15
   end
-  object tfiledialog1: tfiledialog
-    statfile = tstatfile1
-    left = 283
-    top = 48
-  end
   object tstatfile1: tstatfile
     filename = 'status.sta'
     left = 16
     top = 264
+  end
+  object tfiledialog1: tfiledialog
+    controller.nopanel = True
+    controller.compact = False
+    controller.showhidden = True
+    left = 248
+    top = 48
   end
 end

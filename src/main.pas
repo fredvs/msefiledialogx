@@ -28,13 +28,13 @@ type
     thetitle: tstringedit;
     custtitle: tbooleanedit;
     thebasedir: tstringedit;
-    tfiledialog1: tfiledialog;
     fontname: tdropdownlistedit;
     fontheight: tintegeredit;
     tbutton2: TButton;
     tbackcolor: tcoloredit;
     tfontcolor: tcoloredit;
    tstatfile1: tstatfile;
+   tfiledialog1: tfiledialog;
     procedure onex(const Sender: TObject);
     procedure onclose(const Sender: TObject);
   end;
@@ -102,6 +102,8 @@ begin
   if tbackcolor.Value <> cl_none then
     tfiledialog1.controller.backcolor := tbackcolor.Value;  // background color of dialogfile
 
+  tfiledialog1.statfile := tstatfile1;
+  
   if custtitle.Value then
   begin
     if tfiledialog1.controller.Execute(dialogkind, thetitle.Value) = mr_ok then

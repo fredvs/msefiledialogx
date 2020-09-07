@@ -207,7 +207,7 @@ type
     ffilenames: filenamearty;
     ffilterlist: tdoublemsestringdatalist;
     ffilter: filenamety;
-    fpanel: Boolean;
+    fnopanel: Boolean;
     fcompact: Boolean;
     ffilenamescust: filenamearty;
     fshowhidden: Boolean;
@@ -296,7 +296,7 @@ type
     property fontcolor: colorty read ffontcolor write ffontcolor;
     property backcolor: colorty read fbackcolor write fbackcolor;
     property filter: filenamety read ffilter write ffilter;
-    property panel: Boolean read fpanel write fpanel;
+    property panel: Boolean read fnopanel write fnopanel;
     property compact: Boolean read fcompact write fcompact;
     property showhidden: Boolean read fshowhidden write fshowhidden;
     property filterlist: tdoublemsestringdatalist read ffilterlist write setfilterlist;
@@ -2120,6 +2120,7 @@ procedure tfiledialogfo.onlayout(const Sender: tcustomgrid);
 begin
   listview.left     := list_log.left;
   tsplitter1.Height := list_log.Height;
+  tsplitter3.width := placespan.width;
   list_log.datacols[0].Width := list_log.Width -
     list_log.datacols[1].Width - list_log.datacols[2].Width -
     list_log.datacols[3].Width - 20;
@@ -2379,7 +2380,7 @@ begin
   fcolwidth      := reader.readinteger('filecolwidth', fcolwidth);
   fshowhidden    := reader.readboolean('showhidden', fshowhidden);
   fcompact       := reader.readboolean('compact', fcompact);
-  fpanel         := reader.readboolean('panel', fpanel);
+  fnopanel         := reader.readboolean('nopanel', fnopanel);
   fcolsizewidth  := reader.readinteger('colsizewidth', fcolsizewidth);
   fcolextwidth   := reader.readinteger('colextwidth', fcolextwidth);
   fcoldatewidth  := reader.readinteger('coldatewidth', fcoldatewidth);
@@ -2411,7 +2412,7 @@ begin
   writer.writeinteger('y', fwindowrect.y);
   writer.writeinteger('cx', fwindowrect.cx);
   writer.writeinteger('cy', fwindowrect.cy);
-  writer.writeboolean('panel', fpanel);
+  writer.writeboolean('nopanel', fnopanel);
   writer.writeboolean('compact', fcompact);
   writer.writeboolean('showhidden', fshowhidden);
   writer.writeinteger('colsizewidth', fcolsizewidth);
@@ -2493,7 +2494,7 @@ begin
     end;
     end;
 
-    fo.blateral.Value := fpanel;
+    fo.blateral.Value := fnopanel;
    
     fo.bcompact.Value   := fcompact;
     fo.showhidden.Value := fshowhidden;
@@ -2550,7 +2551,7 @@ begin
       fo.widgetrect         := clipinrect(fwindowrect, application.screenrect(fo.window));
     rectbefore := fo.widgetrect;
 
-      if fsplitterplaces > 20 then
+      if fsplitterplaces > 2 then
     fo.tsplitter3.top := fsplitterplaces;
  
    Result := filedialog1(fo, ffilenames, ara, arb, @ffilterindex, @ffilter, @fcolwidth, finclude,
@@ -2570,7 +2571,7 @@ begin
         flastdir := fo.dir.Value;
     end;
     
-      fpanel        := fo.blateral.Value;
+      fnopanel        := fo.blateral.Value;
       fcompact      := fo.bcompact.Value;
       fshowhidden   := fo.showhidden.Value;
       fcolextwidth  := fo.list_log.datacols[1].Width;
