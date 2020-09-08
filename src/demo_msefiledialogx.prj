@@ -30,9 +30,9 @@ findinfiledialog=75
  [findinfileadialogfo.wholeword]
  value=0
  [findinfileadialogfo.indirectories]
- value=0
- [findinfileadialogfo.inprojectdir]
  value=1
+ [findinfileadialogfo.inprojectdir]
+ value=0
  [findinfileadialogfo.casesensitive]
  value=0
  [findinfileadialogfo.mask]
@@ -46,7 +46,7 @@ findinfiledialog=75
  [findinfileadialogfo.dir]
  filenamescust=0
  filenames=1
-  /home/fred/mseuniverse/
+  /home/fred/mseide-msegui/
  filecolwidth=150
  x=407
  y=181
@@ -55,21 +55,22 @@ findinfiledialog=75
  panel=0
  compact=0
  showhidden=0
- colsizewidth=0
- colextwidth=0
- coldatewidth=0
- splitterplaces=0
+ colsizewidth=81
+ colextwidth=45
+ coldatewidth=126
+ splitterplaces=123
  filehistory=5
-  /home/fred/mseuniverse/
   /home/fred/mseide-msegui/
+  /home/fred/mseuniverse/
   /home/fred/mseide-msegui/apps/
   /home/fred/ideu/
   /home/fred/strumpract/src/
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc" "*.mfm"
  [findinfileadialogfo.findtext]
- value=panel
+ value=property icon
  history=20
+  property icon
   panel
   keyeventinfopo^
   key_delete
@@ -89,7 +90,6 @@ findinfiledialog=75
   filedialogres
   msefiledialog
   controller.execute(
-  fdo_directory
  [findinfileadialogfo]
  stackedunder=
  x=707
@@ -272,6 +272,28 @@ compnamedialog=5
  y=268
  cx=300
  cy=203
+bmpfiledialog=21
+ [filedialog]
+ filenamescust=0
+ filenames=1
+  /home/fred/Pictures/imagesideu/beauty.png
+ filecolwidth=150
+ x=0
+ y=0
+ cx=0
+ cy=0
+ panel=0
+ compact=0
+ showhidden=0
+ colsizewidth=81
+ colextwidth=45
+ coldatewidth=126
+ splitterplaces=192
+ lastdir=/home/fred/Pictures/imagesideu/
+ filehistory=1
+  /home/fred/Pictures/imagesideu/beauty.png
+ filefilterindex=0
+ filefilter="*.jpg" "*.jpeg" "*.bmp" "*.ico" "*.png" "*.pnm" "*.pgm" "*.pbm" "*.tga" "*.tif" "*.tiff" "*.xpm"
 mainfile=${PROJECTNAME}.pas
 targetfile=${PROJECTNAME}${EXEEXT}
 messageoutputfile=
@@ -291,7 +313,7 @@ befcommand=0
 aftcommand=0
 makeoptions=7
  -Xg -l -Mobjfpc -Sh -Fcutf8
- -gl -O-
+ -ghl -O-
  -B
  -O2 -XX -Xs -CX
  -vewinh
@@ -863,10 +885,12 @@ envvarons=0
 [edit]
 hintwidth=0
 hintheight=0
-finddtext=panel
+finddtext=ficon
 findhistory=20
- panel
+ ficon
+ seticon
  nopan
+ panel
  tfiledia
  fpanel
  nopanel
@@ -883,11 +907,9 @@ findhistory=20
  places.v
  utf
  tosys
- onformcreated
- onlateral
 findoptions=1
 editpos=3
- 6,33
+ 10,0
  0,0
  0,-1073741823
 bookmarks0=0
@@ -896,15 +918,15 @@ bookmarks2=0
 sourcefiles=3
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/msefiledialogx.pas
- ${PROJECTDIR}/main.mfm
+ /home/fred/mseide-msegui/lib/common/widgets/mseforms.pas
 relpaths=3
  main.pas
  msefiledialogx.pas
- main.mfm
+ mseide-msegui/lib/common/widgets/mseforms.pas
 ismoduletexts=3
  0
  0
- -1
+ 0
 modules=2
  /home/fred/msefiledialogx/src/msefiledialogx.mfm
  /home/fred/msefiledialogx/src/main.mfm
@@ -961,7 +983,7 @@ windowlayout=598
  rcy=0
  wsize=0
  active=0
- visible=0
+ visible=1
  [threadsfo]
  splitdir=0
  useroptions=268451945
@@ -1340,7 +1362,7 @@ windowlayout=598
  [componentpalettefo]
  splitdir=0
  useroptions=268460139
- stackedunder=_mse_mainfo_mse_
+ stackedunder=
  parent=
  mdistate=3
  nx=0
@@ -1355,7 +1377,7 @@ windowlayout=598
  rcy=0
  wsize=0
  active=0
- visible=1
+ visible=0
  [componentpalettefo.componentpages]
  activetab=3
  [debuggerfo]
@@ -1400,6 +1422,8 @@ windowlayout=598
  value=/home/fred/msefiledialogx/src/main.pas
  history=20
   /home/fred/msefiledialogx/src/main.pas
+  /home/fred/mseide-msegui/lib/common/widgets/mseforms.pas
+  /home/fred/msefiledialogx/src/main.mfm
   /home/fred/msefiledialogx/src/msefiledialogx.pas
   /home/fred/mseuniverse/samples/widgets/grids/chessboard/main.mfm
   Z:\home\fred\msefiledialogx\src\msefiledialogx.pas
@@ -1417,8 +1441,6 @@ windowlayout=598
   /home/fred/msefiledialogx/msefiledialogx.pas
   /home/fred/msefiledialogx/main.pas
   /home/fred/msefiledialogx/demo_msefiledialogx.pas
-  /home/fred/ideu/src/selectsubmoduledialogform_mfm.pas
-  /home/fred/new_msefiledialog2/msefiledialog2_mfm.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -1485,7 +1507,7 @@ windowlayout=598
  [_mse_filedialogfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=componentpalettefo
+ stackedunder=_mse_mainfo_mse_
  parent=
  mdistate=3
  nx=0
