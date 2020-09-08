@@ -12,8 +12,6 @@ uses
  mserichstring,msegraphedits,msescrollbar,msefiledialogx,msesplitter,
  msecolordialog;
 
-{msefiledialogx in last position (or after msefiledialog) will override it}
-
 type
   tmainfo = class(tmainform)
     tbutton1: TButton;

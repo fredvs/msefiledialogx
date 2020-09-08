@@ -272,11 +272,11 @@ compnamedialog=5
  y=268
  cx=300
  cy=203
-bmpfiledialog=22
+bmpfiledialog=24
  [filedialog]
  filenamescust=0
  filenames=1
-  /home/fred/Pictures/imagesideu/bluepoint.png
+  /home/fred/strumpract/src/images/dancer.png
  filecolwidth=150
  x=0
  y=0
@@ -289,10 +289,12 @@ bmpfiledialog=22
  colextwidth=45
  coldatewidth=126
  splitterplaces=192
- lastdir=/home/fred/Pictures/imagesideu/
- filehistory=2
-  /home/fred/Pictures/imagesideu/bluepoint.png
+ lastdir=/home/fred/strumpract/src/images/
+ filehistory=4
+  /home/fred/strumpract/src/images/dancer.png
+  /home/fred/strumpract/src/images/audiob.png
   /home/fred/Pictures/imagesideu/beauty.png
+  /home/fred/Pictures/imagesideu/bluepoint.png
  filefilterindex=0
  filefilter="*.jpg" "*.jpeg" "*.bmp" "*.ico" "*.png" "*.pnm" "*.pgm" "*.pbm" "*.tga" "*.tif" "*.tiff" "*.xpm"
 mainfile=${PROJECTNAME}.pas
@@ -910,7 +912,7 @@ findhistory=20
  tosys
 findoptions=1
 editpos=3
- 0,10
+ 66,6
  0,-1073741823
  0,-1073741823
 bookmarks0=0
@@ -984,7 +986,7 @@ windowlayout=598
  rcy=0
  wsize=0
  active=0
- visible=0
+ visible=1
  [threadsfo]
  splitdir=0
  useroptions=268451945
@@ -1172,10 +1174,10 @@ windowlayout=598
  [breakpointsfo.bkptson]
  value=1
  [objectinspectorfo.grid]
- propcolwidthref=547
- width0=244
+ propcolwidthref=532
+ width0=237
  sortdescend0=0
- width1=297
+ width1=289
  sortdescend1=0
  [symbolfo]
  splitdir=0
