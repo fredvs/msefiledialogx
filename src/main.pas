@@ -34,7 +34,7 @@ type
     tbackcolor: tcoloredit;
     tfontcolor: tcoloredit;
    tstatfile1: tstatfile;
-   tfiledialog1: tfiledialog;
+   tfiledialogx1: tfiledialogx;
     procedure onex(const Sender: TObject);
     procedure onclose(const Sender: TObject);
   end;
@@ -63,10 +63,10 @@ begin
   else if b_fdk_new.Value then
     dialogkind := fdk_new;
 
-  tfiledialog1.controller.captionnew := 'New File'; 
-  tfiledialog1.controller.captionopen := 'Open File';
-  tfiledialog1.controller.captionsave := 'Save File as';
-  tfiledialog1.controller.captiondir  := 'Open Directory';
+  tfiledialogx1.controller.captionnew := 'New File'; 
+  tfiledialogx1.controller.captionopen := 'Open File';
+  tfiledialogx1.controller.captionsave := 'Save File as';
+  tfiledialogx1.controller.captiondir  := 'Open Directory';
 
   setlength(ara, 5);
   setlength(arb, 5);
@@ -83,34 +83,34 @@ begin
   arb[3] := '"*.py"';
   arb[4] := '"*.*"';
 
-  tfiledialog1.controller.filterlist.asarraya := ara;
-  tfiledialog1.controller.filterlist.asarrayb := arb;
+  tfiledialogx1.controller.filterlist.asarraya := ara;
+  tfiledialogx1.controller.filterlist.asarrayb := arb;
 
-  tfiledialog1.controller.filter := thefilter.Value;
+  tfiledialogx1.controller.filter := thefilter.Value;
 
-  tfiledialog1.controller.filename := thebasedir.Value;
+  tfiledialogx1.controller.filename := thebasedir.Value;
 
   if fontheight.Value <> 0 then
-    tfiledialog1.controller.fontheight := fontheight.Value; // font height of dialogfile
+    tfiledialogx1.controller.fontheight := fontheight.Value; // font height of dialogfile
 
   if fontname.Value <> 'stf_default' then
-    tfiledialog1.controller.fontname := fontname.Value;     // font name of dialogfile
+    tfiledialogx1.controller.fontname := fontname.Value;     // font name of dialogfile
 
   if tfontcolor.Value <> cl_none then
-    tfiledialog1.controller.fontcolor := tfontcolor.Value;  // font color of dialogfile
+    tfiledialogx1.controller.fontcolor := tfontcolor.Value;  // font color of dialogfile
 
   if tbackcolor.Value <> cl_none then
-    tfiledialog1.controller.backcolor := tbackcolor.Value;  // background color of dialogfile
+    tfiledialogx1.controller.backcolor := tbackcolor.Value;  // background color of dialogfile
 
-  tfiledialog1.statfile := tstatfile1;
+  tfiledialogx1.statfile := tstatfile1;
   
   if custtitle.Value then
   begin
-    if tfiledialog1.controller.Execute(dialogkind, thetitle.Value) = mr_ok then
-      tstringdisp1.Text := (tfiledialog1.controller.filename);
+    if tfiledialogx1.controller.Execute(dialogkind, thetitle.Value) = mr_ok then
+      tstringdisp1.Text := (tfiledialogx1.controller.filename);
   end
-  else if tfiledialog1.controller.Execute(dialogkind) = mr_ok then
-    tstringdisp1.Text := (tfiledialog1.controller.filename);
+  else if tfiledialogx1.controller.Execute(dialogkind) = mr_ok then
+    tstringdisp1.Text := (tfiledialogx1.controller.filename);
 
 end;
 

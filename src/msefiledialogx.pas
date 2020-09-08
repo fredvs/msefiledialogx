@@ -296,7 +296,7 @@ type
     property fontcolor: colorty read ffontcolor write ffontcolor;
     property backcolor: colorty read fbackcolor write fbackcolor;
     property filter: filenamety read ffilter write ffilter;
-    property panel: Boolean read fnopanel write fnopanel;
+    property nopanel: Boolean read fnopanel write fnopanel;
     property compact: Boolean read fcompact write fcompact;
     property showhidden: Boolean read fshowhidden write fshowhidden;
     property filterlist: tdoublemsestringdatalist read ffilterlist write setfilterlist;
@@ -325,7 +325,7 @@ const
     [oe1_savevalue, oe1_savestate, oe1_saveoptions];
 
 type
-  tfiledialog = class(tdialog, istatfile)
+  tfiledialogx = class(tdialog, istatfile)
   private
     fcontroller: tfiledialogcontroller;
     fstatvarname: msestring;
@@ -448,13 +448,13 @@ type
 
   tcustomremotefilenameedit = class(tcustomfilenameedit1)
   private
-    fdialog: tfiledialog;
-    procedure setfiledialog(const avalue: tfiledialog);
+    fdialog: tfiledialogx;
+    procedure setfiledialog(const avalue: tfiledialogx);
   protected
     procedure objectevent(const Sender: TObject; const event: objecteventty);
       override;
   public
-    property dialog: tfiledialog read fdialog write setfiledialog;
+    property dialog: tfiledialogx read fdialog write setfiledialog;
   end;
 
   tfilenameedit = class(tcustomfilenameedit)
@@ -2859,7 +2859,7 @@ end;
 
 { tfiledialog }
 
-constructor tfiledialog.Create(aowner: TComponent);
+constructor tfiledialogx.Create(aowner: TComponent);
 begin
   // foptionsedit:= defaultfiledialogoptionsedit;
   foptionsedit1 := defaultfiledialogoptionsedit1;
@@ -2867,33 +2867,33 @@ begin
   inherited;
 end;
 
-destructor tfiledialog.Destroy;
+destructor tfiledialogx.Destroy;
 begin
   inherited;
   fcontroller.Free;
 end;
 
-function tfiledialog.Execute: modalresultty;
+function tfiledialogx.Execute: modalresultty;
 begin
   Result := fcontroller.Execute(fdialogkind);
 end;
 
-function tfiledialog.Execute(const akind: filedialogkindty): modalresultty;
+function tfiledialogx.Execute(const akind: filedialogkindty): modalresultty;
 begin
   Result := fcontroller.Execute(akind);
 end;
 
-function tfiledialog.Execute(const akind: filedialogkindty; const aoptions: filedialogoptionsty): modalresultty;
+function tfiledialogx.Execute(const akind: filedialogkindty; const aoptions: filedialogoptionsty): modalresultty;
 begin
   Result := fcontroller.Execute(akind, aoptions);
 end;
 
-procedure tfiledialog.setcontroller(const Value: tfiledialogcontroller);
+procedure tfiledialogx.setcontroller(const Value: tfiledialogcontroller);
 begin
   fcontroller.Assign(Value);
 end;
 
-procedure tfiledialog.dostatread(const reader: tstatreader);
+procedure tfiledialogx.dostatread(const reader: tstatreader);
 begin
   if canstatvalue(foptionsedit1, reader) then
     fcontroller.readstatvalue(reader);
@@ -2903,7 +2903,7 @@ begin
     fcontroller.readstatoptions(reader);
 end;
 
-procedure tfiledialog.dostatwrite(const writer: tstatwriter);
+procedure tfiledialogx.dostatwrite(const writer: tstatwriter);
 begin
   if canstatvalue(foptionsedit1, writer) then
     fcontroller.writestatvalue(writer);
@@ -2913,38 +2913,38 @@ begin
     fcontroller.writestatoptions(writer);
 end;
 
-function tfiledialog.getstatvarname: msestring;
+function tfiledialogx.getstatvarname: msestring;
 begin
   Result := fstatvarname;
 end;
 
-procedure tfiledialog.setstatfile(const Value: tstatfile);
+procedure tfiledialogx.setstatfile(const Value: tstatfile);
 begin
   setstatfilevar(istatfile(self), Value, fstatfile);
 end;
 
-procedure tfiledialog.statreading;
+procedure tfiledialogx.statreading;
 begin
   //dummy
 end;
 
-procedure tfiledialog.statread;
+procedure tfiledialogx.statread;
 begin
   //dummy
 end;
 
-procedure tfiledialog.componentevent(const event: tcomponentevent);
+procedure tfiledialogx.componentevent(const event: tcomponentevent);
 begin
   fcontroller.componentevent(event);
   inherited;
 end;
 
-function tfiledialog.getstatpriority: integer;
+function tfiledialogx.getstatpriority: integer;
 begin
   Result := fstatpriority;
 end;
 
-procedure tfiledialog.readoptionsedit(reader: treader);
+procedure tfiledialogx.readoptionsedit(reader: treader);
 var
   opt1: optionseditty;
 begin
@@ -2956,7 +2956,7 @@ begin
     oe_checkvaluepaststatread in opt1);
 end;
 
-procedure tfiledialog.defineproperties(filer: tfiler);
+procedure tfiledialogx.defineproperties(filer: tfiler);
 begin
   inherited;
   filer.defineproperty('optionsedit', @readoptionsedit, nil, False);
@@ -3235,7 +3235,7 @@ end;
 
 { tcustomremotefilenameedit }
 
-procedure tcustomremotefilenameedit.setfiledialog(const avalue: tfiledialog);
+procedure tcustomremotefilenameedit.setfiledialog(const avalue: tfiledialogx);
 begin
   setlinkedvar(avalue, tmsecomponent(fdialog));
   if avalue = nil then

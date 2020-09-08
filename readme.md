@@ -1,28 +1,9 @@
 # MSEFileDialogX a extended MSEFileDialog.
 
-Here how to use it:
+The code of msefiledialogx was added in trunk of mseide-msegui.
+TFileDialogX new component is in mse-ide component-palette now.
 
-Copy in the directory of your project: 
-
-- msefiledialogx.pas
-- msefiledialogx.mfm
-- msefiledialogx_mfm.pas
-
-With the form designer, add a MSEFileDialog component.
-
-Then add at end of uses section:
-
-uses
-
-...
-
- , msefiledialogx;
-
-
-This will load the MSEFileDialogX each time a tfiledialog is called.
-
-(But better remove msefiledialog in uses section)
-
+Please use the trunk source of mseide and msegui.
 
 Included a demo how to use it.
 

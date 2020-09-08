@@ -371,12 +371,15 @@ object mainfo: tmainfo
     left = 16
     top = 264
   end
-  object tfiledialog1: tfiledialog
+  object tfiledialogx1: tfiledialogx
     statfile = tstatfile1
-    controller.panel = False
+    controller.fontheight = 0
+    controller.fontcolor = 0
+    controller.backcolor = 0
+    controller.nopanel = False
     controller.compact = False
     controller.showhidden = False
-    left = 24
-    top = 208
+    left = 176
+    top = 96
   end
 end

@@ -16,6 +16,7 @@ order13=0
 order14=0
 order15=0
 order16=0
+order17=0
 [projectoptions]
 projectdir=/home/fred/msefiledialogx/src
 projectfilename=/home/fred/msefiledialogx/src/demo_msefiledialogx.prj
@@ -35,10 +36,10 @@ findinfiledialog=75
  [findinfileadialogfo.casesensitive]
  value=0
  [findinfileadialogfo.mask]
- value=
+ value="*.pas" "*.pp" "*.inc" "*.mfm"
  history=5
-  
   "*.pas" "*.pp" "*.inc" "*.mfm"
+  
   "*.pas" "*.pp" "*.inc" "*.*"
   "*.pas" "*.pp" "*.inc" "*.*" 
   "*.pas" "*.pp" "*.inc"
@@ -211,7 +212,7 @@ options=114
  firsttab=0
  index=0
  [projectoptionsfo.setting_tab]
- firsttab=1
+ firsttab=0
  index=2
  [projectoptionsfo]
  stackedunder=
@@ -532,7 +533,7 @@ befcommandon=0
 makeoptionson=7
  4095
  31
- 166
+ 162
  228
  4095
  4095
@@ -885,27 +886,22 @@ findhistory=20
  onformcreated
  onlateral
 findoptions=1
-editpos=4
+editpos=3
+ 6,33
+ 0,0
  0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,2
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
-bookmarks3=0
-sourcefiles=4
+sourcefiles=3
  ${PROJECTDIR}/main.pas
- ${PROJECTDIR}/demo_msefiledialogx.prj
  ${PROJECTDIR}/msefiledialogx.pas
- /home/fred/mseuniverse/samples/widgets/grids/chessboard/main.mfm
-relpaths=4
+ ${PROJECTDIR}/main.mfm
+relpaths=3
  main.pas
- demo_msefiledialogx.prj
  msefiledialogx.pas
- ../mseuniverse/samples/widgets/grids/chessboard/main.mfm
-ismoduletexts=4
- 0
+ main.mfm
+ismoduletexts=3
  0
  0
  -1
@@ -923,7 +919,7 @@ nomenumodules=2
  0
 [sourcefo.files_tab]
 firsttab=0
-index=3
+index=0
 [layout]
 windowlayout=598
  [mainfo.basedock]
@@ -939,8 +935,8 @@ windowlayout=598
  ny=0
  ncx=0
  ncy=0
- x=79
- y=29
+ x=46
+ y=55
  cx=1227
  cy=710
  rcx=0
@@ -965,7 +961,7 @@ windowlayout=598
  rcy=0
  wsize=0
  active=0
- visible=1
+ visible=0
  [threadsfo]
  splitdir=0
  useroptions=268451945
@@ -1344,7 +1340,7 @@ windowlayout=598
  [componentpalettefo]
  splitdir=0
  useroptions=268460139
- stackedunder=
+ stackedunder=_mse_mainfo_mse_
  parent=
  mdistate=3
  nx=0
@@ -1359,9 +1355,9 @@ windowlayout=598
  rcy=0
  wsize=0
  active=0
- visible=0
+ visible=1
  [componentpalettefo.componentpages]
- activetab=2
+ activetab=3
  [debuggerfo]
  splitdir=0
  useroptions=24683
@@ -1386,12 +1382,12 @@ windowlayout=598
  mdistate=0
  nx=0
  ny=0
- ncx=1200
+ ncx=1215
  ncy=0
  x=0
  y=0
  cx=1215
- cy=-2
+ cy=0
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -1401,11 +1397,11 @@ windowlayout=598
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/mseuniverse/samples/widgets/grids/chessboard/main.mfm
+ value=/home/fred/msefiledialogx/src/main.pas
  history=20
-  /home/fred/mseuniverse/samples/widgets/grids/chessboard/main.mfm
-  /home/fred/msefiledialogx/src/msefiledialogx.pas
   /home/fred/msefiledialogx/src/main.pas
+  /home/fred/msefiledialogx/src/msefiledialogx.pas
+  /home/fred/mseuniverse/samples/widgets/grids/chessboard/main.mfm
   Z:\home\fred\msefiledialogx\src\msefiledialogx.pas
   /home/fred/msefiledialogx/src/demo_msefiledialogx.pas
   /home/fred/msefiledialogx/src/main2.pas
@@ -1445,7 +1441,7 @@ windowlayout=598
  rcy=0
  [sourcefo.files_tab]
  firsttab=0
- index=3
+ index=0
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
@@ -1489,7 +1485,7 @@ windowlayout=598
  [_mse_filedialogfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_mainfo_mse_
+ stackedunder=componentpalettefo
  parent=
  mdistate=3
  nx=0
@@ -1508,7 +1504,7 @@ windowlayout=598
  [_mse_mainfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=targetconsolefo
+ stackedunder=objectinspectorfo
  parent=
  mdistate=3
  nx=0
