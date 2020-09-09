@@ -2,14 +2,14 @@ object mainfo: tmainfo
   bounds_x = 477
   bounds_y = 170
   bounds_cx = 403
-  bounds_cy = 374
+  bounds_cy = 388
   container.frame.localprops = []
   container.frame.localprops1 = []
   container.bounds = (
     0
     0
     403
-    374
+    388
   )
   font.name = 'stf_default'
   font.localprops = []
@@ -309,7 +309,7 @@ object mainfo: tmainfo
   object tbutton2: tbutton
     taborder = 9
     bounds_x = 316
-    bounds_y = 336
+    bounds_y = 344
     bounds_cx = 82
     bounds_cy = 29
     state = [as_localcaption, as_localonexecute]
@@ -378,15 +378,15 @@ object mainfo: tmainfo
       end>
     frame.button.imagenr = 17
     taborder = 12
-    bounds_x = 4
+    bounds_x = 16
     bounds_y = 344
-    bounds_cx = 300
-    bounds_cy = 21
+    bounds_cx = 284
+    bounds_cy = 29
     statfile = tstatfile1
     controller.fontheight = 0
     controller.fontname = 'stf_default'
-    controller.fontcolor = 0
-    controller.backcolor = 0
+    controller.fontcolor = -1610612734
+    controller.backcolor = -2147483647
     controller.nopanel = False
     controller.icon.options = [bmo_masked, bmo_graymask]
     controller.icon.origformat = 'png'

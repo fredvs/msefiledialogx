@@ -276,7 +276,7 @@ bmpfiledialog=25
  [filedialog]
  filenamescust=0
  filenames=1
-  /home/fred/Pictures/images/beauty.png
+  /home/fred/strumpract/src/images/dancer.png
  filecolwidth=150
  x=0
  y=0
@@ -289,10 +289,10 @@ bmpfiledialog=25
  colextwidth=45
  coldatewidth=126
  splitterplaces=192
- lastdir=/home/fred/Pictures/images/
+ lastdir=/home/fred/strumpract/src/images/
  filehistory=5
-  /home/fred/Pictures/images/beauty.png
   /home/fred/strumpract/src/images/dancer.png
+  /home/fred/Pictures/images/beauty.png
   /home/fred/strumpract/src/images/audiob.png
   /home/fred/Pictures/imagesideu/beauty.png
   /home/fred/Pictures/imagesideu/bluepoint.png
@@ -913,7 +913,7 @@ findhistory=20
  tosys
 findoptions=1
 editpos=3
- 9,3
+ 7,10
  0,-1073741823
  0,-1073741823
 bookmarks0=0
@@ -1366,7 +1366,7 @@ windowlayout=598
  [componentpalettefo]
  splitdir=0
  useroptions=268460139
- stackedunder=_mse_mainfo_mse_
+ stackedunder=targetconsolefo
  parent=
  mdistate=3
  nx=0
@@ -1408,12 +1408,12 @@ windowlayout=598
  mdistate=0
  nx=0
  ny=0
- ncx=1215
+ ncx=1200
  ncy=0
  x=0
  y=0
  cx=1215
- cy=0
+ cy=-2
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -1476,7 +1476,7 @@ windowlayout=598
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=confdebuggerfo
+ stackedunder=_mse_filedialogfo_mse_
  parent=
  mdistate=0
  nx=0
@@ -1511,7 +1511,7 @@ windowlayout=598
  [_mse_filedialogfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=targetconsolefo
+ stackedunder=confdebuggerfo
  parent=
  mdistate=3
  nx=0
@@ -1540,7 +1540,7 @@ windowlayout=598
  x=477
  y=170
  cx=413
- cy=374
+ cy=388
  rcx=0
  rcy=0
  wsize=0
