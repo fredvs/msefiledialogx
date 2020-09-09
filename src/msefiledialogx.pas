@@ -208,7 +208,7 @@ type
     ffilterlist: tdoublemsestringdatalist;
     ffilter: filenamety;
     fnopanel: Boolean;
-    ficon : tmaskedbitmap;
+    ficon: tmaskedbitmap;
     fcompact: Boolean;
     ffilenamescust: filenamearty;
     fshowhidden: Boolean;
@@ -299,7 +299,7 @@ type
     property backcolor: colorty read fbackcolor write fbackcolor;
     property filter: filenamety read ffilter write ffilter;
     property nopanel: Boolean read fnopanel write fnopanel;
-    property icon : tmaskedbitmap read ficon write seticon;
+    property icon: tmaskedbitmap read ficon write seticon;
     property compact: Boolean read fcompact write fcompact;
     property showhidden: Boolean read fshowhidden write fshowhidden;
     property filterlist: tdoublemsestringdatalist read ffilterlist write setfilterlist;
@@ -612,6 +612,7 @@ type
     places: tstringgrid;
     tsplitter3: tsplitter;
     placescust: tstringgrid;
+    labtest: tlabel;
     procedure createdironexecute(const Sender: TObject);
     procedure listviewselectionchanged(const Sender: tcustomlistview);
     procedure listviewitemevent(const Sender: tcustomlistview; const index: integer; var info: celleventinfoty);
@@ -1551,6 +1552,27 @@ begin
   listview.Width := 40;
   listview.invalidate;
 
+  labtest.Caption := '';
+
+  while labtest.Width < 30 do
+  begin
+    labtest.Caption := labtest.Caption + ' ';
+    labtest.invalidate;
+  end;
+
+  tmp := labtest.Caption;
+
+
+  labtest.Caption := ' .';
+
+  while labtest.Width < 30 do
+  begin
+    labtest.Caption := labtest.Caption + ' ';
+    labtest.invalidate;
+  end;
+
+  tmp2 := labtest.Caption;
+
   with listview do
   begin
     dir.Value        := tosysfilepath(directory);
@@ -1580,12 +1602,12 @@ begin
       if listview.filelist.isdir(x) then
       begin
         Inc(x2);
-        list_log[0][x] := '       ' + msestring(listview.itemlist[x].Caption);
+        list_log[0][x] := tmp + msestring(listview.itemlist[x].Caption);
         list_log[1][x] := '';
       end
       else
       begin
-        list_log[0][x] := '  .    ' + msestring(filenamebase(listview.itemlist[x].Caption));
+        list_log[0][x] := tmp2 + msestring(filenamebase(listview.itemlist[x].Caption));
         tmp := fileext(listview.itemlist[x].Caption);
         if tmp <> '' then
           tmp := '.' + tmp;
@@ -2072,7 +2094,7 @@ begin
 
       list_log.defocuscell;
       list_log.datacols.clearselection;
-      
+
       placescust.defocuscell;
       placescust.datacols.clearselection;
 
@@ -2123,7 +2145,7 @@ procedure tfiledialogfo.onlayout(const Sender: tcustomgrid);
 begin
   listview.left     := list_log.left;
   tsplitter1.Height := list_log.Height;
-  tsplitter3.width := placespan.width;
+  tsplitter3.Width  := placespan.Width;
   list_log.datacols[0].Width := list_log.Width -
     list_log.datacols[1].Width - list_log.datacols[2].Width -
     list_log.datacols[3].Width - 20;
@@ -2134,8 +2156,11 @@ end;
 procedure tfiledialogfo.onformcreated(const Sender: TObject);
 var
   x: integer = 0;
+  tmp: string;
 begin
   fcourseid := -1;
+
+  tmp := labtest.Caption;
 
   with stockobjects do
   begin
@@ -2155,50 +2180,6 @@ begin
   back.tag    := Ord(sc_back);
   forward.tag := Ord(sc_forward);
   up.tag      := Ord(sc_up);
-
-  if directoryexists(tosysfilepath(sys_getuserhomedir)) then
-  begin
-    places[0][x] := '       Home';
-    places[1][x] := msestring(tosysfilepath(sys_getuserhomedir));
-    Inc(x);
-  end;
-  if directoryexists(tosysfilepath(sys_getuserhomedir + directoryseparator + 'Desktop')) then
-  begin
-    places[0][x] := '       Desktop';
-    places[1][x] := msestring(tosysfilepath(sys_getuserhomedir + directoryseparator + 'Desktop'));
-    Inc(x);
-  end;
-  if directoryexists(tosysfilepath(sys_getuserhomedir + directoryseparator + 'Music')) then
-  begin
-    places[0][2] := '       Music';
-    places[1][2] := msestring(tosysfilepath(sys_getuserhomedir + directoryseparator + 'Music'));
-    Inc(x);
-  end;
-  if directoryexists(tosysfilepath(sys_getuserhomedir + directoryseparator + 'Pictures')) then
-  begin
-    places[0][3] := '       Pictures';
-    places[1][3] := msestring(tosysfilepath(sys_getuserhomedir + directoryseparator + 'Pictures'));
-    Inc(x);
-  end;
-  if directoryexists(tosysfilepath(sys_getuserhomedir + directoryseparator + 'Videos')) then
-  begin
-    places[0][x] := '       Videos';
-    places[1][x] := msestring(tosysfilepath(sys_getuserhomedir + directoryseparator + 'Videos'));
-    Inc(x);
-  end;
-  if directoryexists(tosysfilepath(sys_getuserhomedir + directoryseparator + 'Documents')) then
-  begin
-    places[0][x] := '       Documents';
-    places[1][x] := msestring(tosysfilepath(sys_getuserhomedir + directoryseparator + 'Documents'));
-    Inc(x);
-  end;
-  if directoryexists(tosysfilepath(sys_getuserhomedir + directoryseparator + 'Downloads')) then
-  begin
-    places[0][x] := '       Downloads';
-    places[1][x] := msestring(tosysfilepath(sys_getuserhomedir + directoryseparator + 'Downloads'));
-  end;
-
-  places.rowcount := x + 1;
 
   application.ProcessMessages;
 
@@ -2287,7 +2268,7 @@ end;
 procedure tfiledialogfo.oncellevcustplaces(const Sender: TObject; var info: celleventinfoty);
 var
   theint: integer;
-  thestr: msestring;
+  thestr, tmp: msestring;
 begin
 
   if (info.eventkind = cek_buttonrelease) or (info.eventkind = cek_keyup) then
@@ -2301,16 +2282,24 @@ begin
       if (ss_double in info.mouseeventinfopo^.shiftstate) and
         (info.cell.row = placescust.rowcount - 1) then
       begin
+        labtest.Caption := '';
+
+        while labtest.Width < 30 do
+        begin
+          labtest.Caption := labtest.Caption + ' ';
+          labtest.invalidate;
+        end;
+
+        tmp    := labtest.Caption;
         thestr := copy(dir.Value, 1, length(dir.Value) - 1);
         theint := lastdelimiter(directoryseparator, thestr);
-        placescust[0][placescust.rowcount - 1] := '       ' + copy(thestr, theint + 1, 14);
+        placescust[0][placescust.rowcount - 1] := tmp + copy(thestr, theint + 1, 14);
         placescust[1][placescust.rowcount - 1] := dir.Value;
         placescust.rowcount := placescust.rowcount + 1;
         places.defocuscell;
         places.datacols.clearselection;
       end
-      else
-      if (info.cell.row < placescust.rowcount - 1) then
+      else if (info.cell.row < placescust.rowcount - 1) then
         if directoryexists(tosysfilepath(placescust[1][info.cell.row] + directoryseparator)) then
         begin
 
@@ -2331,9 +2320,9 @@ begin
 
           list_log.defocuscell;
           list_log.datacols.clearselection;
-          
+
           places.defocuscell;
-         places.datacols.clearselection;
+          places.datacols.clearselection;
 
         end
         else
@@ -2347,55 +2336,55 @@ end;
 { tfiledialogcontroller }
 
 constructor tfiledialogcontroller.Create(const aowner: tmsecomponent = nil; const onchange: proceventty = nil);
-begin 
-  ficon:= tmaskedbitmap.create(bmk_rgb);
-  fbackcolor       := cl_default;
-  ffontname        := 'stf_default';
-  ffontheight      := 0;
-  ffontcolor       := cl_black;
-  fnopanel         := false;
-  fcompact         := false;
-  fshowhidden      := false;
-  foptions         := defaultfiledialogoptions;
+begin
+  ficon       := tmaskedbitmap.Create(bmk_rgb);
+  fbackcolor  := cl_default;
+  ffontname   := 'stf_default';
+  ffontheight := 0;
+  ffontcolor  := cl_black;
+  fnopanel    := False;
+  fcompact    := False;
+  fshowhidden := False;
+  foptions    := defaultfiledialogoptions;
   fhistorymaxcount := defaulthistorymaxcount;
-  fowner           := aowner;
-  ffilterlist      := tdoublemsestringdatalist.Create;
-  finclude         := [fa_all];
-  fexclude         := [fa_hidden];
-  fonchange        := onchange;
+  fowner      := aowner;
+  ffilterlist := tdoublemsestringdatalist.Create;
+  finclude    := [fa_all];
+  fexclude    := [fa_hidden];
+  fonchange   := onchange;
   inherited Create;
 end;
 
 destructor tfiledialogcontroller.Destroy;
 begin
   inherited;
-  ficon.free;
+  ficon.Free;
   ffilterlist.Free;
 end;
 
 procedure tfiledialogcontroller.readstatvalue(const reader: tstatreader);
 begin
-  ffilenames := reader.readarray('filenames', ffilenames);
+  ffilenames     := reader.readarray('filenames', ffilenames);
   ffilenamescust := reader.readarray('filenamescust', ffilenamescust);
   if fdo_params in foptions then
-    fparams  := reader.readmsestring('params', fparams);
+    fparams := reader.readmsestring('params', fparams);
 end;
 
 procedure tfiledialogcontroller.readstatstate(const reader: tstatreader);
 begin
-  ffilterindex   := reader.readinteger('filefilterindex', ffilterindex);
-  ffilter        := reader.readmsestring('filefilter', ffilter);
-  fwindowrect.x  := reader.readinteger('x', fwindowrect.x);
-  fwindowrect.y  := reader.readinteger('y', fwindowrect.y);
-  fwindowrect.cx := reader.readinteger('cx', fwindowrect.cx);
-  fwindowrect.cy := reader.readinteger('cy', fwindowrect.cy);
-  fcolwidth      := reader.readinteger('filecolwidth', fcolwidth);
-  fshowhidden    := reader.readboolean('showhidden', fshowhidden);
-  fcompact       := reader.readboolean('compact', fcompact);
-  fnopanel         := reader.readboolean('nopanel', fnopanel);
-  fcolsizewidth  := reader.readinteger('colsizewidth', fcolsizewidth);
-  fcolextwidth   := reader.readinteger('colextwidth', fcolextwidth);
-  fcoldatewidth  := reader.readinteger('coldatewidth', fcoldatewidth);
+  ffilterindex    := reader.readinteger('filefilterindex', ffilterindex);
+  ffilter         := reader.readmsestring('filefilter', ffilter);
+  fwindowrect.x   := reader.readinteger('x', fwindowrect.x);
+  fwindowrect.y   := reader.readinteger('y', fwindowrect.y);
+  fwindowrect.cx  := reader.readinteger('cx', fwindowrect.cx);
+  fwindowrect.cy  := reader.readinteger('cy', fwindowrect.cy);
+  fcolwidth       := reader.readinteger('filecolwidth', fcolwidth);
+  fshowhidden     := reader.readboolean('showhidden', fshowhidden);
+  fcompact        := reader.readboolean('compact', fcompact);
+  fnopanel        := reader.readboolean('nopanel', fnopanel);
+  fcolsizewidth   := reader.readinteger('colsizewidth', fcolsizewidth);
+  fcolextwidth    := reader.readinteger('colextwidth', fcolextwidth);
+  fcoldatewidth   := reader.readinteger('coldatewidth', fcoldatewidth);
   fsplitterplaces := reader.readinteger('splitterplaces', fsplitterplaces);
   if fdo_chdir in foptions then
     trysetcurrentdirmse(flastdir);
@@ -2465,10 +2454,9 @@ var
   ara, arb: msestringarty;
   //acaption2: msestring;
   rectbefore: rectty;
-  x : integer;
+  x: integer;
   theint: integer;
-  thestr: msestring;
-  
+  thestr, tmp: msestring;
 begin
   //acaption2 := acaption;
   ara    := nil;
@@ -2476,6 +2464,7 @@ begin
   arb    := nil;
   //compiler warning
   Result := mr_ok;
+
   if Assigned(fonbeforeexecute) then
   begin
     fonbeforeexecute(self, dialogkind, Result);
@@ -2493,24 +2482,93 @@ begin
     //todo!!!!! bug 3348
     ara := ffilterlist.asarraya;
     arb := ffilterlist.asarrayb;
-    
+
+    if fontheight > 0 then
+      if fontheight < 21 then
+        fo.font.Height := fontheight
+      else
+        fo.font.Height := 20;
+
+    fo.font.color := fontcolor;
+
+    fo.container.color := backcolor;
+
+    if fontname <> '' then
+      fo.font.Name := ansistring(fontname);
+
+    fo.labtest.Caption := '';
+
+    while fo.labtest.Width < 30 do
+    begin
+      fo.labtest.Caption := fo.labtest.Caption + ' ';
+      fo.labtest.invalidate;
+    end;
+
+    tmp := fo.labtest.Caption;
+
+    x := 0;
+
+    if directoryexists(tosysfilepath(sys_getuserhomedir)) then
+    begin
+      fo.places[0][x] := tmp + 'Home';
+      fo.places[1][x] := msestring(tosysfilepath(sys_getuserhomedir));
+      Inc(x);
+    end;
+    if directoryexists(tosysfilepath(sys_getuserhomedir + directoryseparator + 'Desktop')) then
+    begin
+      fo.places[0][x] := tmp + 'Desktop';
+      fo.places[1][x] := msestring(tosysfilepath(sys_getuserhomedir + directoryseparator + 'Desktop'));
+      Inc(x);
+    end;
+    if directoryexists(tosysfilepath(sys_getuserhomedir + directoryseparator + 'Music')) then
+    begin
+      fo.places[0][2] := tmp + 'Music';
+      fo.places[1][2] := msestring(tosysfilepath(sys_getuserhomedir + directoryseparator + 'Music'));
+      Inc(x);
+    end;
+    if directoryexists(tosysfilepath(sys_getuserhomedir + directoryseparator + 'Pictures')) then
+    begin
+      fo.places[0][3] := tmp + 'Pictures';
+      fo.places[1][3] := msestring(tosysfilepath(sys_getuserhomedir + directoryseparator + 'Pictures'));
+      Inc(x);
+    end;
+    if directoryexists(tosysfilepath(sys_getuserhomedir + directoryseparator + 'Videos')) then
+    begin
+      fo.places[0][x] := tmp + 'Videos';
+      fo.places[1][x] := msestring(tosysfilepath(sys_getuserhomedir + directoryseparator + 'Videos'));
+      Inc(x);
+    end;
+    if directoryexists(tosysfilepath(sys_getuserhomedir + directoryseparator + 'Documents')) then
+    begin
+      fo.places[0][x] := tmp + 'Documents';
+      fo.places[1][x] := msestring(tosysfilepath(sys_getuserhomedir + directoryseparator + 'Documents'));
+      Inc(x);
+    end;
+    if directoryexists(tosysfilepath(sys_getuserhomedir + directoryseparator + 'Downloads')) then
+    begin
+      fo.places[0][x] := tmp + 'Downloads';
+      fo.places[1][x] := msestring(tosysfilepath(sys_getuserhomedir + directoryseparator + 'Downloads'));
+    end;
+
+    fo.places.rowcount := x + 1;
+
     if length(ffilenamescust) > 0 then
     begin
-    fo.placescust.rowcount := length(ffilenamescust) + 1;
-    for x:= 0 to length(ffilenamescust) - 1 do
-    begin
-    thestr := copy(ffilenamescust[x], 1, length(ffilenamescust[x]) - 1);
-    theint := lastdelimiter(directoryseparator, thestr);
-    fo.placescust[1][x] := ffilenamescust[x];
-    fo.placescust[0][x] :=  '       ' + copy(thestr, theint + 1, 14);
-    end;
+      fo.placescust.rowcount := length(ffilenamescust) + 1;
+      for x    := 0 to length(ffilenamescust) - 1 do
+      begin
+        thestr := copy(ffilenamescust[x], 1, length(ffilenamescust[x]) - 1);
+        theint := lastdelimiter(directoryseparator, thestr);
+        fo.placescust[1][x] := ffilenamescust[x];
+        fo.placescust[0][x] := tmp + copy(thestr, theint + 1, 14);
+      end;
     end;
 
     fo.blateral.Value := fnopanel;
-    
+
     if ficon <> nil then
-    fo.icon := ficon;
-   
+      fo.icon := ficon;
+
     fo.bcompact.Value   := fcompact;
     fo.showhidden.Value := fshowhidden;
 
@@ -2525,20 +2583,7 @@ begin
       fo.list_log.datacols[1].Width - fo.list_log.datacols[2].Width -
       fo.list_log.datacols[3].Width - 20;
 
-    if fontheight > 0 then
-      if fontheight < 21 then
-        fo.font.Height := fontheight
-      else
-        fo.font.Height := 20;
-
-    fo.font.color := fontcolor;
-
-    fo.container.color := backcolor;
-
-    if fontname <> '' then
-      fo.font.Name := ansistring(fontname);
-      
-       if (dialogkind in [fdk_dir]) or (fdo_directory in aoptions) then
+    if (dialogkind in [fdk_dir]) or (fdo_directory in aoptions) then
     begin
       fo.filename.tag           := 1;
       fo.filename.Value         := fo.dir.Value;
@@ -2564,10 +2609,10 @@ begin
       fo.widgetrect         := clipinrect(fwindowrect, application.screenrect(fo.window));
     rectbefore := fo.widgetrect;
 
-      if fsplitterplaces > 2 then
-    fo.tsplitter3.top := fsplitterplaces;
- 
-   Result := filedialog1(fo, ffilenames, ara, arb, @ffilterindex, @ffilter, @fcolwidth, finclude,
+    if fsplitterplaces > 2 then
+      fo.tsplitter3.top := fsplitterplaces;
+
+    Result        := filedialog1(fo, ffilenames, ara, arb, @ffilterindex, @ffilter, @fcolwidth, finclude,
       fexclude, po1, fhistorymaxcount, acaption, aoptions, fdefaultext,
       fimagelist, fongetfileicon, foncheckfile);
     if not rectisequal(fo.widgetrect, rectbefore) then
@@ -2577,32 +2622,28 @@ begin
       fonafterexecute(self, Result);
  {$ifdef FPC} {$checkpointer default} {$endif}
     if Result = mr_ok then
-    begin
       if fdo_relative in foptions then
         flastdir := getcurrentdirmse
       else
         flastdir := fo.dir.Value;
-    end;
-    
-      fnopanel        := fo.blateral.Value;
-      fcompact      := fo.bcompact.Value;
-      fshowhidden   := fo.showhidden.Value;
-      fcolextwidth  := fo.list_log.datacols[1].Width;
-      fcolsizewidth := fo.list_log.datacols[2].Width;
-      fcoldatewidth := fo.list_log.datacols[3].Width;
-      fsplitterplaces := fo.tsplitter3.top;
-    
-      if fo.placescust.rowcount > 1 then
+
+    fnopanel        := fo.blateral.Value;
+    fcompact        := fo.bcompact.Value;
+    fshowhidden     := fo.showhidden.Value;
+    fcolextwidth    := fo.list_log.datacols[1].Width;
+    fcolsizewidth   := fo.list_log.datacols[2].Width;
+    fcoldatewidth   := fo.list_log.datacols[3].Width;
+    fsplitterplaces := fo.tsplitter3.top;
+
+    if fo.placescust.rowcount > 1 then
     begin
-    setlength(ffilenamescust,fo.placescust.rowcount -1); 
-     for x:= 0 to length(ffilenamescust) - 1 do
-    begin
-    ffilenamescust[x] := fo.placescust[1][x] ;  
-    end;
+      setlength(ffilenamescust, fo.placescust.rowcount - 1);
+      for x := 0 to length(ffilenamescust) - 1 do
+        ffilenamescust[x] := fo.placescust[1][x];
     end;
 
   finally
-     fo.Free;
+    fo.Free;
   end;
 end;
 
@@ -2713,11 +2754,11 @@ end;
 
 const
   quotechar = msechar('"');
-  
+
 procedure tfiledialogcontroller.seticon(const avalue: tmaskedbitmap);
 begin
- ficon.assign(avalue);
-end;  
+  ficon.Assign(avalue);
+end;
 
 procedure tfiledialogcontroller.setfilename(const avalue: filenamety);
 var
@@ -2847,9 +2888,9 @@ end;
 
 procedure tfiledialogcontroller.Clear;
 begin
-  ffilenames := nil;
-  flastdir   := '';
-  fhistory   := nil;
+  ffilenames     := nil;
+  flastdir       := '';
+  fhistory       := nil;
   ffilenamescust := nil;
 end;
 
@@ -2985,13 +3026,13 @@ end;
 constructor tfilenameeditcontroller.Create(const aowner: tcustomfilenameedit1);
 begin
   inherited Create(aowner);
-  aowner.controller.fbackcolor       := cl_default;
-  aowner.controller.ffontname        := 'stf_default';
-  aowner.controller.ffontheight      := 0;
-  aowner.controller.ffontcolor       := cl_black;
-  aowner.controller.fnopanel         := false;
-  aowner.controller.fcompact         := false;
-  aowner.controller.fshowhidden      := false;
+  aowner.controller.fbackcolor  := cl_default;
+  aowner.controller.ffontname   := 'stf_default';
+  aowner.controller.ffontheight := 0;
+  aowner.controller.ffontcolor  := cl_black;
+  aowner.controller.fnopanel    := False;
+  aowner.controller.fcompact    := False;
+  aowner.controller.fshowhidden := False;
 end;
 
 function tfilenameeditcontroller.Execute(var avalue: msestring): Boolean;
