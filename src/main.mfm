@@ -384,6 +384,7 @@ object mainfo: tmainfo
     bounds_cy = 21
     statfile = tstatfile1
     controller.fontheight = 0
+    controller.fontname = 'stf_default'
     controller.fontcolor = 0
     controller.backcolor = 0
     controller.nopanel = False
@@ -475,8 +476,10 @@ object mainfo: tmainfo
     top = 264
   end
   object tfiledialogx1: tfiledialogx
+    statfile = tstatfile1
     controller.fontheight = 0
-    controller.fontcolor = 0
+    controller.fontname = 'stf_default'
+    controller.fontcolor = -1610612734
     controller.backcolor = -2147483647
     controller.nopanel = False
     controller.icon.options = [bmo_masked, bmo_graymask]
@@ -532,7 +535,7 @@ object mainfo: tmainfo
     }
     controller.compact = False
     controller.showhidden = False
-    left = 256
+    left = 232
     top = 208
   end
 end

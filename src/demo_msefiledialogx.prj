@@ -272,11 +272,11 @@ compnamedialog=5
  y=268
  cx=300
  cy=203
-bmpfiledialog=24
+bmpfiledialog=25
  [filedialog]
  filenamescust=0
  filenames=1
-  /home/fred/strumpract/src/images/dancer.png
+  /home/fred/Pictures/images/beauty.png
  filecolwidth=150
  x=0
  y=0
@@ -289,8 +289,9 @@ bmpfiledialog=24
  colextwidth=45
  coldatewidth=126
  splitterplaces=192
- lastdir=/home/fred/strumpract/src/images/
- filehistory=4
+ lastdir=/home/fred/Pictures/images/
+ filehistory=5
+  /home/fred/Pictures/images/beauty.png
   /home/fred/strumpract/src/images/dancer.png
   /home/fred/strumpract/src/images/audiob.png
   /home/fred/Pictures/imagesideu/beauty.png
@@ -912,7 +913,7 @@ findhistory=20
  tosys
 findoptions=1
 editpos=3
- 66,6
+ 9,3
  0,-1073741823
  0,-1073741823
 bookmarks0=0
@@ -937,7 +938,7 @@ moduleoptions=2
  0
  0
 visiblemodules=2
- -1
+ 0
  -1
 nomenumodules=2
  0
@@ -1174,10 +1175,10 @@ windowlayout=598
  [breakpointsfo.bkptson]
  value=1
  [objectinspectorfo.grid]
- propcolwidthref=532
- width0=237
+ propcolwidthref=547
+ width0=244
  sortdescend0=0
- width1=289
+ width1=297
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -1365,7 +1366,7 @@ windowlayout=598
  [componentpalettefo]
  splitdir=0
  useroptions=268460139
- stackedunder=
+ stackedunder=_mse_mainfo_mse_
  parent=
  mdistate=3
  nx=0
@@ -1380,7 +1381,7 @@ windowlayout=598
  rcy=0
  wsize=0
  active=0
- visible=0
+ visible=1
  [componentpalettefo.componentpages]
  activetab=3
  [debuggerfo]
@@ -1407,12 +1408,12 @@ windowlayout=598
  mdistate=0
  nx=0
  ny=0
- ncx=1200
+ ncx=1215
  ncy=0
  x=0
  y=0
  cx=1215
- cy=-2
+ cy=0
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -1510,7 +1511,7 @@ windowlayout=598
  [_mse_filedialogfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=objectinspectorfo
+ stackedunder=targetconsolefo
  parent=
  mdistate=3
  nx=0
@@ -1525,11 +1526,11 @@ windowlayout=598
  rcy=0
  wsize=0
  active=0
- visible=1
+ visible=0
  [_mse_mainfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=mainfo
+ stackedunder=objectinspectorfo
  parent=
  mdistate=3
  nx=0

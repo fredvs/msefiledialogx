@@ -32,8 +32,8 @@ type
     tbackcolor: tcoloredit;
     tfontcolor: tcoloredit;
    tstatfile1: tstatfile;
-   tfiledialogx1: tfiledialogx;
    tfilenameeditx1: tfilenameeditx;
+   tfiledialogx1: tfiledialogx;
     procedure onex(const Sender: TObject);
     procedure onclose(const Sender: TObject);
   end;
