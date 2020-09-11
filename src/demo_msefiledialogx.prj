@@ -559,7 +559,7 @@ befcommandon=0
 makeoptionson=7
  4095
  31
- 162
+ 166
  228
  4095
  4095
@@ -914,14 +914,14 @@ findhistory=20
 findoptions=1
 editpos=3
  0,-1073741823
- 0,2537
+ 8,2551
  0,-1073741823
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
 sourcefiles=3
  ${PROJECTDIR}/main.pas
- /home/fred/msefiledialogx/src/msefiledialogx.pas
+ ${PROJECTDIR}/msefiledialogx.pas
  /home/fred/mseide-msegui/lib/common/widgets/mseforms.pas
 relpaths=3
  main.pas
@@ -987,7 +987,7 @@ windowlayout=598
  rcy=0
  wsize=0
  active=0
- visible=1
+ visible=0
  [threadsfo]
  splitdir=0
  useroptions=268451945
@@ -1413,7 +1413,7 @@ windowlayout=598
  x=0
  y=0
  cx=1215
- cy=-2
+ cy=0
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -1530,7 +1530,7 @@ windowlayout=598
  [_mse_mainfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=targetconsolefo
+ stackedunder=mainfo
  parent=
  mdistate=3
  nx=0
