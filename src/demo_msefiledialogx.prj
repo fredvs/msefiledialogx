@@ -94,7 +94,7 @@ findinfiledialog=78
   filedialogres
   msefiledialog
  [findinfileadialogfo]
- stackedunder=
+ stackedunder=finddialogfo
  x=707
  y=43
  cx=234
@@ -889,8 +889,9 @@ envvarons=0
 [edit]
 hintwidth=0
 hintheight=0
-finddtext=fisfixedrow
+finddtext=home
 findhistory=20
+ home
  fisfixedrow
  fsplitter
  fsplitterpanpos
@@ -910,15 +911,14 @@ findhistory=20
  ficon
  seticon
  nopan
- panel
 findoptions=1
 editpos=6
  0,-1073741823
- 0,1913
+ 70,2527
  0,-1073741823
- 0,86
- 0,0
- 0,4
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -936,9 +936,9 @@ relpaths=6
  main.pas
  msefiledialogx.pas
  mseide-msegui/lib/common/widgets/mseforms.pas
- ../strumpract/src/waveform.pas
- ../strumpract/src/waveform.mfm
- ../strumpract/src/main.mfm
+ strumpract/src/waveform.pas
+ strumpract/src/waveform.mfm
+ strumpract/src/main.mfm
 ismoduletexts=6
  0
  0
@@ -965,7 +965,7 @@ order=6
 firsttab=0
 index=1
 [layout]
-windowlayout=622
+windowlayout=592
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -985,7 +985,7 @@ windowlayout=622
  cy=710
  rcx=0
  rcy=0
- wsize=0
+ wsize=6
  active=1
  visible=1
  [targetconsolefo]
@@ -1073,7 +1073,7 @@ windowlayout=622
  [findinfilefo]
  splitdir=0
  useroptions=268451947
- stackedunder=objectinspectorfo
+ stackedunder=
  parent=
  mdistate=0
  nx=0
@@ -1111,7 +1111,7 @@ windowlayout=622
  sorted=0
  col=0
  row=4
- rowheight=17
+ rowheight=16
  [stackfo]
  splitdir=0
  useroptions=268460137
@@ -1290,7 +1290,7 @@ windowlayout=622
  ncy=0
  x=0
  y=579
- cx=1215
+ cx=1348
  cy=110
  rcx=0
  rcy=0
@@ -1390,7 +1390,7 @@ windowlayout=622
  [componentpalettefo]
  splitdir=0
  useroptions=268460139
- stackedunder=findinfilefo
+ stackedunder=
  parent=
  mdistate=3
  nx=0
@@ -1405,7 +1405,7 @@ windowlayout=622
  rcy=0
  wsize=0
  active=0
- visible=1
+ visible=0
  [componentpalettefo.componentpages]
  activetab=5
  [debuggerfo]
@@ -1420,7 +1420,7 @@ windowlayout=622
  ncy=0
  x=0
  y=0
- cx=1215
+ cx=1348
  cy=50
  rcx=0
  rcy=0
@@ -1432,12 +1432,12 @@ windowlayout=622
  mdistate=0
  nx=0
  ny=0
- ncx=1200
+ ncx=1333
  ncy=0
  x=0
  y=0
- cx=1215
- cy=0
+ cx=1348
+ cy=-2
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -1447,8 +1447,10 @@ windowlayout=622
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/strumpract/src/main.mfm
- history=50
+ value=/home/fred/msefiledialogx/src/msefiledialogx.pas
+ history=20
+  /home/fred/msefiledialogx/src/msefiledialogx.pas
+  /home/fred/mseide-msegui/lib/common/widgets/mseforms.pas
   /home/fred/ideu/src/msefiledialog.pas
   /home/fred/strumpract/src/imagedancer.pas
   /home/fred/msefiledialog2.pas
@@ -1467,38 +1469,6 @@ windowlayout=622
   /home/fred/strumpract/src/aboutform.pas
   /home/fred/strumpract/src/dockpanel1.pas
   /home/fred/strumpract/src/config.pas
-  /home/fred/strumpract/src/msefiledialogx.pas
-  /home/fred/msefiledialogx/src/demo_msefiledialogx.pas
-  /home/fred/mseide-msegui/lib/common/dialogs/msefiledialog.pas
-  /home/fred/msefiledialogx/src/msefiledialogres.pas
-  /home/fred/msefiledialogx/src/msefiledialogx.pas
-  /home/fred/msefiledialogx/msefiledialogx.pas
-  /home/fred/msefiledialogx/main.pas
-  /home/fred/msefiledialogx/demo_msefiledialogx.pas
-  /home/fred/ideu/src/selectsubmoduledialogform_mfm.pas
-  /home/fred/new_msefiledialog2/msefiledialog2_mfm.pas
-  /home/fred/new_msefiledialog2/msefiledialogres.mfm
-  /home/fred/msefiledialog2new/msefiledialog2.pas
-  /home/fred/msefiledialog2new/new_msefiledialog2.pas
-  /home/fred/msefiledialog2new/msefiledialog2_mfm.pas
-  /home/fred/msefiledialog2new/msefiledialog_mfm.pas
-  /home/fred/msefiledialog2new/msefiledialog2.mfm
-  /home/fred/strumpract/src/msefiledialog.pas
-  /home/fred/ideu/src/make.pas
-  /home/fred/strumpract/src/status.pas
-  /home/fred/ideu/src/breakpointsform.pas
-  /home/fred/ideu/src/mselistbrowser.pas
-  /home/fred/ideu/src/objectinspector.pas
-  /home/fred/strumpract/src/msegrids.pas
-  /home/fred/strumpract/src/filelistform.pas
-  /home/fred/testbgra/fractal_tree/main.pas
-  /home/fred/testbgra/main.pas
-  /home/fred/testbgra/fractal_tree.pas
-  /home/fred/bgracontrols/bgravirtualscreen.pas
-  /home/fred/mclasses.pas
-  /home/fred/eschecs_mse/board.pas
-  /home/fred/strumpract/src/guitars.pas
-  /home/fred/strumpract/src/randomnote.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -1515,7 +1485,7 @@ windowlayout=622
  ncy=0
  x=208
  y=0
- cx=1007
+ cx=1140
  cy=523
  rcx=0
  rcy=0
@@ -1528,7 +1498,7 @@ windowlayout=622
   4
   2
  firsttab=0
- index=3
+ index=1
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
@@ -1565,7 +1535,7 @@ windowlayout=622
  ncy=0
  x=0
  y=53
- cx=1215
+ cx=1348
  cy=523
  rcx=0
  rcy=0
