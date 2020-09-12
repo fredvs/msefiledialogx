@@ -104,8 +104,8 @@ finddialog=8
  value=0
  [finddialogfo]
  stackedunder=
- x=967
- y=215
+ x=973
+ y=467
  cx=234
  cy=269
 options=114
@@ -892,37 +892,18 @@ envvarons=0
 [edit]
 hintwidth=0
 hintheight=0
-finddtext=desktop
-findhistory=20
- desktop
- home
- list_log.datacols[0].Width
- fisfixedrow
- fsplitter
- fsplitterpanpos
- filter.frame.Cap
- list_logs.data
- listlogs.data
- tsplitter1.left
- tsplitter1.left;
- list_log
- fcolw
- fo.f
- < 30
- < 40
- '  
-  30
- ficon
- seticon
+finddtext=fcolnamewidth
+findhistory=1
+ fcolnamewidth
 findoptions=1
 editpos=2
  0,-1073741823
- 0,2140
+ 0,204
 bookmarks0=0
 bookmarks1=0
 sourcefiles=2
  ${PROJECTDIR}/main.pas
- /home/fred/msefiledialogx/src/msefiledialogx.pas
+ ${PROJECTDIR}/msefiledialogx.pas
 relpaths=2
  main.pas
  msefiledialogx.pas
@@ -952,7 +933,7 @@ windowlayout=604
  [mainfo]
  splitdir=0
  useroptions=301990011
- stackedunder=finddialogfo
+ stackedunder=
  parent=
  mdistate=0
  nx=0
