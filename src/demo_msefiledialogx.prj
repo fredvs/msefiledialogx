@@ -549,14 +549,11 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=2
- MAINFO
+modulenames=1
  FILEDIALOGFO
-moduletypes=2
- TMAINFO
+moduletypes=1
  TFILEDIALOGFO
-modulefiles=2
- /home/fred/msefiledialogx/src/main.mfm
+modulefiles=1
  /home/fred/msefiledialogx/src/msefiledialogx.mfm
 befcommandon=0
 makeoptionson=7
@@ -892,13 +889,13 @@ envvarons=0
 [edit]
 hintwidth=0
 hintheight=0
-finddtext=fcolnamewidth
+finddtext=listviewonlistread
 findhistory=1
- fcolnamewidth
+ listviewonlistread
 findoptions=1
 editpos=2
  0,-1073741823
- 0,204
+ 24,1725
 bookmarks0=0
 bookmarks1=0
 sourcefiles=2
@@ -910,23 +907,19 @@ relpaths=2
 ismoduletexts=2
  0
  0
-modules=2
+modules=1
  /home/fred/msefiledialogx/src/msefiledialogx.mfm
- /home/fred/msefiledialogx/src/main.mfm
-moduleoptions=2
+moduleoptions=1
  0
- 0
-visiblemodules=2
+visiblemodules=1
  -1
- -1
-nomenumodules=2
- 0
+nomenumodules=1
  0
 [sourcefo.files_tab]
 firsttab=0
 index=1
 [layout]
-windowlayout=604
+windowlayout=585
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1411,8 +1404,8 @@ windowlayout=604
  value=/home/fred/msefiledialogx/src/msefiledialogx.pas
  history=20
   /home/fred/msefiledialogx/src/msefiledialogx.pas
-  /home/fred/msefiledialogx/src/main.pas
-  /home/fred/mseide-msegui/lib/common/widgets/mseforms.pas
+  /home/fred/mseide-msegui/lib/common/dialogx/msefiledialogx.mfm
+  /home/fred/mseide-msegui/lib/common/dialogx/msefiledialogx.pas
   /home/fred/ideu/src/msefiledialog.pas
   /home/fred/strumpract/src/imagedancer.pas
   /home/fred/msefiledialog2.pas
@@ -1424,12 +1417,12 @@ windowlayout=604
   /home/fred/mseide-msegui/apps/myide/regfiledialogx.pas
   /home/fred/msefiledialogx/src/msefiledialog.pas
   /home/fred/strumpract/src/msestringenter.pas
+  /home/fred/msefiledialogx/src/main.pas
   /home/fred/msefiledialogx/src/main2.pas
   /home/fred/Downloads/skinblue_mfm.pas
   /home/fred/strumpract/src/spectrum1.pas
   /home/fred/strumpract/src/aboutform.pas
   /home/fred/strumpract/src/dockpanel1.pas
-  /home/fred/strumpract/src/config.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -1496,7 +1489,7 @@ windowlayout=604
  [_mse_filedialogfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_mainfo_mse_
+ stackedunder=targetconsolefo
  parent=
  mdistate=3
  nx=0
@@ -1507,25 +1500,6 @@ windowlayout=604
  y=209
  cx=618
  cy=434
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
- [_mse_mainfo_mse_]
- splitdir=0
- useroptions=268451963
- stackedunder=targetconsolefo
- parent=
- mdistate=3
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=477
- y=170
- cx=413
- cy=388
  rcx=0
  rcy=0
  wsize=0
