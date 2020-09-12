@@ -4,13 +4,45 @@ unit main;
 interface
 
 uses
- msetypes,mseglob,mseguiglob,mseguiintf,mseapplication,msestat,msemenus,msegui,
- msegraphics,msegraphutils,mseevent,mseclasses,msewidgets,mseforms,mseact,
- msebitmap,msedataedits,msedatanodes,msedragglob,msedropdownlist,mseedit,
- msegrids,msegridsglob,mseificomp,mseificompglob,mseifiglob,mselistbrowser,
- msestatfile,msestream,msesys,SysUtils,msesimplewidgets,msedispwidgets,
- mserichstring,msegraphedits,msescrollbar,msefiledialogx,msesplitter,
- msecolordialog;
+  msetypes,
+  mseglob,
+  mseguiglob,
+  mseguiintf,
+  mseapplication,
+  msestat,
+  msemenus,
+  msegui,
+  msegraphics,
+  msegraphutils,
+  mseevent,
+  mseclasses,
+  msewidgets,
+  mseforms,
+  mseact,
+  msebitmap,
+  msedataedits,
+  msedatanodes,
+  msedragglob,
+  msedropdownlist,
+  mseedit,
+  msegrids,
+  msegridsglob,
+  mseificomp,
+  mseificompglob,
+  mseifiglob,
+  mselistbrowser,
+  msestatfile,
+  msestream,
+  msesys,
+  SysUtils,
+  msesimplewidgets,
+  msedispwidgets,
+  mserichstring,
+  msegraphedits,
+  msescrollbar,
+  msefiledialogx,
+  msesplitter,
+  msecolordialog;
 
 type
   tmainfo = class(tmainform)
@@ -31,9 +63,9 @@ type
     tbutton2: TButton;
     tbackcolor: tcoloredit;
     tfontcolor: tcoloredit;
-   tstatfile1: tstatfile;
-   tfiledialogx1: tfiledialogx;
-   tfilenameeditx1: tfilenameeditx;
+    tstatfile1: tstatfile;
+    tfiledialogx1: tfiledialogx;
+    tfilenameeditx1: tfilenameeditx;
     procedure onex(const Sender: TObject);
     procedure onclose(const Sender: TObject);
   end;
@@ -62,7 +94,7 @@ begin
   else if b_fdk_new.Value then
     dialogkind := fdk_new;
 
-  tfiledialogx1.controller.captionnew := 'New File'; 
+  tfiledialogx1.controller.captionnew  := 'New File';
   tfiledialogx1.controller.captionopen := 'Open File';
   tfiledialogx1.controller.captionsave := 'Save File as';
   tfiledialogx1.controller.captiondir  := 'Open Directory';
@@ -92,17 +124,12 @@ begin
   if fontheight.Value <> 0 then
     tfiledialogx1.controller.fontheight := fontheight.Value; // font height of dialogfile
 
-  if fontname.Value <> 'stf_default' then
-    tfiledialogx1.controller.fontname := fontname.Value;     // font name of dialogfile
+  tfiledialogx1.controller.fontname := fontname.Value;       // font name of dialogfile
 
-  if tfontcolor.Value <> cl_none then
-    tfiledialogx1.controller.fontcolor := tfontcolor.Value;  // font color of dialogfile
+  tfiledialogx1.controller.fontcolor := tfontcolor.Value;    // font color of dialogfile
 
-  if tbackcolor.Value <> cl_none then
-    tfiledialogx1.controller.backcolor := tbackcolor.Value;  // background color of dialogfile
+  tfiledialogx1.controller.backcolor := tbackcolor.Value;    // background color of dialogfile
 
-  tfiledialogx1.statfile := tstatfile1;
-  
   if custtitle.Value then
   begin
     if tfiledialogx1.controller.Execute(dialogkind, thetitle.Value) = mr_ok then

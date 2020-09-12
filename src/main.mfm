@@ -340,6 +340,8 @@ object mainfo: tmainfo
     bounds_cx = 292
     bounds_cy = 39
     statfile = tstatfile1
+    value = -2147483647
+    valuedefault = -2147483647
     reffontheight = 15
   end
   object tfontcolor: tcoloredit
@@ -366,6 +368,8 @@ object mainfo: tmainfo
     bounds_cx = 172
     bounds_cy = 39
     statfile = tstatfile1
+    value = -1610612734
+    valuedefault = -1610612734
     reffontheight = 15
   end
   object tfilenameeditx1: tfilenameeditx

@@ -549,17 +549,20 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=1
+modulenames=2
+ MAINFO
  FILEDIALOGFO
-moduletypes=1
+moduletypes=2
+ TMAINFO
  TFILEDIALOGFO
-modulefiles=1
+modulefiles=2
+ /home/fred/msefiledialogx/src/main.mfm
  /home/fred/msefiledialogx/src/msefiledialogx.mfm
 befcommandon=0
 makeoptionson=7
  4095
  31
- 162
+ 166
  228
  4095
  4095
@@ -889,14 +892,14 @@ envvarons=0
 [edit]
 hintwidth=0
 hintheight=0
-finddtext=home
+finddtext=list_log.datacols[0].Width
 findhistory=20
+ list_log.datacols[0].Width
  home
  fisfixedrow
  fsplitter
  fsplitterpanpos
  filter.frame.Cap
- list_log.datacols[0].Width
  list_logs.data
  listlogs.data
  tsplitter1.left
@@ -912,60 +915,37 @@ findhistory=20
  seticon
  nopan
 findoptions=1
-editpos=6
- 0,-1073741823
- 70,2527
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
+editpos=2
+ 0,0
+ 0,1949
 bookmarks0=0
 bookmarks1=0
-bookmarks2=0
-bookmarks3=0
-bookmarks4=0
-bookmarks5=0
-sourcefiles=6
+sourcefiles=2
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/msefiledialogx.pas
- /home/fred/mseide-msegui/lib/common/widgets/mseforms.pas
- /home/fred/strumpract/src/waveform.pas
- /home/fred/strumpract/src/waveform.mfm
- /home/fred/strumpract/src/main.mfm
-relpaths=6
+relpaths=2
  main.pas
  msefiledialogx.pas
- mseide-msegui/lib/common/widgets/mseforms.pas
- strumpract/src/waveform.pas
- strumpract/src/waveform.mfm
- strumpract/src/main.mfm
-ismoduletexts=6
+ismoduletexts=2
  0
  0
- 0
- 0
- -1
- 0
-modules=1
+modules=2
  /home/fred/msefiledialogx/src/msefiledialogx.mfm
-moduleoptions=1
+ /home/fred/msefiledialogx/src/main.mfm
+moduleoptions=2
  0
-visiblemodules=1
+ 0
+visiblemodules=2
  -1
-nomenumodules=1
+ -1
+nomenumodules=2
+ 0
  0
 [sourcefo.files_tab]
-order=6
- 0
- 1
- 3
- 5
- 4
- 2
 firsttab=0
 index=1
 [layout]
-windowlayout=592
+windowlayout=604
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -985,7 +965,7 @@ windowlayout=592
  cy=710
  rcx=0
  rcy=0
- wsize=6
+ wsize=0
  active=1
  visible=1
  [targetconsolefo]
@@ -1290,7 +1270,7 @@ windowlayout=592
  ncy=0
  x=0
  y=579
- cx=1348
+ cx=1215
  cy=110
  rcx=0
  rcy=0
@@ -1420,7 +1400,7 @@ windowlayout=592
  ncy=0
  x=0
  y=0
- cx=1348
+ cx=1215
  cy=50
  rcx=0
  rcy=0
@@ -1436,7 +1416,7 @@ windowlayout=592
  ncy=0
  x=0
  y=0
- cx=1348
+ cx=1215
  cy=-2
  rcx=0
  rcy=0
@@ -1450,6 +1430,7 @@ windowlayout=592
  value=/home/fred/msefiledialogx/src/msefiledialogx.pas
  history=20
   /home/fred/msefiledialogx/src/msefiledialogx.pas
+  /home/fred/msefiledialogx/src/main.pas
   /home/fred/mseide-msegui/lib/common/widgets/mseforms.pas
   /home/fred/ideu/src/msefiledialog.pas
   /home/fred/strumpract/src/imagedancer.pas
@@ -1462,7 +1443,6 @@ windowlayout=592
   /home/fred/mseide-msegui/apps/myide/regfiledialogx.pas
   /home/fred/msefiledialogx/src/msefiledialog.pas
   /home/fred/strumpract/src/msestringenter.pas
-  /home/fred/msefiledialogx/src/main.pas
   /home/fred/msefiledialogx/src/main2.pas
   /home/fred/Downloads/skinblue_mfm.pas
   /home/fred/strumpract/src/spectrum1.pas
@@ -1485,18 +1465,11 @@ windowlayout=592
  ncy=0
  x=208
  y=0
- cx=1140
+ cx=1007
  cy=523
  rcx=0
  rcy=0
  [sourcefo.files_tab]
- order=6
-  0
-  1
-  3
-  5
-  4
-  2
  firsttab=0
  index=1
  [confideufo.fontname]
@@ -1535,14 +1508,14 @@ windowlayout=592
  ncy=0
  x=0
  y=53
- cx=1348
+ cx=1215
  cy=523
  rcx=0
  rcy=0
  [_mse_filedialogfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=targetconsolefo
+ stackedunder=objectinspectorfo
  parent=
  mdistate=3
  nx=0
@@ -1553,6 +1526,25 @@ windowlayout=592
  y=209
  cx=618
  cy=384
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_mainfo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=targetconsolefo
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=477
+ y=170
+ cx=413
+ cy=388
  rcx=0
  rcy=0
  wsize=0
