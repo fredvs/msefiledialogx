@@ -195,7 +195,7 @@ options=114
  value=
  [projectoptionsfo.makegroupbox]
  firsttab=0
- index=2
+ index=0
  [projectoptionsfo.exceptionsgrid]
  propcolwidthref=814
  width0=47
@@ -562,7 +562,7 @@ befcommandon=0
 makeoptionson=7
  4095
  31
- 166
+ 162
  228
  4095
  4095
@@ -892,10 +892,11 @@ envvarons=0
 [edit]
 hintwidth=0
 hintheight=0
-finddtext=list_log.datacols[0].Width
+finddtext=desktop
 findhistory=20
- list_log.datacols[0].Width
+ desktop
  home
+ list_log.datacols[0].Width
  fisfixedrow
  fsplitter
  fsplitterpanpos
@@ -913,16 +914,15 @@ findhistory=20
   30
  ficon
  seticon
- nopan
 findoptions=1
 editpos=2
- 0,0
- 0,1949
+ 0,-1073741823
+ 0,2140
 bookmarks0=0
 bookmarks1=0
 sourcefiles=2
  ${PROJECTDIR}/main.pas
- ${PROJECTDIR}/msefiledialogx.pas
+ /home/fred/msefiledialogx/src/msefiledialogx.pas
 relpaths=2
  main.pas
  msefiledialogx.pas
@@ -952,7 +952,7 @@ windowlayout=604
  [mainfo]
  splitdir=0
  useroptions=301990011
- stackedunder=
+ stackedunder=finddialogfo
  parent=
  mdistate=0
  nx=0
@@ -1412,7 +1412,7 @@ windowlayout=604
  mdistate=0
  nx=0
  ny=0
- ncx=1333
+ ncx=1200
  ncy=0
  x=0
  y=0
@@ -1515,7 +1515,7 @@ windowlayout=604
  [_mse_filedialogfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=objectinspectorfo
+ stackedunder=_mse_mainfo_mse_
  parent=
  mdistate=3
  nx=0
@@ -1525,7 +1525,7 @@ windowlayout=604
  x=326
  y=209
  cx=618
- cy=384
+ cy=434
  rcx=0
  rcy=0
  wsize=0
