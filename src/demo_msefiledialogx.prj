@@ -195,7 +195,7 @@ options=114
  value=
  [projectoptionsfo.makegroupbox]
  firsttab=0
- index=0
+ index=2
  [projectoptionsfo.exceptionsgrid]
  propcolwidthref=814
  width0=47
@@ -897,15 +897,17 @@ envvarons=0
 [edit]
 hintwidth=0
 hintheight=0
-finddtext= GB
-findhistory=3
+finddtext=F |
+findhistory=5
+ F |
+ ' D
   GB
  noicon.val
  theima
 findoptions=1
 editpos=2
  0,-1073741823
- 0,1644
+ 22,1593
 bookmarks0=0
 bookmarks1=0
 sourcefiles=2
@@ -969,7 +971,7 @@ windowlayout=588
  rcy=0
  wsize=0
  active=0
- visible=0
+ visible=1
  [threadsfo]
  splitdir=0
  useroptions=268451945
@@ -1063,7 +1065,7 @@ windowlayout=588
  x=0
  y=0
  cx=205
- cy=517
+ cy=524
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1253,9 +1255,9 @@ windowlayout=588
  ncx=0
  ncy=0
  x=0
- y=582
+ y=581
  cx=1348
- cy=107
+ cy=108
  rcx=0
  rcy=0
  [componentstorefo]
@@ -1388,7 +1390,7 @@ windowlayout=588
  x=0
  y=0
  cx=1348
- cy=59
+ cy=51
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -1404,7 +1406,7 @@ windowlayout=588
  x=0
  y=0
  cx=1348
- cy=62
+ cy=54
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -1416,6 +1418,7 @@ windowlayout=588
  [debuggerfo.file_history]
  value=/home/fred/msefiledialogx/src/msefiledialogx.pas
  history=20
+  /home/fred/mseide-msegui/lib/common/kernel/msetypes.pas
   /home/fred/msefiledialogx/src/msefiledialogx.pas
   /home/fred/mseuniverse/COPYING
   /home/fred/Desktop/corona
@@ -1435,7 +1438,6 @@ windowlayout=588
   /home/fred/msefiledialogx/src/main2.pas
   /home/fred/Downloads/skinblue_mfm.pas
   /home/fred/strumpract/src/spectrum1.pas
-  /home/fred/strumpract/src/aboutform.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -1453,7 +1455,7 @@ windowlayout=588
  x=208
  y=0
  cx=1140
- cy=517
+ cy=524
  rcx=0
  rcy=0
  [sourcefo.files_tab]
@@ -1494,15 +1496,15 @@ windowlayout=588
  ncx=0
  ncy=0
  x=0
- y=62
+ y=54
  cx=1348
- cy=517
+ cy=524
  rcx=0
  rcy=0
  [_mse_filedialogfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=objectinspectorfo
+ stackedunder=targetconsolefo
  parent=
  mdistate=3
  nx=0
