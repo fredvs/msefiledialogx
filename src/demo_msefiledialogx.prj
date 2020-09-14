@@ -907,7 +907,7 @@ findhistory=5
 findoptions=1
 editpos=2
  0,-1073741823
- 22,1593
+ 10,1580
 bookmarks0=0
 bookmarks1=0
 sourcefiles=2
@@ -1065,7 +1065,7 @@ windowlayout=588
  x=0
  y=0
  cx=205
- cy=524
+ cy=525
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1390,7 +1390,7 @@ windowlayout=588
  x=0
  y=0
  cx=1348
- cy=51
+ cy=50
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -1406,7 +1406,7 @@ windowlayout=588
  x=0
  y=0
  cx=1348
- cy=54
+ cy=53
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -1418,8 +1418,8 @@ windowlayout=588
  [debuggerfo.file_history]
  value=/home/fred/msefiledialogx/src/msefiledialogx.pas
  history=20
-  /home/fred/mseide-msegui/lib/common/kernel/msetypes.pas
   /home/fred/msefiledialogx/src/msefiledialogx.pas
+  /home/fred/mseide-msegui/lib/common/kernel/msetypes.pas
   /home/fred/mseuniverse/COPYING
   /home/fred/Desktop/corona
   /home/fred/mseide-msegui/lib/common/dialogx/msefiledialogx.pas
@@ -1455,7 +1455,7 @@ windowlayout=588
  x=208
  y=0
  cx=1140
- cy=524
+ cy=525
  rcx=0
  rcy=0
  [sourcefo.files_tab]
@@ -1496,9 +1496,9 @@ windowlayout=588
  ncx=0
  ncy=0
  x=0
- y=54
+ y=53
  cx=1348
- cy=524
+ cy=525
  rcx=0
  rcy=0
  [_mse_filedialogfo_mse_]
