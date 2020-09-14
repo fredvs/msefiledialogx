@@ -223,7 +223,7 @@ options=114
  y=68
  cx=874
  cy=572
-imagelisteditor=46
+imagelisteditor=47
  [imagelisteditorfo.statfile1]
  currentversion=0
  [imagelisteditorfo.filedialog]
@@ -236,6 +236,7 @@ imagelisteditor=46
  cx=496
  cy=308
  panel=0
+ noicon=0
  compact=0
  showhidden=0
  colnamewidth=203
@@ -904,7 +905,7 @@ findhistory=3
 findoptions=1
 editpos=2
  0,-1073741823
- 31,1693
+ 0,1644
 bookmarks0=0
 bookmarks1=0
 sourcefiles=2
@@ -935,7 +936,7 @@ windowlayout=588
  [mainfo]
  splitdir=0
  useroptions=301990011
- stackedunder=beautyfo
+ stackedunder=
  parent=
  mdistate=0
  nx=0
@@ -1398,8 +1399,8 @@ windowlayout=588
  mdistate=0
  nx=0
  ny=0
- ncx=1197
- ncy=55
+ ncx=1348
+ ncy=62
  x=0
  y=0
  cx=1348
