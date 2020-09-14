@@ -46,12 +46,12 @@ findinfiledialog=78
  [findinfileadialogfo.dir]
  filenamescust=0
  filenames=1
-  /home/fred/strumpract/
+  /home/fred/mseide-msegui/
  filecolwidth=150
  x=407
  y=181
- cx=496
- cy=308
+ cx=608
+ cy=467
  panel=0
  compact=0
  showhidden=0
@@ -59,11 +59,11 @@ findinfiledialog=78
  colsizewidth=81
  colextwidth=45
  coldatewidth=126
- splitterplaces=123
+ splitterplaces=253
  splitterlateral=110
  filehistory=6
-  /home/fred/strumpract/
   /home/fred/mseide-msegui/
+  /home/fred/strumpract/
   /home/fred/mseuniverse/
   /home/fred/mseide-msegui/apps/
   /home/fred/ideu/
@@ -71,8 +71,10 @@ findinfiledialog=78
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc" "*.mfm"
  [findinfileadialogfo.findtext]
- value=ttimer
+ value=selectcell
  history=20
+  selectcell
+  select
   ttimer
   property icon
   panel
@@ -91,10 +93,8 @@ findinfiledialog=78
   "*.pas"
   captionsave
   filedialog(
-  filedialogres
-  msefiledialog
  [findinfileadialogfo]
- stackedunder=finddialogfo
+ stackedunder=
  x=707
  y=43
  cx=234
@@ -223,12 +223,13 @@ options=114
  y=68
  cx=874
  cy=572
-imagelisteditor=39
+imagelisteditor=46
  [imagelisteditorfo.statfile1]
  currentversion=0
  [imagelisteditorfo.filedialog]
+ filenamescust=0
  filenames=1
-  /home/fred/Pictures/coeur.png
+  /home/fred/Pictures/bookmark.png
  filecolwidth=150
  x=659
  y=227
@@ -237,11 +238,17 @@ imagelisteditor=39
  panel=0
  compact=0
  showhidden=0
+ colnamewidth=203
  colsizewidth=81
  colextwidth=45
  coldatewidth=126
+ splitterplaces=129
+ splitterlateral=126
  lastdir=/home/fred/Pictures/
- filehistory=7
+ filehistory=10
+  /home/fred/Pictures/bookmark.png
+  /home/fred/Pictures/file.png
+  /home/fred/Pictures/directory.png
   /home/fred/Pictures/coeur.png
   /home/fred/strumpract/src/images/audiob.png
   /home/fred/strumpract/src/images/textb.png
@@ -889,22 +896,40 @@ envvarons=0
 [edit]
 hintwidth=0
 hintheight=0
-finddtext=listviewonlistread
-findhistory=1
+finddtext=fo.font
+findhistory=9
+ fo.font
+ fnoicon
+ theim
+ var
+ icon
+ ~
+ fnopanel
+ font.h
  listviewonlistread
 findoptions=1
-editpos=2
+editpos=4
  0,-1073741823
- 24,1725
+ 0,2436
+ 0,-1073741823
+ 0,-1073741823
 bookmarks0=0
 bookmarks1=0
-sourcefiles=2
+bookmarks2=0
+bookmarks3=0
+sourcefiles=4
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/msefiledialogx.pas
-relpaths=2
+ /home/fred/mseide-msegui/lib/common/widgets/mseinplaceedit.pas
+ /home/fred/mseide-msegui/lib/common/editwidgets/mselistbrowser.pas
+relpaths=4
  main.pas
  msefiledialogx.pas
-ismoduletexts=2
+ mseide-msegui/lib/common/widgets/mseinplaceedit.pas
+ mseide-msegui/lib/common/editwidgets/mselistbrowser.pas
+ismoduletexts=4
+ 0
+ 0
  0
  0
 modules=1
@@ -1404,7 +1429,6 @@ windowlayout=585
  value=/home/fred/msefiledialogx/src/msefiledialogx.pas
  history=20
   /home/fred/msefiledialogx/src/msefiledialogx.pas
-  /home/fred/mseide-msegui/lib/common/dialogx/msefiledialogx.mfm
   /home/fred/mseide-msegui/lib/common/dialogx/msefiledialogx.pas
   /home/fred/ideu/src/msefiledialog.pas
   /home/fred/strumpract/src/imagedancer.pas
@@ -1423,6 +1447,7 @@ windowlayout=585
   /home/fred/strumpract/src/spectrum1.pas
   /home/fred/strumpract/src/aboutform.pas
   /home/fred/strumpract/src/dockpanel1.pas
+  /home/fred/strumpract/src/config.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -1489,7 +1514,7 @@ windowlayout=585
  [_mse_filedialogfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=targetconsolefo
+ stackedunder=objectinspectorfo
  parent=
  mdistate=3
  nx=0
@@ -1499,7 +1524,7 @@ windowlayout=585
  x=326
  y=209
  cx=618
- cy=434
+ cy=484
  rcx=0
  rcy=0
  wsize=0
