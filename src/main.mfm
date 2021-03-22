@@ -460,6 +460,7 @@ object mainfo: tmainfo
     controller.compact = False
     controller.showoptions = False
     controller.hidehistory = False
+    controller.hideicons = False
     controller.showhidden = False
     reffontheight = 15
   end
@@ -474,7 +475,7 @@ object mainfo: tmainfo
       2
     )
     taborder = 13
-    bounds_x = 40
+    bounds_x = 16
     bounds_y = 54
     bounds_cx = 139
     bounds_cy = 17
@@ -490,7 +491,7 @@ object mainfo: tmainfo
       2
     )
     taborder = 14
-    bounds_x = 240
+    bounds_x = 272
     bounds_y = 54
     bounds_cx = 88
     bounds_cy = 17
@@ -506,7 +507,7 @@ object mainfo: tmainfo
       2
     )
     taborder = 15
-    bounds_x = 240
+    bounds_x = 224
     bounds_y = 78
     bounds_cx = 122
     bounds_cy = 17
@@ -522,9 +523,25 @@ object mainfo: tmainfo
       2
     )
     taborder = 16
-    bounds_x = 40
-    bounds_y = 78
+    bounds_x = 176
+    bounds_y = 54
     bounds_cx = 79
+    bounds_cy = 17
+  end
+  object bcompact: tbooleanedit
+    frame.caption = 'Compact List'
+    frame.localprops = []
+    frame.localprops1 = []
+    frame.outerframe = (
+      0
+      2
+      82
+      2
+    )
+    taborder = 17
+    bounds_x = 32
+    bounds_y = 78
+    bounds_cx = 95
     bounds_cy = 17
   end
   object tfiledialogx1: tfiledialogx
@@ -587,7 +604,8 @@ object mainfo: tmainfo
     controller.compact = False
     controller.showoptions = False
     controller.hidehistory = False
-    controller.showhidden = True
+    controller.hideicons = False
+    controller.showhidden = False
     left = 232
     top = 208
   end

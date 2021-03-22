@@ -925,8 +925,8 @@ findhistory=20
  theimagelist
 findoptions=1
 editpos=2
- 18,32
- 0,2951
+ 26,89
+ 0,-1073741823
 bookmarks0=0
 bookmarks1=0
 sourcefiles=2
@@ -1425,11 +1425,11 @@ windowlayout=607
  nx=0
  ny=0
  ncx=1197
- ncy=40
+ ncy=38
  x=0
  y=0
  cx=1212
- cy=38
+ cy=36
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -1441,8 +1441,8 @@ windowlayout=607
  [debuggerfo.file_history]
  value=/home/fred/msefiledialogx/src/main.pas
  history=20
-  /home/fred/msefiledialogx/src/msefiledialogx.pas
   /home/fred/msefiledialogx/src/main.pas
+  /home/fred/msefiledialogx/src/msefiledialogx.pas
   /home/fred/msefiledialogx/src/msefiledialogx.mfm
   /home/fred/msefiledialogx.pas
   /home/fred/filedialogx/msefiledialogx.pas
@@ -1527,7 +1527,7 @@ windowlayout=607
  [_mse_filedialogfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=objectinspectorfo
+ stackedunder=_mse_mainfo_mse_
  parent=
  mdistate=3
  nx=0
@@ -1546,7 +1546,7 @@ windowlayout=607
  [_mse_mainfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=mainfo
+ stackedunder=objectinspectorfo
  parent=
  mdistate=3
  nx=0
