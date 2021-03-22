@@ -901,9 +901,13 @@ envvarons=0
 [edit]
 hintwidth=314
 hintheight=214
-finddtext=filename.visible
+finddtext=fnoicon
 findhistory=20
+ fnoicon
+ fnoicons
+ hidehistory
  showoptions
+ bnoicon
  fshowoptions
  showhidden
  list_log.top
@@ -919,14 +923,10 @@ findhistory=20
  procedure getfileicon(
  getfileicon
  theimagelist
- icon
- setico
- tfilelistview
- filelistview
 findoptions=1
 editpos=2
- 49,77
- 0,833
+ 18,32
+ 0,2951
 bookmarks0=0
 bookmarks1=0
 sourcefiles=2
@@ -968,8 +968,8 @@ windowlayout=607
  ny=0
  ncx=0
  ncy=0
- x=109
- y=115
+ x=63
+ y=98
  cx=1224
  cy=621
  rcx=0
@@ -994,7 +994,7 @@ windowlayout=607
  rcy=0
  wsize=0
  active=0
- visible=1
+ visible=0
  [threadsfo]
  splitdir=0
  useroptions=268451945
@@ -1382,7 +1382,7 @@ windowlayout=607
  [componentpalettefo]
  splitdir=0
  useroptions=268460139
- stackedunder=_mse_mainfo_mse_
+ stackedunder=
  parent=
  mdistate=3
  nx=0
@@ -1397,7 +1397,7 @@ windowlayout=607
  rcy=0
  wsize=0
  active=0
- visible=1
+ visible=0
  [componentpalettefo.componentpages]
  activetab=5
  [debuggerfo]
@@ -1425,11 +1425,11 @@ windowlayout=607
  nx=0
  ny=0
  ncx=1197
- ncy=46
+ ncy=40
  x=0
  y=0
  cx=1212
- cy=44
+ cy=38
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -1442,6 +1442,7 @@ windowlayout=607
  value=/home/fred/msefiledialogx/src/main.pas
  history=20
   /home/fred/msefiledialogx/src/msefiledialogx.pas
+  /home/fred/msefiledialogx/src/main.pas
   /home/fred/msefiledialogx/src/msefiledialogx.mfm
   /home/fred/msefiledialogx.pas
   /home/fred/filedialogx/msefiledialogx.pas
@@ -1460,7 +1461,6 @@ windowlayout=607
   /home/fred/strumpract/src/alsa_mixer.pas
   /home/fred/strumpract/src/alsa_mixer_test.pas
   /home/fred/strumpract/src/uos_portaudio.pas
-  /home/fred/alsa_sound/src/alsa_sound.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -1527,7 +1527,7 @@ windowlayout=607
  [_mse_filedialogfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=componentpalettefo
+ stackedunder=objectinspectorfo
  parent=
  mdistate=3
  nx=0
@@ -1546,17 +1546,17 @@ windowlayout=607
  [_mse_mainfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=objectinspectorfo
+ stackedunder=mainfo
  parent=
  mdistate=3
  nx=0
  ny=0
  ncx=0
  ncy=0
- x=477
- y=170
+ x=497
+ y=198
  cx=413
- cy=388
+ cy=421
  rcx=0
  rcy=0
  wsize=0

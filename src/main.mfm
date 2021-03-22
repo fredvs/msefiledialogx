@@ -1,15 +1,15 @@
 object mainfo: tmainfo
-  bounds_x = 477
-  bounds_y = 170
+  bounds_x = 497
+  bounds_y = 198
   bounds_cx = 403
-  bounds_cy = 388
+  bounds_cy = 421
   container.frame.localprops = []
   container.frame.localprops1 = []
   container.bounds = (
     0
     0
     403
-    388
+    421
   )
   font.name = 'stf_default'
   font.localprops = []
@@ -35,7 +35,7 @@ object mainfo: tmainfo
     )
     taborder = 1
     bounds_x = 0
-    bounds_y = 286
+    bounds_y = 318
     bounds_cx = 403
     bounds_cy = 45
     anchors = [an_top]
@@ -157,7 +157,7 @@ object mainfo: tmainfo
     )
     taborder = 3
     bounds_x = 32
-    bounds_y = 78
+    bounds_y = 110
     bounds_cx = 132
     bounds_cy = 39
     value = '"*.pas" "*.mfm"'
@@ -176,7 +176,7 @@ object mainfo: tmainfo
     )
     taborder = 4
     bounds_x = 192
-    bounds_y = 78
+    bounds_y = 110
     bounds_cx = 172
     bounds_cy = 39
     value = 'My title'
@@ -194,7 +194,7 @@ object mainfo: tmainfo
     )
     taborder = 5
     bounds_x = 240
-    bounds_y = 76
+    bounds_y = 108
     bounds_cx = 91
     bounds_cy = 17
   end
@@ -211,14 +211,14 @@ object mainfo: tmainfo
     )
     taborder = 6
     bounds_x = 32
-    bounds_y = 124
+    bounds_y = 156
     bounds_cx = 332
     bounds_cy = 39
     reffontheight = 15
   end
   object tbutton1: tbutton
     bounds_x = 64
-    bounds_y = 264
+    bounds_y = 296
     bounds_cx = 300
     bounds_cy = 29
     state = [as_localcaption, as_localonexecute]
@@ -253,7 +253,7 @@ object mainfo: tmainfo
     )
     taborder = 7
     bounds_x = 24
-    bounds_y = 168
+    bounds_y = 200
     bounds_cx = 103
     bounds_cy = 39
     optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_readonlydialog, oe1_savevalue, oe1_savestate, oe1_checkvalueafterstatread]
@@ -287,7 +287,7 @@ object mainfo: tmainfo
     taborder = 8
     hint = 'Font height for all ideU text'
     bounds_x = 133
-    bounds_y = 168
+    bounds_y = 200
     bounds_cx = 76
     bounds_cy = 39
     optionsedit1 = [oe1_autopopupmenu, oe1_savevalue, oe1_savestate]
@@ -298,7 +298,7 @@ object mainfo: tmainfo
   object tbutton2: tbutton
     taborder = 9
     bounds_x = 316
-    bounds_y = 344
+    bounds_y = 376
     bounds_cx = 82
     bounds_cy = 29
     state = [as_localcaption, as_localonexecute]
@@ -325,7 +325,7 @@ object mainfo: tmainfo
     )
     taborder = 10
     bounds_x = 64
-    bounds_y = 214
+    bounds_y = 246
     bounds_cx = 292
     bounds_cy = 39
     value = -2147483647
@@ -352,7 +352,7 @@ object mainfo: tmainfo
     )
     taborder = 11
     bounds_x = 216
-    bounds_y = 168
+    bounds_y = 200
     bounds_cx = 172
     bounds_cy = 39
     value = -1610612734
@@ -370,7 +370,7 @@ object mainfo: tmainfo
     frame.button.imagenr = 17
     taborder = 12
     bounds_x = 16
-    bounds_y = 344
+    bounds_y = 376
     bounds_cx = 284
     bounds_cy = 29
     statfile = tstatfile1
@@ -458,6 +458,8 @@ object mainfo: tmainfo
       000000000000000000000000
     }
     controller.compact = False
+    controller.showoptions = False
+    controller.hidehistory = False
     controller.showhidden = False
     reffontheight = 15
   end
@@ -472,7 +474,7 @@ object mainfo: tmainfo
       2
     )
     taborder = 13
-    bounds_x = 8
+    bounds_x = 40
     bounds_y = 54
     bounds_cx = 139
     bounds_cy = 17
@@ -488,7 +490,7 @@ object mainfo: tmainfo
       2
     )
     taborder = 14
-    bounds_x = 168
+    bounds_x = 240
     bounds_y = 54
     bounds_cx = 88
     bounds_cy = 17
@@ -504,9 +506,25 @@ object mainfo: tmainfo
       2
     )
     taborder = 15
-    bounds_x = 272
-    bounds_y = 54
+    bounds_x = 240
+    bounds_y = 78
     bounds_cx = 122
+    bounds_cy = 17
+  end
+  object bhideicons: tbooleanedit
+    frame.caption = 'Hide Icons'
+    frame.localprops = []
+    frame.localprops1 = []
+    frame.outerframe = (
+      0
+      2
+      66
+      2
+    )
+    taborder = 16
+    bounds_x = 40
+    bounds_y = 78
+    bounds_cx = 79
     bounds_cy = 17
   end
   object tfiledialogx1: tfiledialogx
@@ -567,6 +585,8 @@ object mainfo: tmainfo
       0000000000000000000000000000000000000000
     }
     controller.compact = False
+    controller.showoptions = False
+    controller.hidehistory = False
     controller.showhidden = True
     left = 232
     top = 208

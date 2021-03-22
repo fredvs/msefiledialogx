@@ -37,6 +37,7 @@ type
    tstatfile1: tstatfile;
    bhidehistory: tbooleanedit;
    bshowhidden: tbooleanedit;
+   bhideicons: tbooleanedit;
     procedure onex(const Sender: TObject);
     procedure onclose(const Sender: TObject);
   end;
@@ -84,7 +85,11 @@ begin
   if bshowhidden.value then
   tfiledialogx1.controller.showhidden  := true else
   tfiledialogx1.controller.showhidden  := false;
-
+  
+  if bhideicons.value then
+  tfiledialogx1.controller.hideicons  := true else
+  tfiledialogx1.controller.hideicons  := false;
+  
   setlength(ara, 5);
   setlength(arb, 5);
 
