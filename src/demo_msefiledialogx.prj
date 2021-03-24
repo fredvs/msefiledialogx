@@ -925,12 +925,12 @@ findhistory=20
  theimagelist
 findoptions=1
 editpos=2
- 26,89
+ 46,75
  0,-1073741823
 bookmarks0=0
 bookmarks1=0
 sourcefiles=2
- ${PROJECTDIR}/main.pas
+ /home/fred/msefiledialogx/src/main.pas
  ${PROJECTDIR}/msefiledialogx.pas
 relpaths=2
  main.pas
@@ -1425,11 +1425,11 @@ windowlayout=607
  nx=0
  ny=0
  ncx=1197
- ncy=38
+ ncy=36
  x=0
  y=0
  cx=1212
- cy=36
+ cy=34
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -1546,7 +1546,7 @@ windowlayout=607
  [_mse_mainfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=objectinspectorfo
+ stackedunder=mainfo
  parent=
  mdistate=3
  nx=0
