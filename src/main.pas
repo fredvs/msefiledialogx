@@ -10,7 +10,7 @@ uses
  msegrids,msegridsglob,mseificomp,mseificompglob,mseifiglob,mselistbrowser,
  msestatfile,msestream,msesys,SysUtils,msesimplewidgets,msedispwidgets,
  mserichstring,msegraphedits,msescrollbar,msefiledialogx,msesplitter,
- msecolordialog;
+ msecolordialog, msefiledialog;
 
 type
   tmainfo = class(tmainform)
