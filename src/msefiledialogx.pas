@@ -147,11 +147,11 @@ const
   defaultfiledialogoptions = [fdo_savelastdir];
 
 type
-  filedialogxkindty = (fdxk_none, fdxk_open, fdxk_save, fdxk_new, fdxk_dir);
+  filedialogkindty = (fdk_none,fdk_open,fdk_save,fdk_new);
 
   tfiledialogxcontroller = class;
 
-  filedialogbeforeexecuteeventty = procedure(const Sender: tfiledialogxcontroller; var dialogkind: filedialogxkindty; var aresult: modalresultty) of object;
+  filedialogbeforeexecuteeventty = procedure(const Sender: tfiledialogxcontroller; var dialogkind: filedialogkindty; var aresult: modalresultty) of object;
   filedialogafterexecuteeventty  = procedure(const Sender: tfiledialogxcontroller; var aresult: modalresultty) of object;
 
   tfiledialogxcontroller = class(tlinkedpersistent)
@@ -228,21 +228,21 @@ type
     procedure writestatvalue(const writer: tstatwriter);
     procedure writestatstate(const writer: tstatwriter);
     procedure writestatoptions(const writer: tstatwriter);
-    function actcaption(const dialogkind: filedialogxkindty): msestring;
-    function Execute(dialogkind: filedialogxkindty = fdxk_none): modalresultty;
+    function actcaption(const dialogkind: filedialogkindty): msestring;
+    function Execute(dialogkind: filedialogkindty = fdk_none): modalresultty;
       overload;
-    //fdxk_none -> use options fdo_save
-    function Execute(dialogkind: filedialogxkindty; const acaption: msestring; aoptions: filedialogxoptionsty): modalresultty;
+    //fdk_none -> use options fdo_save
+    function Execute(dialogkind: filedialogkindty; const acaption: msestring; aoptions: filedialogxoptionsty): modalresultty;
       overload;
-    function Execute(const dialogkind: filedialogxkindty; const acaption: msestring): modalresultty;
+    function Execute(const dialogkind: filedialogkindty; const acaption: msestring): modalresultty;
       overload;
-    function Execute(const dialogkind: filedialogxkindty; const aoptions: filedialogxoptionsty): modalresultty;
+    function Execute(const dialogkind: filedialogkindty; const aoptions: filedialogxoptionsty): modalresultty;
       overload;
-    function Execute(var avalue: filenamety; dialogkind: filedialogxkindty = fdxk_none): Boolean;
+    function Execute(var avalue: filenamety; dialogkind: filedialogkindty = fdk_none): Boolean;
       overload;
-    function Execute(var avalue: filenamety; const dialogkind: filedialogxkindty; const acaption: msestring): Boolean;
+    function Execute(var avalue: filenamety; const dialogkind: filedialogkindty; const acaption: msestring): Boolean;
       overload;
-    function Execute(var avalue: filenamety; const dialogkind: filedialogxkindty; const acaption: msestring; aoptions: filedialogxoptionsty): Boolean;
+    function Execute(var avalue: filenamety; const dialogkind: filedialogkindty; const acaption: msestring; aoptions: filedialogxoptionsty): Boolean;
       overload;
     function canoverwrite(): Boolean;
     //true if current filename is allowed to write
@@ -301,7 +301,7 @@ type
     fcontroller: tfiledialogxcontroller;
     fstatvarname: msestring;
     fstatfile: tstatfile;
-    fdialogkind: filedialogxkindty;
+    fdialogkind: filedialogkindty;
     //   foptionsedit: optionseditty;
     foptionsedit1: optionsedit1ty;
     fstatpriority: integer;
@@ -328,10 +328,10 @@ type
     function Execute: modalresultty;
       overload;
       override;
-    function Execute(const akind: filedialogxkindty): modalresultty;
+    function Execute(const akind: filedialogkindty): modalresultty;
       reintroduce;
       overload;
-    function Execute(const akind: filedialogxkindty; const aoptions: filedialogxoptionsty): modalresultty;
+    function Execute(const akind: filedialogkindty; const aoptions: filedialogxoptionsty): modalresultty;
       reintroduce;
       overload;
     procedure componentevent(const event: tcomponentevent);
@@ -341,7 +341,7 @@ type
     property statvarname: msestring read getstatvarname write fstatvarname;
     property statpriority: integer read fstatpriority write fstatpriority default 0;
     property controller: tfiledialogxcontroller read fcontroller write setcontroller;
-    property dialogkind: filedialogxkindty read fdialogkind write fdialogkind default fdxk_none;
+    property dialogkind: filedialogkindty read fdialogkind write fdialogkind default fdk_none;
     property optionsedit1: optionsedit1ty read foptionsedit1 write foptionsedit1 default defaultfiledialogoptionsedit1;
 
   end;
@@ -2746,7 +2746,7 @@ begin
     fowner.sendrootcomponentevent(tcomponentevent.Create(self), True);
 end;
 
-function tfiledialogxcontroller.Execute(dialogkind: filedialogxkindty; const acaption: msestring; aoptions: filedialogxoptionsty): modalresultty;
+function tfiledialogxcontroller.Execute(dialogkind: filedialogkindty; const acaption: msestring; aoptions: filedialogxoptionsty): modalresultty;
 var
   po1: pmsestringarty;
   fo: tfiledialogxfo;
@@ -2931,24 +2931,24 @@ begin
     //   fo.list_log.datacols[1].Width - fo.list_log.datacols[2].Width -
     //   fo.list_log.datacols[3].Width - 20;
 
-    if (dialogkind in [fdxk_dir]) or (fdo_directory in aoptions) then
+    if (fdo_directory in aoptions) then
     begin
       fo.filename.tag           := 1;
       fo.filename.Value         := fo.dir.Value;
       fo.filename.frame.Caption := 'Selected Directory';
     end
-    else if (dialogkind in [fdxk_save]) then
+    else if (dialogkind in [fdk_save]) then
     begin
       fo.filename.frame.Caption := 'Save File as';
       fo.filename.tag           := 2;
     end  
-    else if (dialogkind in [fdxk_new]) then
+    else if (dialogkind in [fdk_new]) then
       fo.filename.frame.Caption := 'New File Name'
     else
       fo.filename.frame.Caption := 'Selected File';
 
-    if dialogkind <> fdxk_none then
-      if dialogkind in [fdxk_save, fdxk_new] then
+    if dialogkind <> fdk_none then
+      if dialogkind in [fdk_save, fdk_new] then
         system.include(aoptions, fdo_save)
       else
         system.exclude(aoptions, fdo_save);
@@ -3013,55 +3013,62 @@ begin
   end;
 end;
 
-function tfiledialogxcontroller.Execute(const dialogkind: filedialogxkindty; const acaption: msestring): modalresultty;
+function tfiledialogxcontroller.Execute(const dialogkind: filedialogkindty; const acaption: msestring): modalresultty;
 begin
   Result := Execute(dialogkind, acaption, foptions);
 end;
 
-function tfiledialogxcontroller.actcaption(const dialogkind: filedialogxkindty): msestring;
+function tfiledialogxcontroller.actcaption(const dialogkind: filedialogkindty): msestring;
 begin
   case dialogkind of
-    fdxk_save:
+    fdk_save:
       Result := fcaptionsave;
-    fdxk_new:
+    fdk_new:
       Result := fcaptionnew;
-    fdxk_open:
+    fdk_open:
       Result := fcaptionopen;
-    fdxk_dir:
-      Result := fcaptiondir;
-   // fdxk_none:
+    //fdk_dir:
+    //  Result := fcaptiondir;
+   // fdk_none:
    //   Result := '';
     else
       Result := fcaptionopen;
   end;
 end;
 
-function tfiledialogxcontroller.Execute(const dialogkind: filedialogxkindty; const aoptions: filedialogxoptionsty): modalresultty;
+function tfiledialogxcontroller.Execute(const dialogkind: filedialogkindty; const aoptions: filedialogxoptionsty): modalresultty;
 begin
+ if fdo_directory in aoptions then
+ Result := Execute(dialogkind, fcaptiondir, aoptions) else
   Result := Execute(dialogkind, actcaption(dialogkind), aoptions);
 end;
 
-function tfiledialogxcontroller.Execute(dialogkind: filedialogxkindty = fdxk_none): modalresultty;
+function tfiledialogxcontroller.Execute(dialogkind: filedialogkindty = fdk_none): modalresultty;
 begin
-  if dialogkind = fdxk_none then
+  if dialogkind = fdk_none then
     if fdo_save in foptions then
-      dialogkind := fdxk_save
+      dialogkind := fdk_save
     else
-      dialogkind := fdxk_none;
+      dialogkind := fdk_none;
+   if fdo_directory in foptions then   
+   Result := Execute(dialogkind, fcaptiondir) else
   Result := Execute(dialogkind, actcaption(dialogkind));
 end;
 
-function tfiledialogxcontroller.Execute(var avalue: filenamety; dialogkind: filedialogxkindty = fdxk_none): Boolean;
+function tfiledialogxcontroller.Execute(var avalue: filenamety; dialogkind: filedialogkindty = fdk_none): Boolean;
 begin
-  if dialogkind = fdxk_none then
+  if dialogkind = fdk_none then
     if fdo_save in foptions then
-      dialogkind := fdxk_save
+      dialogkind := fdk_save
     else
-      dialogkind := fdxk_none;
+      dialogkind := fdk_none;
+      
+    if fdo_directory in foptions then   
+   Result := Execute(avalue, dialogkind, fcaptiondir) else
   Result := Execute(avalue, dialogkind, actcaption(dialogkind));
 end;
 
-function tfiledialogxcontroller.Execute(var avalue: filenamety; const dialogkind: filedialogxkindty; const acaption: msestring; aoptions: filedialogxoptionsty): Boolean;
+function tfiledialogxcontroller.Execute(var avalue: filenamety; const dialogkind: filedialogkindty; const acaption: msestring; aoptions: filedialogxoptionsty): Boolean;
 var
   wstr1: filenamety;
 begin
@@ -3093,7 +3100,7 @@ begin
       captions[sc_warningupper]);
 end;
 
-function tfiledialogxcontroller.Execute(var avalue: filenamety; const dialogkind: filedialogxkindty; const acaption: msestring): Boolean;
+function tfiledialogxcontroller.Execute(var avalue: filenamety; const dialogkind: filedialogkindty; const acaption: msestring): Boolean;
 begin
   Result := Execute(avalue, dialogkind, acaption, foptions);
 end;
@@ -3303,12 +3310,12 @@ begin
   Result := fcontroller.Execute(fdialogkind);
 end;
 
-function tfiledialogx.Execute(const akind: filedialogxkindty): modalresultty;
+function tfiledialogx.Execute(const akind: filedialogkindty): modalresultty;
 begin
   Result := fcontroller.Execute(akind);
 end;
 
-function tfiledialogx.Execute(const akind: filedialogxkindty; const aoptions: filedialogxoptionsty): modalresultty;
+function tfiledialogx.Execute(const akind: filedialogkindty; const aoptions: filedialogxoptionsty): modalresultty;
 begin
   Result := fcontroller.Execute(akind, aoptions);
 end;

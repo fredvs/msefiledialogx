@@ -12,6 +12,7 @@ uses
  msegrids, msegridsglob, mseificomp, mseificompglob, mseifiglob,
  mselistbrowser,msestatfile, msestream, msesys, msesimplewidgets,sysutils,
  classes, math, msefiledialogx, 
+ // msefiledialog, 
   msedispwidgets, mserichstring, msegraphedits,
  msescrollbar, msecolordialog;
 
@@ -57,19 +58,26 @@ uses
 
 procedure tmainfo.onex(const Sender: TObject);
 var
-  dialogkind: filedialogxkindty;
+  dialogkind: filedialogkindty;
   ara, arb: msestringarty;
 begin
+
+  tfiledialogx1.controller.options := [];
+ 
   if b_fdk_open.Value then
-    dialogkind := fdxk_open
+    dialogkind := fdk_open
   else if b_fdk_save.Value then
-    dialogkind := fdxk_save
+    dialogkind := fdk_save
   else if b_fdk_dir.Value then
-    dialogkind := fdxk_dir
-  else if b_fdk_none.Value then
-    dialogkind := fdxk_none
+  begin
+   tfiledialogx1.controller.options := [fdo_directory];
+   end
+  else if b_fdk_none.Value then 
+    dialogkind := fdk_none
   else if b_fdk_new.Value then
-    dialogkind := fdxk_new;
+    dialogkind := fdk_new;
+    
+    
 
   tfiledialogx1.controller.captionnew  := 'New File';
   tfiledialogx1.controller.captionopen := 'Open File';

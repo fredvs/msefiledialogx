@@ -464,6 +464,7 @@ object mainfo: tmainfo
     controller.showhidden = False
     controller.options = [fdo_sysfilename, fdo_savelastdir]
     controller.captionopen = 'Open File'
+    controller.captiondir = 'Open Dir'
     reffontheight = 15
   end
   object bshowoptions: tbooleanedit
@@ -608,6 +609,7 @@ object mainfo: tmainfo
     controller.hidehistory = False
     controller.hideicons = False
     controller.showhidden = False
+    controller.options = [fdo_directory, fdo_savelastdir]
     left = 232
     top = 208
   end
