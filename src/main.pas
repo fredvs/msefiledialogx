@@ -8,12 +8,10 @@ uses
  msegui, msegraphics, msegraphutils, mseevent, mseclasses, msewidgets, mseforms,
  mseimage, msebitmap, mseformatbmpicoread, mseformatjpgread, mseformatpngread,
  mseformatpnmread, mseformattgaread, mseformatxpmread, msekeyboard, mseact,
- msedataedits, msedatanodes, msedragglob, msedropdownlist, mseedit,
- msegrids, msegridsglob, mseificomp, mseificompglob, mseifiglob,
- mselistbrowser,msestatfile, msestream, msesys, msesimplewidgets,sysutils,
- classes, math, msefiledialogx, 
- // msefiledialog, 
-  msedispwidgets, mserichstring, msegraphedits,
+ msedataedits, msedatanodes, msedragglob, msedropdownlist, mseedit,msegrids,
+  msegridsglob, mseificomp, mseificompglob, mseifiglob,mselistbrowser,
+ msestatfile, msestream, msesys, msesimplewidgets,sysutils,classes, math,
+  msefiledialogx,msedispwidgets, mserichstring, msegraphedits,
  msescrollbar, msecolordialog;
 
 type

@@ -141,7 +141,7 @@ type
     fdo_checkexist, fdo_acceptempty, fdo_single,
     fdo_chdir, fdo_savelastdir,
     fdo_checksubdir);
-  filedialogxoptionsty = set of filedialogxoptionty;
+  filedialogoptionsty = set of filedialogxoptionty;
 
 const
   defaultfiledialogoptions = [fdo_savelastdir];
@@ -205,7 +205,7 @@ type
     procedure setfilename(const avalue: filenamety);
     procedure dochange;
     procedure setdefaultext(const avalue: filenamety);
-    procedure setoptions(Value: filedialogxoptionsty);
+    procedure setoptions(Value: filedialogoptionsty);
     procedure checklink;
     procedure setlastdir(const avalue: filenamety);
     procedure setimagelist(const avalue: timagelist);
@@ -214,7 +214,7 @@ type
     flastdir: filenamety;
     fbasedir: filenamety;
     fdefaultext: filenamety;
-    foptions: filedialogxoptionsty;
+    foptions: filedialogoptionsty;
   public
 
     constructor Create(const aowner: tmsecomponent = nil; const onchange: proceventty = nil);
@@ -232,17 +232,17 @@ type
     function Execute(dialogkind: filedialogkindty = fdk_none): modalresultty;
       overload;
     //fdk_none -> use options fdo_save
-    function Execute(dialogkind: filedialogkindty; const acaption: msestring; aoptions: filedialogxoptionsty): modalresultty;
+    function Execute(dialogkind: filedialogkindty; const acaption: msestring; aoptions: filedialogoptionsty): modalresultty;
       overload;
     function Execute(const dialogkind: filedialogkindty; const acaption: msestring): modalresultty;
       overload;
-    function Execute(const dialogkind: filedialogkindty; const aoptions: filedialogxoptionsty): modalresultty;
+    function Execute(const dialogkind: filedialogkindty; const aoptions: filedialogoptionsty): modalresultty;
       overload;
     function Execute(var avalue: filenamety; dialogkind: filedialogkindty = fdk_none): Boolean;
       overload;
     function Execute(var avalue: filenamety; const dialogkind: filedialogkindty; const acaption: msestring): Boolean;
       overload;
-    function Execute(var avalue: filenamety; const dialogkind: filedialogkindty; const acaption: msestring; aoptions: filedialogxoptionsty): Boolean;
+    function Execute(var avalue: filenamety; const dialogkind: filedialogkindty; const acaption: msestring; aoptions: filedialogoptionsty): Boolean;
       overload;
     function canoverwrite(): Boolean;
     //true if current filename is allowed to write
@@ -276,7 +276,7 @@ type
     property exclude: fileattributesty read fexclude write fexclude default [fa_hidden];
     property colwidth: integer read fcolwidth write fcolwidth default 0;
     property defaultext: filenamety read fdefaultext write setdefaultext;
-    property options: filedialogxoptionsty read foptions write setoptions default defaultfiledialogoptions;
+    property options: filedialogoptionsty read foptions write setoptions default defaultfiledialogoptions;
     property historymaxcount: integer read fhistorymaxcount write sethistorymaxcount default defaulthistorymaxcount;
     property captionopen: msestring read fcaptionopen write fcaptionopen;
     property captionsave: msestring read fcaptionsave write fcaptionsave;
@@ -331,7 +331,7 @@ type
     function Execute(const akind: filedialogkindty): modalresultty;
       reintroduce;
       overload;
-    function Execute(const akind: filedialogkindty; const aoptions: filedialogxoptionsty): modalresultty;
+    function Execute(const akind: filedialogkindty; const aoptions: filedialogoptionsty): modalresultty;
       reintroduce;
       overload;
     procedure componentevent(const event: tcomponentevent);
@@ -641,12 +641,12 @@ type
     procedure course(const adir: filenamety);
     procedure doup();
   public
-    dialogoptions: filedialogxoptionsty;
+    dialogoptions: filedialogoptionsty;
     defaultext: filenamety;
     filenames: filenamearty;
   end;
 
-function filedialog(var afilenames: filenamearty; const aoptions: filedialogxoptionsty; const acaption: msestring;    //'' -> 'Open' or 'Save'
+function filedialog(var afilenames: filenamearty; const aoptions: filedialogoptionsty; const acaption: msestring;    //'' -> 'Open' or 'Save'
   const filterdesc: array of msestring; const filtermask: array of msestring; const adefaultext: filenamety = ''; const filterindex: pinteger = nil;     //nil -> 0
   const filter: pfilenamety = nil;       //nil -> unused
   const colwidth: pinteger = nil;        //nil -> default
@@ -654,7 +654,7 @@ function filedialog(var afilenames: filenamearty; const aoptions: filedialogxopt
   const imagelist: timagelist = nil; const ongetfileicon: getfileiconeventty = nil; const oncheckfile: checkfileeventty = nil): modalresultty;
   overload;
 //threadsafe
-function filedialog(var afilename: filenamety; const aoptions: filedialogxoptionsty; const acaption: msestring; const filterdesc: array of msestring; const filtermask: array of msestring;
+function filedialog(var afilename: filenamety; const aoptions: filedialogoptionsty; const acaption: msestring; const filterdesc: array of msestring; const filtermask: array of msestring;
   const adefaultext: filenamety = ''; const filterindex: pinteger = nil;     //nil -> 0
   const filter: pfilenamety = nil;       //nil -> unused
   const colwidth: pinteger = nil;        //nil -> default
@@ -756,7 +756,7 @@ function filedialog1(dialog: tfiledialogxfo; var afilenames: filenamearty;
   const history: pmsestringarty;
    const historymaxcount: integer;
     const acaption: msestring;
-     const aoptions: filedialogxoptionsty;
+     const aoptions: filedialogoptionsty;
   const adefaultext: filenamety;
    const imagelist: timagelist;
     const ongetfileicon: getfileiconeventty;
@@ -907,7 +907,7 @@ begin
   end;
 end;
 
-function filedialog(var afilenames: filenamearty; const aoptions: filedialogxoptionsty; const acaption: msestring; const filterdesc: array of msestring; const filtermask: array of msestring;
+function filedialog(var afilenames: filenamearty; const aoptions: filedialogoptionsty; const acaption: msestring; const filterdesc: array of msestring; const filtermask: array of msestring;
   const adefaultext: filenamety = ''; const filterindex: pinteger = nil; const filter: pfilenamety = nil;       //nil -> unused
   const colwidth: pinteger = nil;        //nil -> default
   const includeattrib: fileattributesty = [fa_all]; const excludeattrib: fileattributesty = [fa_hidden]; const history: pmsestringarty = nil; const historymaxcount: integer = defaulthistorymaxcount;
@@ -942,7 +942,7 @@ begin
   end;
 end;
 
-function filedialog(var afilename: filenamety; const aoptions: filedialogxoptionsty; const acaption: msestring; const filterdesc: array of msestring; const filtermask: array of msestring;
+function filedialog(var afilename: filenamety; const aoptions: filedialogoptionsty; const acaption: msestring; const filterdesc: array of msestring; const filtermask: array of msestring;
   const adefaultext: filenamety = ''; const filterindex: pinteger = nil; const filter: pfilenamety = nil;       //nil -> unused
   const colwidth: pinteger = nil;        //nil -> default
   const includeattrib: fileattributesty = [fa_all]; const excludeattrib: fileattributesty = [fa_hidden]; const history: pmsestringarty = nil; const historymaxcount: integer = defaulthistorymaxcount;
@@ -2746,7 +2746,7 @@ begin
     fowner.sendrootcomponentevent(tcomponentevent.Create(self), True);
 end;
 
-function tfiledialogxcontroller.Execute(dialogkind: filedialogkindty; const acaption: msestring; aoptions: filedialogxoptionsty): modalresultty;
+function tfiledialogxcontroller.Execute(dialogkind: filedialogkindty; const acaption: msestring; aoptions: filedialogoptionsty): modalresultty;
 var
   po1: pmsestringarty;
   fo: tfiledialogxfo;
@@ -3036,7 +3036,7 @@ begin
   end;
 end;
 
-function tfiledialogxcontroller.Execute(const dialogkind: filedialogkindty; const aoptions: filedialogxoptionsty): modalresultty;
+function tfiledialogxcontroller.Execute(const dialogkind: filedialogkindty; const aoptions: filedialogoptionsty): modalresultty;
 begin
  if fdo_directory in aoptions then
  Result := Execute(dialogkind, fcaptiondir, aoptions) else
@@ -3068,7 +3068,7 @@ begin
   Result := Execute(avalue, dialogkind, actcaption(dialogkind));
 end;
 
-function tfiledialogxcontroller.Execute(var avalue: filenamety; const dialogkind: filedialogkindty; const acaption: msestring; aoptions: filedialogxoptionsty): Boolean;
+function tfiledialogxcontroller.Execute(var avalue: filenamety; const dialogkind: filedialogkindty; const acaption: msestring; aoptions: filedialogoptionsty): Boolean;
 var
   wstr1: filenamety;
 begin
@@ -3222,16 +3222,16 @@ begin
   end;
 end;
 
-procedure tfiledialogxcontroller.setoptions(Value: filedialogxoptionsty);
+procedure tfiledialogxcontroller.setoptions(Value: filedialogoptionsty);
 
 (*
 const
- mask1: filedialogxoptionsty = [fdo_absolute,fdo_relative];
-// mask2: filedialogxoptionsty = [fdo_directory,fdo_file];
- mask3: filedialogxoptionsty = [fdo_filtercasesensitive,fdo_filtercaseinsensitive];
+ mask1: filedialogoptionsty = [fdo_absolute,fdo_relative];
+// mask2: filedialogoptionsty = [fdo_directory,fdo_file];
+ mask3: filedialogoptionsty = [fdo_filtercasesensitive,fdo_filtercaseinsensitive];
 *)
 begin
-  Value := filedialogxoptionsty(setsinglebit(card32(Value), card32(foptions),
+  Value := filedialogoptionsty(setsinglebit(card32(Value), card32(foptions),
     [card32([fdo_absolute, fdo_relative, fdo_lastdirrelative,
     fdo_basedirrelative]),
     card32([fdo_filtercasesensitive, fdo_filtercaseinsensitive])]));
@@ -3315,7 +3315,7 @@ begin
   Result := fcontroller.Execute(akind);
 end;
 
-function tfiledialogx.Execute(const akind: filedialogkindty; const aoptions: filedialogxoptionsty): modalresultty;
+function tfiledialogx.Execute(const akind: filedialogkindty; const aoptions: filedialogoptionsty): modalresultty;
 begin
   Result := fcontroller.Execute(akind, aoptions);
 end;
