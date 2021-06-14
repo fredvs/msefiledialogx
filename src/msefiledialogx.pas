@@ -1321,9 +1321,6 @@ end;
 { tfiledialogxfo }
 
 procedure tfiledialogxfo.LoadImage(const AFileName: msestring);
-var
-  LSize: sizety;
-  LXRatio, LYRatio, LRatio: double;
 begin
   tbitmapcomp1.bitmap.LoadFromFile(tosysfilepath(AFileName));
   imImage.Bitmap := tbitmapcomp1.bitmap;
@@ -2046,7 +2043,7 @@ end;
 procedure tfiledialogxfo.oncellev(const Sender: TObject; var info: celleventinfoty);
 var
   cellpos, cellpos2: gridcoordty;
-  x, y: integer;
+  y: integer;
   str1: msestring;
 begin
 
@@ -2272,9 +2269,7 @@ end;
 
 procedure tfiledialogxfo.oncellevplaces(const Sender: TObject; var info: celleventinfoty);
 var
-  cellpos, cellpos2: gridcoordty;
-  x, y: integer;
-  str1: msestring;
+  cellpos : gridcoordty;
 begin
 
   if (info.eventkind = cek_buttonrelease) or (info.eventkind = cek_keyup) then
@@ -2362,13 +2357,8 @@ begin
 end;
 
 procedure tfiledialogxfo.onformcreated(const Sender: TObject);
-var
-  x: integer = 0;
-  tmp: msestring;
 begin
   fcourseid := -1;
-
-  tmp := labtest.Caption;
 
   with stockobjects do
   begin
@@ -2464,8 +2454,7 @@ procedure tfiledialogxfo.ondrawcellplacescust(const Sender: tcol; const Canvas: 
 var
   aicon: integer;
   apoint: pointty;
-  astr: msestring;
-begin
+ begin
   if bnoicon.Value = False then
     if cellinfo.cell.row < placescust.rowcount - 1 then
     begin

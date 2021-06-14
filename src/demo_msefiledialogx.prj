@@ -943,8 +943,8 @@ findhistory=20
  dialogkind
 findoptions=1
 editpos=2
- 22,2902
- 0,6
+ 3,1647
+ 0,-1073741823
 bookmarks0=0
 bookmarks1=0
 sourcefiles=2
@@ -1422,7 +1422,7 @@ windowlayout=582
  x=0
  y=0
  cx=1350
- cy=0
+ cy=-2
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -1434,6 +1434,7 @@ windowlayout=582
  [debuggerfo.file_history]
  value=/home/fred/msefiledialogx/src/msefiledialogx.pas
  history=20
+  /home/fred/msefiledialogx/src/msefiledialogx.pas
   /home/fred/mseide-msegui/lib/common/fpccompatibility/msefpimage.pas
   /home/fred/mseide-msegui/lib/common/dialogx/msefiledialogx.pas
   /home/fred/mseide-msegui/lib/common/image/mseformatgifread.pas
@@ -1453,7 +1454,6 @@ windowlayout=582
   /home/fred/ideu/src/conffpgui.pas
   /home/fred/ideu/src/confdebugger.pas
   /home/fred/ideu/src/commandorform.pas
-  /home/fred/ideu/src/commandlineform.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
