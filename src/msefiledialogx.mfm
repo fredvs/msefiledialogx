@@ -1,8 +1,8 @@
 object filedialogxfo: Tfiledialogxfo
   optionswidget = [ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets, ow_hinton]
   visible = False
-  bounds_x = 323
-  bounds_y = 164
+  bounds_x = 656
+  bounds_y = 61
   bounds_cx = 608
   bounds_cy = 484
   bounds_cxmin = 30
@@ -434,6 +434,7 @@ object filedialogxfo: Tfiledialogxfo
           end        
           item
             caption = 'Date'
+            face.localprops = []
             options = [dco_colsort, dco_wholecellsortclick, dco_hintclippedtext]
           end>
       end>

@@ -586,7 +586,7 @@ type
    bhidehistory: tbooleanedit;
    tbitmapcomp1: tbitmapcomp;
    imImage: timage;
-    procedure LoadImage(const AFileName: string);
+    procedure LoadImage(const AFileName: msestring);
     procedure createdironexecute(const Sender: TObject);
     procedure listviewselectionchanged(const Sender: tcustomlistview);
     procedure listviewitemevent(const Sender: tcustomlistview; const index: integer; var info: celleventinfoty);
@@ -1320,7 +1320,7 @@ end;
 
 { tfiledialogxfo }
 
-procedure tfiledialogxfo.LoadImage(const AFileName: string);
+procedure tfiledialogxfo.LoadImage(const AFileName: msestring);
 var
   LSize: sizety;
   LXRatio, LYRatio, LRatio: double;
@@ -1374,12 +1374,11 @@ begin
     filename.Value := dir.Value;
 
   //  writeln(dir.Value + filename.Value);
-
   //    writeln(fileext(filename.Value));
 
  if (lowercase(fileext(filename.Value)) = 'xpm') or
     (lowercase(fileext(filename.Value)) = 'jpeg') or
-     (lowercase(fileext(filename.Value)) = 'ico') or
+   //  (lowercase(fileext(filename.Value)) = 'ico') or
       (lowercase(fileext(filename.Value)) = 'bmp') or
       (lowercase(fileext(filename.Value)) ='png') or
       (lowercase(fileext(filename.Value)) = 'jpg') then
@@ -1657,7 +1656,7 @@ var
    {$else} 
   info: fileinfoty;
   {$endif}
-  thedir, thestrnum, thestrfract, thestrx, thestrext, tmp, tmp2, tmp3: string;
+  thedir, thestrnum, thestrfract, thestrx, thestrext, tmp, tmp2, tmp3: msestring;
 begin
 
   listview.Width := 30;
@@ -1719,7 +1718,7 @@ begin
   if listview.rowcount > 0 then
     for x := 0 to listview.rowcount - 1 do
     begin
-      list_log[4][x] := IntToStr(x);
+      list_log[4][x] := msestring(IntToStr(x));
 
       if listview.filelist.isdir(x) then
       begin
@@ -1750,7 +1749,7 @@ begin
       thedir := tosysfilepath(dir.Value + (listview.itemlist[x].Caption));
        
         {$ifdef unix}
-       FpStat(thedir, info); 
+       FpStat(rawByteString(thedir), info); 
         {$else} 
          getfileinfo(msestring(trim(thedir)), info);
         {$endif}
@@ -1794,7 +1793,7 @@ begin
           thestrext := ' B ';
         end;
 
-        thestrnum := IntToStr(y);
+        thestrnum := msestring(IntToStr(y));
 
         z := Length(thestrnum);
 
@@ -1803,7 +1802,7 @@ begin
             thestrnum := ' ' + thestrnum;
 
         if y2 > 0 then
-          thestrfract := '.' + IntToStr(y2)
+          thestrfract := '.' + msestring(IntToStr(y2))
         else
           thestrfract := '';
 
@@ -1813,9 +1812,9 @@ begin
         list_log[2][x] := ' ';
 
       {$ifdef unix}  
-       list_log[3][x] := formatdatetime('YY-MM-DD hh:mm:ss', FileDateToDateTime(info.st_mtime));
+       list_log[3][x] := msestring(formatdatetime('YY-MM-DD hh:mm:ss', FileDateToDateTime(info.st_mtime)));
       {$else} 
-      list_log[3][x] := formatdatetime('YY-MM-DD hh:mm:ss', info.extinfo1.modtime);
+      list_log[3][x] := msestring(formatdatetime('YY-MM-DD hh:mm:ss', info.extinfo1.modtime));
       {$endif}
        
       if listview.filelist.isdir(x) then
@@ -1831,7 +1830,7 @@ begin
   list_log.defocuscell;
   list_log.datacols.clearselection;
 
-  dir.frame.Caption := 'Directory with ' + IntToStr(list_log.rowcount - x2) + ' files';
+  dir.frame.Caption := 'Directory with ' + msestring(IntToStr(list_log.rowcount - x2)) + ' files';
 
  if filename.tag <> 2 then begin // save file
   if filename.tag = 1 then
@@ -2048,7 +2047,7 @@ procedure tfiledialogxfo.oncellev(const Sender: TObject; var info: celleventinfo
 var
   cellpos, cellpos2: gridcoordty;
   x, y: integer;
-  str1: string;
+  str1: msestring;
 begin
 
   if (list_log.rowcount > 0) and ((info.eventkind = cek_buttonrelease) or
@@ -2062,7 +2061,7 @@ begin
         cellpos2.col := 0;
         places.defocuscell;
         places.datacols.clearselection;
-        y := StrToInt(list_log[4][cellpos.row]);
+        y := StrToInt(ansistring(list_log[4][cellpos.row]));
         cellpos2.row := y;
 
         if listview.filelist.isdir(y) then
@@ -2275,7 +2274,7 @@ procedure tfiledialogxfo.oncellevplaces(const Sender: TObject; var info: celleve
 var
   cellpos, cellpos2: gridcoordty;
   x, y: integer;
-  str1: string;
+  str1: msestring;
 begin
 
   if (info.eventkind = cek_buttonrelease) or (info.eventkind = cek_keyup) then
@@ -2365,7 +2364,7 @@ end;
 procedure tfiledialogxfo.onformcreated(const Sender: TObject);
 var
   x: integer = 0;
-  tmp: string;
+  tmp: msestring;
 begin
   fcourseid := -1;
 
@@ -2526,7 +2525,7 @@ begin
             tmp := ' ';
 
           thestr := copy(dir.Value, 1, length(dir.Value) - 1);
-          theint := lastdelimiter(directoryseparator, thestr);
+          theint := lastdelimiter(directoryseparator, ansistring(thestr));
           placescust[0][placescust.rowcount - 1] := tmp + copy(thestr, theint + 1, 14);
           placescust[1][placescust.rowcount - 1] := dir.Value;
           placescust.rowcount := placescust.rowcount + 1;
@@ -2901,7 +2900,7 @@ begin
       for x    := 0 to length(ffilenamescust) - 1 do
       begin
         thestr := copy(ffilenamescust[x], 1, length(ffilenamescust[x]) - 1);
-        theint := lastdelimiter(directoryseparator, thestr);
+        theint := lastdelimiter(directoryseparator, ansistring(thestr));
         fo.placescust[1][x] := ffilenamescust[x];
         fo.placescust[0][x] := tmp + copy(thestr, theint + 1, 14);
       end;
